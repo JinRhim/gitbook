@@ -146,16 +146,15 @@ If you follow the google tutorial, you can make your own Efficientdet .tflite fi
 
 
 
-However, as you can see, it is not working well
+You need to manually copy .tflite file and label file to specific folders.
 
 <figure><img src="../.gitbook/assets/IMG_2065 Medium.jpeg" alt=""><figcaption></figcaption></figure>
 
 ```
 mendel@purple-jet:/home/coral/pycoral$ python3 examples/classify image.py - -mode
-1 test data/demo vi.tflite
-- -labels test data/demo label vi.txt - input test dat
+1 test data/demo vi.tflite --labels test data/demo label vi.txt --input test dat
 a/images/apple 11. jpg
-- . . - INFERENCE TIME • - ..
+---- INFERENCE TIME ---- 
 Note: The first inference on Edge TPU is slow because it includes loading the del into Edge TPU memory.
 mo
 80.2ms
@@ -164,12 +163,7 @@ mo
 70.2ms
 69.4ms
 RESULTS hand: 0.96484
-mendel@purple- jet : /home/coral/pycoral$ python examples/classify_ image.py - -mode
-I test data/demo vi. tflite
--labels test_data/demo_label_vI.txt
-•- input test dat
-a/images/apple 11.jpg
 ```
 
-
+However, as you can see, it is not working out well. My model is saying that apple is hand.  I will post later whenever I have time to fix this
 
