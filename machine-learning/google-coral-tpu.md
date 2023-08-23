@@ -13,13 +13,23 @@ Finally, I am free of endless h5py wheel configuration error.&#x20;
 Below is the official tutorial from google:\
 [https://coral.ai/docs/dev-board/get-started](https://coral.ai/docs/dev-board/get-started)
 
-Similar to Jetson Nano setup, you should download image, run balenaetcher, and then flip the switch again
+Similar to Jetson Nano setup:&#x20;
+
+1. Download Image
+2. Flash through BalenaEtcher
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 at 3.04.22 PM.png" alt=""><figcaption></figcaption></figure>
+
+```
+(base) jin@cose-zwqin-r13:~/Documents$ ./etcher.AppImage 
+Language changed to: en 
+packageUpdatable false 
+ready -to- show: 1.1095
+```
 
 <figure><img src="../.gitbook/assets/IMG_2054.jpg" alt=""><figcaption><p>switch in Google Coral Dev Board</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/IMG_2055 Medium.jpeg" alt="" width="360"><figcaption></figcaption></figure>
-
-Once it is done, it will show following message through HDMI cable
+3. Once it is done, it will show following message through HDMI cable
 
 ```
 === FLASH START! ===
@@ -33,17 +43,29 @@ Once it is done, it will show following message through HDMI cable
 ﻿﻿Writing boot filesystem...
 [
 7.3035321 randon: crng init done
-* Writing hone filesystem..
+* Writing home filesystem..
 
 ```
 
+4. When the RED LED turns off, unplug power and remove microSD card, and set switch to on-off-off-off.  After few minutes, below text should appear and then the blue background with terminal should display. &#x20;
 
-
-When the RED LED turns off, unplug power and remove microSD card, and set switch to on-off-off-off.&#x20;
-
-Connect to computer with USB C cable.&#x20;
+{% code overflow="wrap" %}
+```
+9.4443951 +HUT
+9.4569393 -HWT
+9.4928651 HTT: full reorder offload enabled
+9.5209031 Pkt log is disabled
+9.5285871 target uses HTT version 3.50; host uses 3.28
+9.5410181 Host SW:4.5.23.1, FW:2.0.1.1048, HW:QCA6174_REV3_2
+9.5525841 o1_pktlog_init: pktlogmod_init successful!
+9.5628641 wlan: driver loaded in 1496000
+I A start job is running for Scripts that should be run only once (1min 11s no limit)
+```
+{% endcode %}
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
+
+5. If you connect the OTG usb c cable to desktop, the device should pop up in "mdt device"
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
 
@@ -83,7 +105,7 @@ So, everything is done. The Board will show the terminal at the background with 
 In order to run the ssdmobilenet demo,&#x20;
 
 ```
-mendel@purple-jet:/$ edgetpu demo - -device
+mendel@purple-jet:/$ edgetpu_demo --device
 ```
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.44.43 PM.png" alt=""><figcaption></figcaption></figure>
@@ -138,7 +160,7 @@ The parrot inference should run.&#x20;
 
 
 
-If you follow the google tutorial, you can make your own Efficientdet .tflite file compiled for google coral dev board. I put them in separate github repository with some inference photos.&#x20;
+If you follow the google tutorial, you can make your own Efficientdet.tflite file compiled for google coral dev board. I put them in separate github repository with some inference photos.&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.58.40 PM.png" alt="" width="239"><figcaption></figcaption></figure>
 
