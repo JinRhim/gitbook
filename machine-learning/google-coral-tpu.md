@@ -35,16 +35,12 @@ ready -to- show: 1.1095
 === FLASH START! ===
 * Writing partition table
 6.4208401 GPT-partition _entry array_crc32 values don't match: 0x4462764 1= 0x97897541
-[
-6.4346771 GPT: Use GNU Parted to correct GPT errors.
-[
-6.4456501 mncbIkO: p1 p2 p3 p
+[6.4346771 GPT:] Use GNU Parted to correct GPT errors.
+[6.4456501 mncbIkO:] p1 p2 p3 p
 ﻿﻿Writing bootloader ...
 ﻿﻿Writing boot filesystem...
-[
-7.3035321 randon: crng init done
+[7.3035321 random:] crng init done
 * Writing home filesystem..
-
 ```
 
 4. When the RED LED turns off, unplug power and remove microSD card, and set switch to on-off-off-off.  After few minutes, below text should appear and then the blue background with terminal should display. &#x20;
@@ -116,11 +112,15 @@ It will show the highway video.
 
 
 
+Now, create new folder at home directory with your name and add permission (I did chown root:root /usr/bin/sudo and it messed up my whole system root permission so I had to clean install again)
 
+```
+mendel@undefiend-eft:/home$ whoami 
+mendel
+mendel@undefiend-eft:/home$ sudo chown -R mendel:mendel /home/jin
+```
 
 Google tutorial shows how to clone the project and run the sample inference.
-
-
 
 Change your directory to home and clone those projects.
 
