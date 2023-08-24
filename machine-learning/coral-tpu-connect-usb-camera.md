@@ -32,8 +32,8 @@ In order to follow tutorial I had to type multiple github links which was easy t
 
 ```
 touch run_usb_camera_inference.sh
-touch run_Face_detection_inference.sh 
-touch usb_Transfer.sh 
+touch run_face_detection_inference.sh 
+touch usb_transfer.sh 
 ```
 
 run\_usb\_camera\_inference.sh _(Do not forget to change fps and resolution and directory)_
