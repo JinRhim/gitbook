@@ -7,6 +7,12 @@
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Law Practice Exam](pharmacy/law-practice-exam.md)
+  * [Statin](pharmacy/statin.md)
+  * [Finasteride](pharmacy/finasteride.md)
+  * [CYP Interaction Chart](pharmacy/cyp-interaction-chart.md)
+  * [Intro Biochem](pharmacy/intro-biochem.md)
+  * [Drug Utilization Review](pharmacy/drug-utilization-review.md)
+  * [Catheter](pharmacy/catheter.md)
 
 ## This week
 

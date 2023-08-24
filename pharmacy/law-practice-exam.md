@@ -1,5 +1,115 @@
 # Law Practice Exam
 
+1\. What were the exposure groups of interest? How were they measured?\
+\
+
+
+1. The exposure groups were the group prescribed with P2Y12 inhibitor (clopidogrel, ticagrelor or prasugrel).\
+   \
+
+
+2\. What were the primary outcomes of interest? How were they measured?\
+\
+
+
+1. rate of readmission in 90 days and long-term mortality were the primary outcomes of interest.&#x20;
+2. It was measured by a logistic regression model, Kaplan-Meier curves, and a cox proportional hazards.\
+   \
+
+
+3\. What statistical method was used to adjust for confounding?\
+\
+
+
+1. propensity score matching to account for the nonrandom use of ticagrelor and prasugrel. A logistic regression model was used to estimate propensity scores among patients receiving ticagrelor or prasugrel with demographic and clinical variables included as predictors
+2. Adjusted odds ratio/cox proportional hazards/Kaplan-Meier curves were also used.\
+   \
+
+
+4\. What potential confounders were addressed in the study? What potential confounders were NOT addressed in the study?\
+&#x20;
+
+1. Potential confounders that were addressed in the study are medication adherence, age, gender, BMI, race, smoking status, medical status, family history, previous heart disease history, serum levels.&#x20;
+2. Potential confounders not addressed in the study include economic status, exercising habits, stress level, or food intakes.
+
+\
+\
+
+
+1. In figure 3, what is the literal interpretation of the hazard ratio?
+2.
+   1. There was no significant difference in the hazard rates of mortality between patients treated with ticagrelor and patients treated with prasugrel. Hazard ratio being 1.3, 95% confidence interval 0.8 to 2.2, p = 0.31.\
+      \
+
+3. In figure 3, what does the Kaplan-Meier curve tell us?
+4.
+   1. The figure 3 shows Kaplan-Meier curve for cumulative long-term mortality. It is demonstrating long-term mortality in propensity matched patients. The 1-year mortality rate for patients discharged on ticagrelor was 5.4% (95% CI 3.3% to 7.4%), whereas that for prasugrel was 3.7% (95% CI 2.2% to 5.2%).\
+      \
+
+5. Did the authors adequately address the study limitations? Are there limitations which could
+
+have affected the study results?
+
+1. Yes, there were several limitations. First, the study was unable to account for all potential confounders as it is an observational study. Secondly, all hospitals participating in this study are actively engaged in statewide collaborative quality improvement initiatives. Therefore, these findings may not be generalizable to hospitals that do not participate in those initiatives. Third, this is studied over older Medicare patients in the state of Michigan, so limiting generalizability. Lastly, the study was not account for medication compliance, treatment discontinuation, or treatment switching.\
+   \
+
+2. What does this study suggest about antiplatelet medications after percutaneous coronary
+
+Intervention?
+
+1. The study compared older patients treated with ticagrelor versus prasugrel after PCI for ACS by retrospective observational analysis. There were no significant differences in the rates of 90 day readmission or long term mortality between older patients treated with ticagrelor and patients treated with prasugrel after PCI for ACS. These 2 treatments appear similarly effective.&#x20;
+2. This study suggest that stent thrombosis is becoming less common due to advances in stent technologies. Thus, pathologic bleeding from excessive platelet inhibition may contribute more toward morbidity and mortality among patients taking antiplatelet medications.\
+   \
+   \
+
+
+\
+
+
+![](https://lh4.googleusercontent.com/mrh4ElX\_T4JpYolZAU\_dReTG9ocyvCt6rw9qTdYScNDgURoOxnzNZkvcuGr9egwB\_J-NsWoc6Ks4KYgtxcqeSYW\_xtXLN1QE-7iVeXoV\_RcjKxMVj3AC6la\_fgW\_HTgMwS38zNUCfeyWAaiP7vCIVQ)\
+\
+
+
+1\. In figure 3, what is the literal interpretation of the hazard ratio?\
+\
+
+
+1. Although the cox model hazard ratio is 1.3, and 95% CI is 0.8 to 2.2 which contains 0. Also, the p valuve which is 0.31 shows that this result is statistically insignificant
+
+\
+
+
+2\. In figure 3, what does the Kaplan-Meier curve tell us?&#x20;
+
+\
+
+
+1. Kaplan-Meier curve shows long-term mortality in propensity-matched patients. Ticagrelor discharge patient 1-year mortality was 5.4% (95% CI 3.3% to 7.4%), whereas prasugrel dischanged patient 1-year mortality  was 3.7% (95% CI 2.2% to 5.2%).
+
+\
+
+
+3\. Did the authors adequately address the study limitations? Are there limitations which could have affected the study results?&#x20;
+
+1. Although the study attempted to account for the nonrandom administration of ticagrelor and prasugrel through propensity-matching techniques, the study was unable to account for all potential confounders due to the observational nature of the present study.&#x20;
+2. All hospitals participating in this registry are actively engaged in statewide collaborative quality improvement initiatives. These findings may not be generalizable to hospitals that do not participate in such initiatives.&#x20;
+3. We studied older Medicare patients in the state of Michigan, thus potentially limiting generalizability only to older medicare patients.
+4. Finally, as previously noted, we could not account for medication compliance, treatment discontinuation, or treatment switching, all of which may have important effects on outcomes and warrant further research.
+5. There are different enzymatic allele present as a confounder&#x20;
+6. Some of the patient behavior might abruptly changed after knowing that they had PCI.&#x20;
+7. Researcher bias might be present&#x20;
+8. Potential of hospital data collection method variation.&#x20;
+
+\
+
+
+4\. What does this study suggest about antiplatelet medications after percutaneous coronary intervention?&#x20;
+
+\
+
+
+1. In this study about ticagrelor and prasugrel treatments in older Medicare patients who underwent PCI for ACS, there were no significant differences in the rates of 90-day hospital readmission or long-term mortality. With prasugrel’s potential earlier patent expiration and generic drug approval, it may emerge as a more cost-effective agent compared with ticagrelor in the near future.
+
 1\. Which of the following would be correct regarding the cGMP:
 
 It does not apply to dietary supplements
@@ -465,4 +575,8 @@ a.         Adulterated
 
 1. Misbranded
 2. Neither adulterated or misbranded
-3. Both adulterated and misbranded
+3. Both adulterated and misbranded\
+   \
+
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 12.41.00 AM.png" alt=""><figcaption></figcaption></figure>
