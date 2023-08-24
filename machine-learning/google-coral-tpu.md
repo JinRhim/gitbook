@@ -4,6 +4,8 @@ description: setting up Google Coral
 
 # Google Coral TPU
 
+### Google Coral Dev Board Basic Setup
+
 Initially, I wanted to use Jetson Nano for running my ssdmobilenet .tflite file. However, the outdated JetPack 4.6 and its endless library dependecy error to install tensorflow eventually forced me to try Google Coral Dev Board. (Although Pytorch model that was installed 1 year ago works fine, I want to try .tflite files)  \
 \
 Finally, I am free of endless h5py wheel configuration error.&#x20;
@@ -61,7 +63,7 @@ I A start job is running for Scripts that should be run only once (1min 11s no l
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
 
-5. If you connect the OTG usb c cable to desktop, the device should pop up in "mdt device"
+5. If you connect the OTG usb-c cable to desktop, the device should pop up in "mdt device"
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
 
@@ -76,7 +78,7 @@ Found 1 devices.
 (base) jin@cose-zwqin-r13:~$
 ```
 
-If you successfully connect to wifi,&#x20;
+6. Connect to WiFi.&#x20;
 
 ```
 mendel@purple-jet:~$ mcli connection show
@@ -98,6 +100,8 @@ So, everything is done. The Board will show the terminal at the background with 
 
 
 
+### Running SSDMobileNet Demo&#x20;
+
 In order to run the ssdmobilenet demo,&#x20;
 
 ```
@@ -112,6 +116,10 @@ It will show the highway video.
 
 
 
+
+
+### Running Google Tutorial's Parrot Inference Demo
+
 Now, create new folder at home directory with your name and add permission (I did chown root:root /usr/bin/sudo and it messed up my whole system root permission so I had to clean install again)
 
 ```
@@ -122,7 +130,7 @@ mendel@undefiend-eft:/home$ sudo chown -R mendel:mendel /home/jin
 
 Google tutorial shows how to clone the project and run the sample inference.
 
-Change your directory to home and clone those projects.
+Change your directory to home/your-name and clone those projects.
 
 ```
 remote: Enumerating objects: 315, done.
@@ -156,9 +164,9 @@ The parrot inference should run.&#x20;
 
 
 
+### Running Custom tflite model based on Google's Efficientdet tutorial
 
-
-
+Tutorial Link: [https://colab.research.google.com/github/google-coral/tutorials/blob/master/retrain\_efficientdet\_model\_maker\_tf2.ipynb](https://colab.research.google.com/github/google-coral/tutorials/blob/master/retrain\_efficientdet\_model\_maker\_tf2.ipynb)
 
 If you follow the google tutorial, you can make your own Efficientdet.tflite file compiled for google coral dev board. I put them in separate github repository with some inference photos.&#x20;
 
