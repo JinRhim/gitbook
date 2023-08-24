@@ -178,7 +178,7 @@ If you follow the google tutorial, you can make your own Efficientdet.tflite fil
 
 You need to manually copy .tflite file and label file to specific folders.
 
-<figure><img src="../.gitbook/assets/IMG_2065 Medium.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2065 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 ```
 mendel@purple-jet:/home/coral/pycoral$ python3 examples/classify image.py - -mode
