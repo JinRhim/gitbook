@@ -6,6 +6,7 @@
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
+  * [Law Practice Exam](pharmacy/law-practice-exam.md)
 
 ## This week
 
