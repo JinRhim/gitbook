@@ -45,3 +45,15 @@ what will be the ratio of \[P] to \[S] after the reaction has reached equilibriu
 40. Which of the following does not occur during polypeptide hydrolysis by chymotrypsin? **D**\_ (a) transfer of a proton from Ser195 to His57 (b) transfer of a proton from His57 to the substrate (c) transfer of a proton from a water molecule to His57 (d) formation of a covalent bond between His57 and the substrate (e) formation of a covalent bond between Ser195 and the substrate
 
 <figure><img src="../.gitbook/assets/Biochemistry.docx.jpg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx 2.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx 3.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx 4.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx 5.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Functional Group.docx 5.jpeg" alt=""><figcaption></figcaption></figure>

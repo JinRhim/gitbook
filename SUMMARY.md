@@ -13,6 +13,8 @@
   * [Intro Biochem](pharmacy/intro-biochem.md)
   * [Drug Utilization Review](pharmacy/drug-utilization-review.md)
   * [Catheter](pharmacy/catheter.md)
+  * [BPS305](pharmacy/bps305.md)
+  * [Diels-Alder Reaction](pharmacy/diels-alder-reaction.md)
 
 ## This week
 
