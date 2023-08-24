@@ -124,6 +124,12 @@ done
 
 echo "Selected files copied from USB to $DESTINATION_DIR"
 
+# Unmount the USB drive
+sudo umount /media/usb
+
+# Print a message indicating that the USB drive has been unmounted
+echo "\n==USB drive has been unmounted.==\n"
+
 ```
 
 ### Copy to USB&#x20;
