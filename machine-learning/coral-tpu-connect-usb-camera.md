@@ -43,7 +43,7 @@ run\_usb\_camera\_inference.sh _(Do not forget to change fps and resolution and 
 
 echo "\n==== SSDMobileNet V2 1000 Object detection Demo ====\n"
 
-export DEMO_FILES="$HOME/jin/demo_files"
+export DEMO_FILES="/home/jin/demo_files"
 mkdir -p ${DEMO_FILES}
 
 # The image classification model and labels file
@@ -70,7 +70,7 @@ run face\_detection\_inference.sh _(Do not forget to change fps and resolution a
 # Set the path to the demo files directory
 echo "\n=========Face Detection Demo==============\n"
 
-DEMO_FILES="$HOME/jin/demo_files"
+DEMO_FILES="/home/jin/demo_files"
 
 # Set the path to the model file
 MODEL_FILE="${DEMO_FILES}/ssd_mobilenet_v2_face_quant_postprocess_edgetpu.tflite"
