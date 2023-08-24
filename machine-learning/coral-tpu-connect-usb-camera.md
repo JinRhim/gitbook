@@ -18,13 +18,13 @@ v4l2-ctl --list-formats-ext --device /dev/video1
 
 Because OpenCV is already installed in google coral, you do not have to install any module. However, it is important to check what resolution and what fps the usb camera supports.&#x20;
 
-For example, my camera only supports 20fps or 30fps unlike google tutorial.&#x20;
+For example, my camera only supports 20fps or 30fps unlike google tutorial which uses 24fps 800X600
 
 
 
 ### Making Scripts
 
-However, in order to follow tutorial I had to type multiple github links which was easy to mistake. To make it simpler I made a script which I typed in my computer and move to coral dev board through USB-A port.&#x20;
+In order to follow tutorial I had to type multiple github links which was easy to mistake. To make it simpler lets use script so that everything could be copy pasted
 
 ### Create 3 Scripts&#x20;
 
