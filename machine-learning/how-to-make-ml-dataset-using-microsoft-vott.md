@@ -155,9 +155,58 @@ Click the Export Setting Button which is shown in the red box above.&#x20;
 * Export Unassigned --> UNCHECKED
 
 If you do not uncheck this, all the images which you did not labeled will be included in dataset also. \
-\
-\
-Now, press project button so that you could see imported imaged again.&#x20;
+
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames wㅗfdasffdsaffdsafd</p></figcaption></figure>
+
+f\
+s\
+fNsow, press project button so that you could go back to project.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.38.17 PM.png" alt=""><figcaption></figcaption></figure>
 
+### Labeling Dataset
+
+Now, select frame\_0.jpg and drag your mouse. The bounding box will pop up. After setting correct bounding box, Press NUMPAD 1.&#x20;
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.40.58 PM.png" alt=""><figcaption><p>labeling banana</p></figcaption></figure>
+
+Whatever saved in TAGS will show up after pressing NUMPAD 1. Press down key, and then keep continuing labeling next image.&#x20;
+
+&#x20;Now you need to keep doing this until the end of image. Use a good gaming mouse, as low quality mouse will cause extensive fatigue.&#x20;
+
+Drag, press 1, press down, drag, press 1, press down, ...&#x20;
+
+
+
+
+
+### Exporting the project&#x20;
+
+Once the labeling is done, press **Export Project**.
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.45.30 PM.png" alt=""><figcaption></figcaption></figure>
+
+However, sometimes it will say Export Failed! It does not mean all of your work disappeared.&#x20;
+
+The solution is to hit the **Export Project** several times so that it eventually shows **Export Successful!** message. &#x20;
+
+If it keeps failing, wait for a minute and hit the button for 10 times again.&#x20;
+
+### Checking Output Files
+
+now, next to the frames folder, there should be a vott output folder
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.48.50 PM.png" alt=""><figcaption></figcaption></figure>
+
+Inside the Vott output folder full of .json files, there will be file {Vott\_your\_file\_name}-PasccalVOC. Inside this folder, there should be your JPG image file and Annotations file.&#x20;
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.51.18 PM.png" alt=""><figcaption><p>Vott PascalVOC output</p></figcaption></figure>
+
+Annotation folder is for .xml&#x20;
+
+JPEGImages folder is for .jpg&#x20;
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.52.08 PM.png" alt=""><figcaption><p>JPEGImages</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.51.59 PM.png" alt=""><figcaption><p>Annotations</p></figcaption></figure>
