@@ -21,15 +21,37 @@ Omnivision camera sensors are commonly used in&#x20;
 
 I though if I make dataset based on OV sensors and recycle the dataset maybe it might increase the accuracy due to shared sensor pixel characteristics, but later I realized it doesn't affect overall performance much.
 
-#### Taking video through OpenMV IDE&#x20;
+#### Taking video through OpenMV H7
 
 If video is being taken from phone, this step can be skipped.&#x20;
 
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-25 at 12.00.51 AM (2).png" alt="" width="301"><figcaption><p>OpenMV IDE Recording Setup</p></figcaption></figure>
+
 Download [OpenMV IDE](https://openmv.io/pages/download) and connect OpenMV H7. There are multiple resolutions to choose to capture image. (The default is QVGA: 320X240)
 
-```
-sensor.set_framesize(sensor.QVGA)
+```python
+import sensor, image, time
+
+exposure_ms = 1  # microseconds = 1e-6
+
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.VGA) # Default: sensor.QVGA
+
+# default is turned on. It will automatically lower the brightness if the screen is static
+# If you do not turn this off, whenever the object is static, the image will be really dark
+# sensor.set_auto_exposure(enable [, exposure_us])
+# exposure_us = microseconds in integer
+
 sensor.set_auto_exposure(False, exposure_ms)
+sensor.skip_frames(time = 1000)
+
+clock = time.clock()
+
+while(True):
+    clock.tick()
+    img = sensor.snapshot()
+    print(clock.fps())
 ```
 
 There are multiple options for resolution:&#x20;

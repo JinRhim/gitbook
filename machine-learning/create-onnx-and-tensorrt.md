@@ -68,7 +68,7 @@ python create_onnx.py
     --onnx /home/tensorflow_train_folder_path/workspace/training_demo/exported-models/my_model_onnx/model.onnx
 ```
 
-![](<../.gitbook/assets/image (1).png>)![](https://lh6.googleusercontent.com/shS4fcCzlnZckZkNWPBdcYW9dxInXVM82CPb-zOWGicO9eXu8HYEcDPoIGejZJXz3bR-purBpOzuy9jU-dvq7UleMqku7hqqiMXuzNrU22d2JBmnMpqCYiHlSqZnmgqkh75NvMXQJvqR2wUs0pemIc0)
+![](<../.gitbook/assets/image (1) (1).png>)![](https://lh6.googleusercontent.com/shS4fcCzlnZckZkNWPBdcYW9dxInXVM82CPb-zOWGicO9eXu8HYEcDPoIGejZJXz3bR-purBpOzuy9jU-dvq7UleMqku7hqqiMXuzNrU22d2JBmnMpqCYiHlSqZnmgqkh75NvMXQJvqR2wUs0pemIc0)
 
 In the my\_model\_onnx folder, there should be model.onnx
 
