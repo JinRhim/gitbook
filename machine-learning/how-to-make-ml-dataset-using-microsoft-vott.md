@@ -157,11 +157,9 @@ Click the Export Setting Button which is shown in the red box above.&#x20;
 If you do not uncheck this, all the images which you did not labeled will be included in dataset also. \
 
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames wㅗfdasffdsaffdsafd</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames which you only viewed will not be exported. In this case, frame_1000 and frame_1004</p></figcaption></figure>
 
-f\
-s\
-fNsow, press project button so that you could go back to project.
+Now, press project button so that you could go back to project.
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.38.17 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -210,3 +208,39 @@ JPEGImages folder is for .jpg&#x20;
 <figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.52.08 PM.png" alt=""><figcaption><p>JPEGImages</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.51.59 PM.png" alt=""><figcaption><p>Annotations</p></figcaption></figure>
+
+The xml files will look like below format:&#x20;
+
+```xml
+<annotation verified="yes">
+    <folder>Annotation</folder>
+    <filename>frame_0.jpg</filename>
+    <path>banana_dataset_maker-PascalVOC-export/Annotations/frame_0.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>320</width>
+        <height>240</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+    <name>banana</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>117.51744570974576</xmin>
+        <ymin>14.975387314618644</ymin>
+        <xmax>203.2808527542373</xmax>
+        <ymax>149.3641585010593</ymax>
+    </bndbox>
+</object>
+</annotation>
+
+```
+
+### Ready to use&#x20;
+
+Now, your dataset is ready to use! Copy Annotations folder and JPEGImages folder to whatever place you want. However, if you want this dataset to be used in Pytorch or Tensorflow, you would probably need little bit of polishing, which I will post next time.
