@@ -6,6 +6,7 @@
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
+  * [Diuretics](pharmacy/diuretics.md)
   * [Law Practice Exam](pharmacy/law-practice-exam.md)
   * [Statin](pharmacy/statin.md)
   * [Finasteride](pharmacy/finasteride.md)
