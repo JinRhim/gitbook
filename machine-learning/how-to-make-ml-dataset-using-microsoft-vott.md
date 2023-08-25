@@ -199,7 +199,11 @@ Drag, press 1, press down, drag, press 1, press down, ...&#x20;
 
 
 
+#### Do not label it wrong!&#x20;
 
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-25 at 12.07.17 AM.png" alt=""><figcaption><p>Faulty COCO Dataset</p></figcaption></figure>
+
+Above faulty labels are from official COCO Dataset. Try to label it correctly in order to not confuse the model. (I found this when I made script that draw bounding box on image)
 
 ### Exporting the project&#x20;
 
