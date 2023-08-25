@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Machine Learning](README.md)
+  * [How to make ML Dataset using Microsoft Vott](machine-learning/how-to-make-ml-dataset-using-microsoft-vott.md)
   * [Google Coral TPU](machine-learning/google-coral-tpu.md)
   * [Coral TPU: Connect USB Camera](machine-learning/coral-tpu-connect-usb-camera.md)
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
