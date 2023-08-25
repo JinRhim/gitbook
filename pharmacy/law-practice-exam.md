@@ -575,8 +575,134 @@ a.         Adulterated
 
 1. Misbranded
 2. Neither adulterated or misbranded
-3. Both adulterated and misbranded\
-   \
+3.  Both adulterated and misbranded\
+    \
+    1\. This laboratory test is NOT typically used to diagnose SLE. (1pt)
+
+    1. Double stranded DNA antibodies
+    2. Anti-macrophage cytoplasmic antibodies&#x20;
+    3. Anti-neutrophil cytoplasmic antibodies
+    4. Anti-cardiolipin antibodies
+
+    Answer: B
+
+    \
+
+
+    2\. A low red blood cell count may occur in patients’ with SLE.  Why? Explain your answer. (2pt)
+
+    &#x20;Patient exhibits pancytopenia coupled with low reticulocyte count. This suggests that there is something wrong with the bone marrow, the bone marrow is not producing enough red blood cells. This is contrary to the destruction of red blood cells that would be observed in the spleen. The lack of red blood cells is much greater due to inadequate production than rapid destruction.
+
+    \
+
+
+    &#x20;
+
+    3\. Our patient had an ESR of 88mm/min- is this within the normal range? (1pt)
+
+    1. Yes
+    2. No
+
+    \
+    \
+    \
+    \
+
+
+    4\. Why was this patient treated with an immunosuppressive drug(s) and antibiotics? (2pt)
+
+    \
+
+
+    In order to suppress an excessive fever of 38.2 degrees, the immunosuppressive drug was administered to decrease excessive autoimmune reaction.  Also to lower the risk of infection due to lowered immune response, antibiotics were administered. ( possibility of relapsing inflammatory disorders, including systemic lupus erythematosus (SLE), antineutrophil cytoplasmic antibody-associated vasculitis, and adult-onset Still’s disease, antibiotics were also administered.)&#x20;
+
+    \
+    \
+
+
+    \
+
+
+    5\. Circle ALL of the following hematologic findings that were abnormal. (1pt)
+
+    * White cell count
+    * ESR
+    * CRP
+    * Prothrombin time
+    * Ferritin
+
+    \
+    \
+    \
+    \
+
+
+    6\. Why was the patient administered IV immunoglobulin rather that an alternate immunosuppressive treatment?  Explain your answer.  (2pt)
+
+    IV immunoglobulin is a good immune system-modulating choice for patients extra-susceptible to infection.  Intravenous immune globulin is often used as an immunomodulatory agent in patients in whom infection is a concern. I would broaden the antimicrobial coverage, given the need for immunosuppression in the context of ongoing fevers and severe neutropenia.
+
+    \
+    \
+    \
+
+
+    &#x20;
+
+    7\. SLE patients typically demonstrate normal levels of CRP.  Did this patient have elevated CRP levels? (1pt)
+
+    1. Yes
+    2. No (a little elevated but not classified as elevated)
+    3. Yes, however, there is no data to support this.
+
+    \
+    \
+    \
+
+
+    &#x20;
+
+    8\. Define lupus anticoagulant. How is it relevant in this case? (2pt)
+
+    &#x20; Lupus anticoagulants are antibodies against substances in the lining of cells. These substances prevent blood clotting in a test tube. Lupus anticoagulant is commonly seen in SLE. The test for lupus anticoagulant was positive, thus leading the diagnosing patient as SLE.&#x20;
+
+    Starkebaum, G. A. (2017, February 8). Lupus anticoagulants and antiphospholipid antibodies: MedlinePlus Medical Encyclopedia. Retrieved October 30, 2018, from https://medlineplus.gov/ency/article/000547.htm
+
+
+
+### Ward
+
+1\. Billy is a pharmacist at Main Street Pharmacy and Sue is the PIC. A routine inspection by a state pharmacy board inspector revealed that Billy had been refilling certain patients’ prescriptions without authorization and without Sue’s knowledge. State law provides that the PIC is responsible for any violations of the pharmacy laws and regulations. Therefore, the board of pharmacy found both Sue and Billy in violation of the law, fined each one several hundred dollars, and placed each on probation. Several pharmacists complained to the board that what the board did to Sue was unfair. They argued that the law is unconstitutional because it punishes one for the acts of someone else without having knowledge of the other person’s illegal acts.
+
+a. If you were a board of pharmacy member, how would you respond to the pharmacists’ complaints?
+
+Pharmacist in change shoud share the responsibility also in order to display the strict responsibility of Pharmacist in Charge. It is PIC’s responsibility to handle and care all of those pharmacist actions, and to ensure compliance with all applicable laws and regulations for a single pharmacy.
+
+b. Why have such a law? Is the law unfair?
+
+The law in intended to decrease malpractice and mistakes that can commonly happen in pharmacy. PIC is hired in order to watch those mistakes, so the PIC should also share the responsibility &#x20;
+
+2\. The state board of pharmacy brought disciplinary action against five pharmacists working at three different DrugCo (a chain pharmacy) pharmacies and against DrugCo itself for the pharmacists’ repeated failure to counsel patients as mandated by regulation. DrugCo argued that the pharmacists were at fault, not the pharmacy, and that only the pharmacists should face disciplinary action.
+
+a. Should DrugCo’s pharmacy license be the subject of disciplinary action, and what additional facts would be important to know in arriving at this decision?
+
+IF it happened multiple times in one pharmacy chain, it would be due to loose restrictions and rules that are imposed on pharmacist by pharmacy chain; pharmacy chain should also be punished and strengthen their regulations.
+
+&#x20;
+
+3.Ben, a pharmacist in the state of Mordor, set up an office where he provides medication therapy consultations to patients for an hourly fee. Ben neither stocks nor dispenses any drugs. The state of Mordor defines the practice of pharmacy to include dispensing a drug product from a state-licensed pharmacy. Some on the Mordor Board of Pharmacy feel that the definition of the practice pharmacy must be changed to include the professional services Ben is providing at his office. Others on the board are confident that enough regulatory control exists over Ben’s pharmacist license that changing the definition of the practice of pharmacy is not necessary.
+
+a. Explain the pros of changing the definition of the practice of pharmacy to include the professional services Ben is providing.
+
+The patients can have more information about their medication therapy, improving the patient outcomes.&#x20;
+
+b. If the definition is changed to include Ben’s professional services, what concerns would there be with Ben doing these activities in an office setting instead of a licensed pharmacy?
+
+Practice of pharmacy need to be performed in pharmacy.
+
+\
+
+
+\
 
 
 <figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 12.41.00 AM.png" alt=""><figcaption></figcaption></figure>

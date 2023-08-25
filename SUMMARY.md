@@ -9,7 +9,7 @@
   * [Diuretics](pharmacy/diuretics.md)
   * [Medical Marijuana](pharmacy/medical-marijuana.md)
   * [Law Practice Exam](pharmacy/law-practice-exam.md)
-  * [Statin](pharmacy/statin.md)
+  * [Statin IAL](pharmacy/statin-ial.md)
   * [Finasteride](pharmacy/finasteride.md)
   * [CYP Interaction Chart](pharmacy/cyp-interaction-chart.md)
   * [Intro Biochem](pharmacy/intro-biochem.md)
@@ -17,6 +17,8 @@
   * [Catheter](pharmacy/catheter.md)
   * [BPS305](pharmacy/bps305.md)
   * [Diels-Alder Reaction](pharmacy/diels-alder-reaction.md)
+  * [PHP 317 Quiz 2](pharmacy/php-317-quiz-2.md)
+  * [EEG](pharmacy/eeg.md)
 
 ## This week
 
