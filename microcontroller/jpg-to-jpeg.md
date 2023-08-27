@@ -50,7 +50,7 @@ Higher the baud rate, more work microcontroller have to do while processing all 
 
 <figure><img src="../.gitbook/assets/1.1_ (2) (1).png" alt=""><figcaption><p>crashing serial monitor</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/1.1_.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/1.1_ (2).gif" alt=""><figcaption></figcaption></figure>
 
 The easiest attempt to alleviate such bottleneck is to lower the resolution. Ov7760 Camera driver shows different resolution options
 
