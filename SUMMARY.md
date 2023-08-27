@@ -7,6 +7,7 @@
   * [Coral TPU: testing model with USB Camera](machine-learning/coral-tpu-connect-usb-camera.md)
   * [Coral TPU: Train EfficientDet](readme/coral-tpu-train-efficientdet.md)
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
+  * [Edge Impulse](readme/edge-impulse.md)
 * [Microcontroller](microcontroller/README.md)
   * [JPG to JPEG](microcontroller/jpg-to-jpeg.md)
 * [Pharmacy](pharmacy/README.md)
