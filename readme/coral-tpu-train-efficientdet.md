@@ -1,14 +1,12 @@
 ---
-description: Object Classification
+description: Object Classification for Coral Dev Board
 ---
 
 # Coral TPU: Train EfficientDet
 
-[Google tutorial](https://colab.research.google.com/github/google-coral/tutorials/blob/master/retrain\_efficientdet\_model\_maker\_tf2.ipynb) shows how to train your own model and deploy it on the Coral Dev Board.
+[Google tutorial](https://colab.research.google.com/github/google-coral/tutorials/blob/master/retrain\_efficientdet\_model\_maker\_tf2.ipynb) shows how to train your own model for Coral Dev Board.
 
-
-
-However, in my case, the google colab tutorial showed multiple numpy, tensorflow, and other configuration file errors.&#x20;
+However, trying to follow this official Google tutorial has inflicted 3 hours of agony and pain on me, as it caused incessant amounts of numpy, tensorflow, and many other library configuration errors. If Google's tutorial code worked for you, you have no need to read this post.&#x20;
 
 
 
@@ -16,11 +14,53 @@ After several attempts to fix the problem through google colab, I eventually cre
 
 
 
-Below is my method of training and deploying the model:&#x20;
+Below is my method of training and deploying the model.&#x20;
 
+It will only detect two objects for testing purposes:&#x20;
 
+* Apple
+* The exoglove model that I am trying to detect&#x20;
 
-### create a separate conda environment for efficientDet. Below is the environment.yml for my env.&#x20;
+### Dataset if you need&#x20;
+
+If you need a simple dataset that you want to test, use the below dataset [https://drive.google.com/file/d/1Ji2fiGojwNSJEInsZf1sLoGN2WA3f8ql/view?usp=sharing](https://drive.google.com/file/d/1Ji2fiGojwNSJEInsZf1sLoGN2WA3f8ql/view?usp=sharing) which I have been labeling with Microsoft VoTT.&#x20;
+
+However, this code will require you to make separate folders for images and XML file. Use the below script to separate the image and annotation folder if needed
+
+```
+import os
+import shutil
+
+def copy_files(source_dir, dest_images_dir, dest_annotations_dir):
+    for filename in os.listdir(source_dir):
+        if filename.endswith('.jpg'):
+            shutil.copy(os.path.join(source_dir, filename), os.path.join(dest_images_dir, filename))
+        elif filename.endswith('.xml'):
+            shutil.copy(os.path.join(source_dir, filename), os.path.join(dest_annotations_dir, filename))
+
+def main():
+    images_folder = "images"
+    annotations_folder = "annotations"
+    os.makedirs(images_folder, exist_ok=True)
+    os.makedirs(annotations_folder, exist_ok=True)
+
+    while True:
+        folder_name = input("Enter folder name (Enter '0' to mark the end): ")
+        if folder_name == '0':
+            break
+        if not os.path.isdir(folder_name):
+            print(f"Folder '{folder_name}' does not exist. Skipping...")
+            continue
+
+        copy_files(folder_name, images_folder, annotations_folder)
+    
+    print("Copying complete.")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Create a separate conda environment for efficientDet. Below is the environment.yml for my env.&#x20;
 
 ```
 name: coral
@@ -250,7 +290,7 @@ dependencies:
 prefix: /home/jin/anaconda3/envs/coral
 ```
 
-If you do not use exact environment, the code might cause numpy or tensorflow library dependency error&#x20;
+This is the environment setting that did not cause the numpy or tensorflow library dependency error&#x20;
 
 ### Create Jupyter Notebook&#x20;
 
@@ -259,7 +299,7 @@ conda install jupyter
 jupyter notebook 
 ```
 
-### Create new file and paste following code:&#x20;
+### Create a new file and paste the following code:&#x20;
 
 ```
 import numpy as np
@@ -282,9 +322,10 @@ tf.get_logger().setLevel('ERROR')
 from absl import logging
 logging.set_verbosity(logging.ERROR)
 
-
-images_in = 'Dataset_7class/images'
-annotations_in = 'Dataset_7class/annotations'
+# Images folder input 
+images_in = 'Dataset_apple_hand/images'
+# XML folder input 
+annotations_in = 'Dataset_apple_hand/annotations'
 
 
 label_map = {1: 'hand', 2: 'apple'}
@@ -296,15 +337,15 @@ label_map = {1: 'hand', 2: 'apple'}
 </strong>NumPy version: 1.23.4
 </code></pre>
 
-Althought it gave me outdated tensorflow version warning, it worked well&#x20;
+Modify the image and annotation path based on where your dataset is.&#x20;
 
-
+Although it gave me an outdated tensorflow version warning, it worked well&#x20;
 
 ### Paste code for dataset generation
 
 ```
 def split_dataset(images_path, annotations_path, val_split, test_split, out_path):
-    # remove preexisting folder
+    # Remove preexisting folder
     current_dir = os.getcwd() 
     folder_name = os.path.join(current_dir, 'dataset')
     if os.path.exists(folder_name) and os.path.isdir(folder_name):
@@ -379,7 +420,7 @@ def split_dataset(images_path, annotations_path, val_split, test_split, out_path
     return (train_dir, val_dir, test_dir)
 ```
 
-Above code is function for generating dataset
+Above code is function for generating dataset. The code will generate train, validation, test folder
 
 ```
 train_dir, val_dir, test_dir = split_dataset(images_in, annotations_in,val_split=0.2, test_split=0.2,out_path='dataset')
@@ -425,10 +466,12 @@ model.evaluate(test_data)
 
 ### Export trained model
 
+Change the filename to whatever you want&#x20;
+
 ```
 # Now export trained model 
 
-TFLITE_FILENAME = 'efficientdet_coral_v2.tflite'
+TFLITE_FILENAME = 'efficientdet_coral_v2.tflite' 
 LABELS_FILENAME = 'coral_labels_v2.txt'
 print("Done!")
 
@@ -439,11 +482,11 @@ print("Done!")
 
 ### Convert exported mode using EdgeTPU compiler
 
-now, your folder should have&#x20;
+Now, your folder should have&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-27-07.png" alt=""><figcaption></figcaption></figure>
 
-Go to the terminal and type&#x20;
+In the same directory, go to the terminal and type&#x20;
 
 ```
 edgetpu_compiler efficientdet_coral_v2.tflite --num_segments=1
@@ -481,7 +524,7 @@ Now, the folder should have&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-32-30.png" alt=""><figcaption></figcaption></figure>
 
-The log file shows that most of operations are supported.
+The log file shows that most of the operations are supported.
 
 ```
 Edge TPU Compiler version 16.0.384591198
@@ -503,27 +546,23 @@ LOGISTIC                       1          Mapped to Edge TPU
 MAX_POOL_2D                    14         Mapped to Edge TPU
 ```
 
-
-
-
-
 ### Transfer file&#x20;
 
-It is possible to transfer file through ssh communication, but I used more conventional way: USB
+It is possible to transfer files through SSH communication from the desktop to the Coral Dev Board, but I used a more conventional way: USB
 
-3 files are required:&#x20;
+Copy 3 files to USB:&#x20;
 
 * Your exported model.tflite&#x20;
 * Your exported label.txt
-* usb\_transfer.sh (You can just manually cp everyting, so skip this if you want)
+* usb\_transfer.sh (You can manually cp everything, so skip if you want)
 
-usb\_transfer.sh scripts are in previous post&#x20;
+usb\_transfer.sh scripts are in the previous post&#x20;
 
 {% content-ref url="../machine-learning/coral-tpu-connect-usb-camera.md" %}
 [coral-tpu-connect-usb-camera.md](../machine-learning/coral-tpu-connect-usb-camera.md)
 {% endcontent-ref %}
 
-Now, turn on the Google Coral Dev Board and mount USB. (you need to create /media/usb directory) The USB path might differ
+Now, turn on the Google Coral Dev Board and mount the USB. (you need to create /media/usb directory) The USB path might differ
 
 ```
 sudo mount /dev/sda1 /media/usb 
@@ -537,7 +576,7 @@ Transfer those file to one of the directories that belong to /home
 I created new folder called "demo\_v2"
 
 ```
-mendel@undefined-eft:/media/usb/coral script$ /usb transfer.sh
+mendel@undefined-eft:/media/usb$ ./usb transfer.sh
 Files in the USB drive:
 run_face_detection_inference.sh run_usb_camera_inference.sh usb_transfer.sh
 Enter the destination directory on the Coral Dev Board: /home/jin/demo_v2
@@ -555,10 +594,10 @@ Selected files copied from USB to /home/jin/demo_v2
 
 ### Run the code&#x20;
 
-Now, go to directory where you files and models are moved. In my case, it is /home/jin/demo\_v2
+Now, go to the directory where your files and models are moved. In my case, it is /home/jin/demo\_v2
 
-<pre><code>mendel@undefined-eft:cd /home/jin/demo_v2
-<strong>mendel@undefined-eft:ls
+<pre><code>mendel@undefined-eft: cd /home/jin/demo_v2
+<strong>mendel@undefined-eft: ls
 </strong><strong>efficientDet_coral_v2_edgetpu.tflite
 </strong><strong>coral_labels_v2.txt 
 </strong></code></pre>
@@ -584,13 +623,24 @@ edgetpu_detect \
 
 ESC + :wq to save
 
-If it causes E212: no permission to write then you should add permission to home directory&#x20;
+If it causes E212: no permission to write then you should add permission to the home directory&#x20;
+
+<pre><code><strong>sudo chmod +x run_effi_v2.sh
+</strong>./run_effi_v2
+</code></pre>
+
+If the streaming stops after a few seconds showing gstream render\_overlay\_gen.send(tensor, layout, command)&#x20;
+
+Check whether the script is running **edgetpu\_classify** instead of **edgetpu\_detect**
+
+<figure><img src="../.gitbook/assets/IMG_2135 Large.jpeg" alt="" width="375"><figcaption><p>my setting: apple and hand </p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/efficientdet_demo.gif" alt=""><figcaption></figcaption></figure>
+
+Do not forget to&#x20;
 
 ```
-chmod +x run_effi_v2.sh
-./run_effi_v2
+sudo shutdown now 
 ```
 
-If the streaming stops after few seconds due to gstream render\_overlay\_gen.send(tensor, layout, command)&#x20;
-
-You probably mistaken edgetpu\_classify and edgetpu\_detect
+Instead of unplugging
