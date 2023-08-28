@@ -226,3 +226,141 @@ Go to Arduino IDE --> Sketch --> Include Library --> Add .ZIP Library --> ei-son
 Flash the sample code and turn on the Serial Monitor.&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-08-27 at 4.45.57 PM.png" alt=""><figcaption></figcaption></figure>
+
+## Simpler Labeling
+
+It is inconvenient to manually label all the data while labeled dataset already exists. However, edge impulse does not support the .xml file (maybe in future it might). The [format required by Edge Impulse](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-uploader#bounding-boxes) is the json file with label and coordinates
+
+```
+{
+    "version": 1,
+    "type": "bounding-box-labels",
+    "boundingBoxes": {
+        "apple168.jpg": [
+            {
+                "x": 130,
+                "y": 103,
+                "width": 85,
+                "height": 85,
+                "label": "apple"
+            }
+        ],
+        "dataset2_382.jpg": [
+            {
+                "x": 75,
+                "y": 0,
+                "width": 123,
+                "height": 57,
+                "label": "hand"
+            }
+        ],
+```
+
+However, the PascalVOC XML Label looks like this:
+
+```
+<annotation verified="yes">
+    <folder>Annotation</folder>
+    <filename>apple315</filename>
+    <path>apple_dataset-PascalVOC-export/Annotations/frame_315.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>320</width>
+        <height>240</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+    <name>apple</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>179.99695702794241</xmin>
+        <ymin>56.52393900783014</ymin>
+        <xmax>290.4149357006774</xmax>
+        <ymax>161.96616971465858</ymax>
+    </bndbox>
+</object>
+</annotation>
+
+```
+
+So, we need a program that converts the PascalVOC xml files into one json file that contain labels and coordinates. &#x20;
+
+## Edge Impulse Label Converter
+
+```
+# Jin Rhim 
+# Convert XML Bounding Box to Edge Impulse Json Format
+# Enter image folder name 
+# It will output bounding_boxes.labels
+
+import xml.etree.ElementTree as ET
+import json
+import os
+
+# Set the path to your dataset folder
+data_dir = input("Enter folder name: ")
+
+# Create an empty dictionary to store the bounding box data
+bounding_boxes = {}
+
+# Loop through all .xml files in the data directory
+for xml_file in os.listdir(data_dir):
+    if xml_file.endswith(".xml"):
+        # Parse the .xml file and extract the relevant information
+        tree = ET.parse(os.path.join(data_dir, xml_file))
+        root = tree.getroot()
+        filename = root.find("filename").text + ".jpg"
+        boxes = []
+        for obj in root.findall("object"):
+            label = obj.find("name").text
+            xmin = int(round(float(obj.find("bndbox").find("xmin").text)))
+            ymin = int(round(float(obj.find("bndbox").find("ymin").text)))
+            xmax = int(round(float(obj.find("bndbox").find("xmax").text)))
+            ymax = int(round(float(obj.find("bndbox").find("ymax").text)))
+            box = {"x": xmin, "y": ymin, "width": xmax -
+                   xmin, "height": ymax - ymin, "label": label}
+            boxes.append(box)
+
+        bounding_boxes[filename] = boxes
+
+# Create the output dictionary
+output = {"version": 1, "type": "bounding-box-labels",
+          "boundingBoxes": bounding_boxes}
+
+# Write the output to a file in the same directory as the script
+output_file = os.path.join(os.path.dirname(__file__), "bounding_boxes.labels")
+with open(output_file, "w") as outfile:
+    json.dump(output, outfile, indent=4)
+
+```
+
+Once you run this code in the same directory as the image folder, it will generate&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-27 at 5.03.56 PM.png" alt=""><figcaption></figcaption></figure>
+
+Put the bounding\_boxes.labels inside the dataset folder where .jpg files and .xml files are in
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-27 at 5.07.48 PM.png" alt=""><figcaption></figcaption></figure>
+
+And whatever project you have, you can just drag this dataset and upload it. Edge Impulse will automatically label it with message&#x20;
+
+```
+pre-processing annotation files. 
+Parse annotations file 'bounding_boxes.labels' successfully
+```
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-27 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-27 at 5.13.05 PM.png" alt=""><figcaption></figcaption></figure>
+
+Now your dataset should look like this without labeling hundreds of image
+
+Below is the link for my 4.4 mb dataset that you could drag and upload to Edge Impulse
+
+{% embed url="https://drive.google.com/file/d/1bxvysYBlD5dcd829rqSWqFxK5xmCsHcL/view?usp=sharing" %}
+
