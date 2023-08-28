@@ -185,4 +185,4 @@ $ python3 detect.py
 
 <figure><img src="../../.gitbook/assets/coral_distance_2.gif" alt=""><figcaption><p>google coral dev board: distance</p></figcaption></figure>
 
-Unfortunately, I could not find the way to draw a line in svg.
+Unfortunately, I could not find the way to draw a line in svg. The distance is based on the pixel. Camera input is 640X480

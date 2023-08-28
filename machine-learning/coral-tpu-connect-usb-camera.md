@@ -1,12 +1,12 @@
 ---
 description: CSI Camera out of stock as usual
-cover: ../../.gitbook/assets/IMG_2065 Medium.jpeg
+cover: ../.gitbook/assets/IMG_2065 Medium.jpeg
 coverY: 0
 ---
 
 # Coral TPU: testing model with USB Camera
 
-<figure><img src="../../.gitbook/assets/IMG_2127 Large (1).jpeg" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2127 Large (1).jpeg" alt="" width="375"><figcaption></figcaption></figure>
 
 [Google Tutorial: how to connect camera](https://coral.ai/docs/dev-board/camera/#connect-a-usb-camera)
 
@@ -136,7 +136,7 @@ echo "\n==USB drive has been unmounted.==\n"
 
 put those files inside the USB.
 
-&#x20;![](<../../.gitbook/assets/image (3).png>)
+&#x20;![](<../.gitbook/assets/image (3).png>)
 
 Now, connect to Coral Dev Board&#x20;
 
@@ -205,7 +205,7 @@ sudo chmod +x run_usb_camera_inference.sh
 
 The SSDMobileNet V2 1000 object detection demo will look like below:&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-23 at 6.53.36 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 at 6.53.36 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also run face detection model. (However, you must run above script first so that it downloads all the models)&#x20;
 

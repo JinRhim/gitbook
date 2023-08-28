@@ -456,7 +456,7 @@ model = object_detector.create(train_data=train_data,
                                train_whole_model=True)
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2023-08-26 18-24-07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-24-07.png" alt=""><figcaption></figcaption></figure>
 
 ### Evaluate model
 
@@ -484,7 +484,7 @@ print("Done!")
 
 Now, your folder should have&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2023-08-26 18-27-07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-27-07.png" alt=""><figcaption></figcaption></figure>
 
 In the same directory, go to the terminal and type&#x20;
 
@@ -522,7 +522,7 @@ Compilation succeeded!
 
 Now, the folder should have&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot from 2023-08-26 18-32-30.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-32-30.png" alt=""><figcaption></figcaption></figure>
 
 The log file shows that most of the operations are supported.
 
@@ -558,8 +558,8 @@ Copy 3 files to USB:&#x20;
 
 usb\_transfer.sh scripts are in the previous post&#x20;
 
-{% content-ref url="coral-tpu-connect-usb-camera.md" %}
-[coral-tpu-connect-usb-camera.md](coral-tpu-connect-usb-camera.md)
+{% content-ref url="../machine-learning/coral-tpu-connect-usb-camera.md" %}
+[coral-tpu-connect-usb-camera.md](../machine-learning/coral-tpu-connect-usb-camera.md)
 {% endcontent-ref %}
 
 Now, turn on the Google Coral Dev Board and mount the USB. (you need to create /media/usb directory) The USB path might differ
@@ -633,9 +633,9 @@ If the streaming stops after a few seconds showing gstream render\_overlay\_gen.
 
 Check whether the script is running **edgetpu\_classify** instead of **edgetpu\_detect**
 
-<figure><img src="../../.gitbook/assets/IMG_2135 Large.jpeg" alt="" width="375"><figcaption><p>my setting: apple and hand </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2135 Large.jpeg" alt="" width="375"><figcaption><p>my setting: apple and hand </p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/efficientdet_demo.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/efficientdet_demo.gif" alt=""><figcaption></figcaption></figure>
 
 Do not forget to&#x20;
 

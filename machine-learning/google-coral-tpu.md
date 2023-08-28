@@ -10,7 +10,7 @@ Initially, I wanted to use Jetson Nano for running my ssdmobilenet .tflite file.
 \
 Finally, I am free of endless h5py wheel configuration error.&#x20;
 
-<figure><img src="../../.gitbook/assets/IMG_2053.png" alt=""><figcaption><p>google coral dev board vs jetson nano</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2053.png" alt=""><figcaption><p>google coral dev board vs jetson nano</p></figcaption></figure>
 
 Below is the official tutorial from google:\
 [https://coral.ai/docs/dev-board/get-started](https://coral.ai/docs/dev-board/get-started)
@@ -20,7 +20,7 @@ Similar to Jetson Nano setup:&#x20;
 1. Download Image
 2. Flash through BalenaEtcher
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-23 at 3.04.22 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 at 3.04.22 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 (base) jin@cose-zwqin-r13:~/Documents$ ./etcher.AppImage 
@@ -29,7 +29,7 @@ packageUpdatable false
 ready -to- show: 1.1095
 ```
 
-<figure><img src="../../.gitbook/assets/IMG_2054.jpg" alt=""><figcaption><p>switch in Google Coral Dev Board</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2054.jpg" alt=""><figcaption><p>switch in Google Coral Dev Board</p></figcaption></figure>
 
 3. Once it is done, it will show following message through HDMI cable
 
@@ -61,13 +61,13 @@ I A start job is running for Scripts that should be run only once (1min 11s no l
 ```
 {% endcode %}
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 5. If you connect the OTG usb-c cable to desktop, the device should pop up in "mdt device"
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.37.54 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.37.54 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 (base) jin@cose-zwqin-r13:~$ mdt wait -for -device
@@ -108,9 +108,9 @@ In order to run the ssdmobilenet demo,&#x20;
 mendel@purple-jet:/$ edgetpu_demo --device
 ```
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.44.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.44.43 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.46.31 PM.png" alt=""><figcaption><p>Google Coral Dev Board Demo</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.46.31 PM.png" alt=""><figcaption><p>Google Coral Dev Board Demo</p></figcaption></figure>
 
 It will show the highway video.
 
@@ -170,15 +170,15 @@ Tutorial Link: [https://colab.research.google.com/github/google-coral/tutorials/
 
 If you follow the google tutorial, you can make your own Efficientdet.tflite file compiled for google coral dev board. I put them in separate github repository with some inference photos.&#x20;
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 3.58.40 PM.png" alt="" width="239"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.58.40 PM.png" alt="" width="239"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/Screenshot 2023-08-20 at 4.01.14 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 4.01.14 PM.png" alt=""><figcaption></figcaption></figure>
 
 
 
 You need to manually copy .tflite file and label file to specific folders.
 
-<figure><img src="../../.gitbook/assets/IMG_2065 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2065 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 ```
 mendel@purple-jet:/home/coral/pycoral$ python3 examples/classify image.py - -mode
