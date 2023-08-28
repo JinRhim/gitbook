@@ -360,7 +360,7 @@ Parse annotations file 'bounding_boxes.labels' successfully
 
 Now your dataset should look like this without labeling hundreds of image
 
-Below is the link for my 4.4 mb dataset that you could drag and upload to Edge Impulse
+Below is the link for my 4.4 mb dataset that you could drag and upload to Edge Impulse for testing purpose
 
 {% embed url="https://drive.google.com/file/d/1bxvysYBlD5dcd829rqSWqFxK5xmCsHcL/view?usp=sharing" %}
 
