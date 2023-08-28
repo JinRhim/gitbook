@@ -1,10 +1,10 @@
+---
+description: Distance calculation between apple and hand
+---
+
 # Coral TPU: calculate Distance between object
 
-## I need to calculate the distance between exoglove model and apple. How?&#x20;
-
-
-
-## Running Google's github example&#x20;
+&#x20;Running Google's github example&#x20;
 
 Thankfully, Google gives [another tutorial ](https://coral.ai/docs/dev-board/camera/#try-other-example-code)about how to modify and run your own model.&#x20;
 
@@ -12,7 +12,7 @@ Thankfully, Google gives [another tutorial ](https://coral.ai/docs/dev-board/cam
 
 Turn on your google coral dev board and conenct USB camera. Change to home directory and clone [Google's github](https://github.com/google-coral/examples-camera.git) tutorial.
 
-If you are using coral dev board, no need to install requirements&#x20;
+You can skip install\_requirements if you are using Coral Dev Board.
 
 ```
 $ cd /home/jin 
@@ -22,7 +22,7 @@ $ sh download_models.sh
 $ cd gstreamer
 ```
 
-If you are using the Google Coral Camera, no need to change the code. However, if you are using USB camera,&#x20;
+However, if you are using USB camera instead of Coral Camera, you need to modify one line of code. I used vim.
 
 ```
 $ vim detect.py
@@ -35,7 +35,7 @@ Press \[i] to edit the detect.py file. Go to the parser.add\_argument and change
 parser.add_argument('--videosrc', help='Which video source to use. ', default='/dev/video1')
 ```
 
-Then press **:wq** to exit the vim. Again, if you are getting E212 error, set the permission of home directory.&#x20;
+Then press **:wq** to exit the vim. Again, if you are getting E212 error, change the permission of home directory.&#x20;
 
 Run the detect.py which will load SSDMobileNet with COCO label map
 
