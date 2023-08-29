@@ -6,6 +6,7 @@
   * [Google Coral TPU](machine-learning/google-coral-tpu.md)
     * [Coral TPU: testing model with USB Camera](machine-learning/coral-tpu-connect-usb-camera.md)
     * [Coral TPU: Train EfficientDet](readme/coral-tpu-train-efficientdet.md)
+    * [Coral TPU: Output UART](readme/google-coral-tpu/coral-tpu-output-uart.md)
     * [Coral TPU: calculate Distance between object](readme/google-coral-tpu/coral-tpu-calculate-distance-between-object.md)
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
   * [Edge Impulse](readme/edge-impulse.md)
