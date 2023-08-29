@@ -121,3 +121,90 @@ void loop() {
 }
 </code></pre>
 
+
+
+## Output Object distance through UART &#x20;
+
+now, lets go to the Coral Dev board and output distance through UART communication.&#x20;
+
+Let's edit the detect.py&#x20;
+
+```
+vim detect.py 
+```
+
+In the import,&#x20;
+
+```python
+# import numpy for distance calculation
+import numpy as np 
+# import uart 
+from periphery import Serial 
+
+# now put UART communication in here 
+uart3 = Serial("/dev/ttymxc2", 9600)
+```
+
+And in the generate\_svg,&#x20;
+
+```python
+    # Draw lines and calculate distance if both centers are found
+    if apple_center != (0, 0) and hand_center != (0, 0):
+        svg.add_rect(apple_center[0], apple_center[1], 3,3,'red', 3)
+        svg.add_rect(hand_center[0], hand_center[1], 3, 3, 'blue', 3)
+
+        # Calculate Euclidean distance between centers
+        distance = np.linalg.norm(np.array(apple_center) - np.array(hand_center))
+        distance_text = 'Distance: {:.2f} pixels'.format(distance)
+        svg.add_text(10, src_h - 40, distance_text, 30)
+        #output uart
+        uart3.write(f"{distance} ".encode()); 
+```
+
+If you just do&#x20;
+
+```
+uart3.write(distance) 
+```
+
+It will cause error since the int is directly passed (bytes is required)
+
+Run the code&#x20;
+
+```
+python3 detect.py 
+```
+
+<figure><img src="../../.gitbook/assets/uart_output.gif" alt=""><figcaption></figcaption></figure>
+
+It will output the distance correctly! However, the numbers are float and there is no space between each distance.&#x20;
+
+## Polishing UART output&#x20;
+
+Lets make it more clean. Go to vim and edit the UART output line
+
+```python
+uart3.write(f"{int(distance)} ".encode()); 
+```
+
+<figure><img src="../../.gitbook/assets/IMG_2164 Large.jpeg" alt=""><figcaption><p>editing through vim....</p></figcaption></figure>
+
+Now the distance is converted to int and have space. (I do not need that much accuracy)&#x20;
+
+So, if you run this code
+
+<figure><img src="../../.gitbook/assets/IMG_2166 Medium.jpeg" alt=""><figcaption><p>distance output</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/uart_output_v2.gif" alt=""><figcaption></figcaption></figure>
+
+The UART correctly receives the distance and prints them in integer format and with space
+
+
+
+However, the GPIO usage probably cause delays in both Google Coral Dev board and ESP32.&#x20;
+
+I probably need to fix code so that It sends distance every 3 inferences.
+
+<figure><img src="../../.gitbook/assets/IMG_2167 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
+
+As one inference is around 80ms, 3 inference would be \~250ms. Updating distance 4 times per second is probably unnoticeable.&#x20;
