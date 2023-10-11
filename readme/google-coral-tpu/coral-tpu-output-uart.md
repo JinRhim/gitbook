@@ -92,7 +92,7 @@ Do not forget the 'sudo' as it will give you warning that you do not have permis
 If it keep causing permission error
 
 ```
-sudo chomd a+rw /dev/ttymxc2
+sudo chmod a+rw /dev/ttymxc2
 ```
 
 To get permission.&#x20;
@@ -208,3 +208,87 @@ I probably need to fix code so that It sends distance every 3 inferences.
 <figure><img src="../../.gitbook/assets/IMG_2167 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 As one inference is around 80ms, 3 inference would be \~250ms. Updating distance 4 times per second is probably unnoticeable.&#x20;
+
+
+
+
+
+## # ====Updated Code ==== #&#x20;
+
+so, whenever the UART Communication tries to send integer information, the UART TX will send&#x20;
+
+```
+123\n443\n503\n412\n123...
+```
+
+I used delimiter as the **'\n'** so that ESP8266 (which is the receiver) can receive and parse easily.&#x20;
+
+The sample python3 code to send UART information will be&#x20;
+
+```
+import serial
+import time
+import random 
+
+uart3= serial.Serial("/dev/ttymxc2", 115200)
+
+while true: 
+    distance = random.randint(0, 300)
+    uart3.write(f"{distance}".encode())
+    uart3.write(b'\n')
+    print(distance)
+    time.sleep(3)
+```
+
+Above code will send a random distance from 0 to 300 through UART in a Baud rate of 115200 and also send a delimiter as '\n'.&#x20;
+
+To add timer instead of delay, the prev\_dist and prev\_time must be initialized inside of main() function
+
+```
+import serial
+import time
+import random 
+
+def main():
+    uart3 = serial.Serial("/dev/ttymxc2", 115200)
+
+    previous_distance = None  # Initialize the previous_distance variable
+    previous_time = time.time()  # Initialize the previous_time variable
+
+    interval = 0.3  # Set the desired interval in seconds (e.g., 300ms)
+
+    while True:
+        current_time = time.time()
+
+        # Check if the desired interval has passed
+        if current_time - previous_time >= interval:
+            previous_time = current_time  # Update the previous time
+
+            # Generate a random distance value
+            distance = random.randint(0, 300)
+
+            # Check if the generated distance is the same as the previous one
+            while distance == previous_distance:
+                distance = random.randint(0, 300)
+
+            # Update the previous_distance variable
+            previous_distance = distance
+
+            # Send the distance over UART
+            uart3.write(f"{distance}".encode())
+            uart3.write(b'\n')
+            print(distance)
+
+        # You can run other programs or tasks here without blocking the loop
+
+if __name__ == "__main__":
+    main()
+
+```
+
+
+
+
+
+
+
