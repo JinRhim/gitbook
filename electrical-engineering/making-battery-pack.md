@@ -27,7 +27,7 @@ According to the Datasheet,&#x20;
 
 * Max Charge Voltage = 4.2V±0.05V&#x20;
 * End Voltage = 2.5V&#x20;
-* Standard Discharge = 0.2C&#x20;
+* Standard Discharge = 0.2C (3500mAh X 0.2C = 680mA)
 * Max Discharge = 10A (INR = High Discharge)
 
 Compared to Samsung 30Q which can discharge maximum of 20A and continuously discharge 15A, LG MJ1 discharge rate might be seen as slower, but way cheaper.&#x20;
@@ -58,10 +58,10 @@ Eventually I ended up buying a 2s charge BMS module from Amazon.
 
 I found the [datasheet](https://seegatecell.com/wp-content/uploads/2021/01/2S-7.4V-4A-DATASHEET-2.pdf) for the model that is similar to this one.&#x20;
 
-* Max continous Charging Current: 4A&#x20;
+* Max continuous Charging Current: 4A&#x20;
 * Max continuous Discharging Current: 4A&#x20;
 * Overcharge detection voltage: 4.28V&#x20;
-* Overdischarge release votlage: 3.0V&#x20;
+* Overdischarge release voltage: 3.0V&#x20;
 
 There is no inductor so I guess there is not buck-boost converter involved. The circuit simply charges and discharges the battery.&#x20;
 
