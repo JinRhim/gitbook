@@ -27,10 +27,10 @@ According to the Datasheet,&#x20;
 
 * Max Charge Voltage = 4.2V±0.05V&#x20;
 * End Voltage = 2.5V&#x20;
-* Standard Discharge = 680mA&#x20;
+* Standard Discharge = 0.2C&#x20;
 * Max Discharge = 10A (INR = High Discharge)
 
-Compared to Samsung 30Q which can discharge maximum of 20A and continuously discharge 15A, LG MJ1 discharge rate is slower, but way cheaper.&#x20;
+Compared to Samsung 30Q which can discharge maximum of 20A and continuously discharge 15A, LG MJ1 discharge rate might be seen as slower, but way cheaper.&#x20;
 
 <div>
 
@@ -42,7 +42,7 @@ Compared to Samsung 30Q which can discharge maximum of 20A and continuously disc
 
 </div>
 
-All of the Batteries at the arrival was charged at 3.6V.
+All of the Batteries at the arrival were charged at 3.6V.
 
 ## Ordering BMS Module&#x20;
 
@@ -54,6 +54,8 @@ Eventually I ended up buying a 2s charge BMS module from Amazon.
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-02 at 6.06.48 PM.png" alt="" width="168"><figcaption></figcaption></figure>
 
+<figure><img src="../.gitbook/assets/IMG_2263 Large.jpeg" alt=""><figcaption></figcaption></figure>
+
 I found the [datasheet](https://seegatecell.com/wp-content/uploads/2021/01/2S-7.4V-4A-DATASHEET-2.pdf) for the model that is similar to this one.&#x20;
 
 * Max continous Charging Current: 4A&#x20;
@@ -63,17 +65,19 @@ I found the [datasheet](https://seegatecell.com/wp-content/uploads/2021/01/2S-7.
 
 There is no inductor so I guess there is not buck-boost converter involved. The circuit simply charges and discharges the battery.&#x20;
 
+
+
 ## Making Battery Pack&#x20;
 
 Out of 8 Batteries I will be using 2 batteries for powering Google Coral Dev Board with Extension board and 6 batteries for controlling servos and ESP32.&#x20;
 
 <div>
 
-<figure><img src="../.gitbook/assets/IMG_2033 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2033 Large.jpeg" alt=""><figcaption><p>2s3p battery pack </p></figcaption></figure>
 
  
 
-<figure><img src="../.gitbook/assets/IMG_2032 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2032 Large.jpeg" alt=""><figcaption><p>Charging battery pack @9V </p></figcaption></figure>
 
 </div>
 
@@ -81,5 +85,15 @@ The batteries are connected in 2s3p configuration. To activate the charging mode
 
 (I wonder whether charging the battery through power supply is the reason why the power supply broke after 1 month - maybe I should've included diode when I was charging )
 
+<div>
 
+<figure><img src="../.gitbook/assets/IMG_2261 Large.jpeg" alt=""><figcaption><p>Output </p></figcaption></figure>
+
+ 
+
+<figure><img src="../.gitbook/assets/IMG_2259 Large.jpeg" alt=""><figcaption><p>charging </p></figcaption></figure>
+
+</div>
+
+As you can see, output is just the single cell charge value multiplied by two.&#x20;
 
