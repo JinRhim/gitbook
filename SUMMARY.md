@@ -14,6 +14,7 @@
   * [JPG to JPEG](microcontroller/jpg-to-jpeg.md)
 * [Electrical Engineering](electrical-engineering/README.md)
   * [Making Battery Pack](electrical-engineering/making-battery-pack.md)
+* [HSPICE](hspice.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
