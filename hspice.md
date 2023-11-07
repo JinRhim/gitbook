@@ -66,3 +66,7 @@ Set the input/output variables&#x20;
 &#x20;Save the PrimeWave Script
 
 <figure><img src=".gitbook/assets/Screenshot 2023-11-07 at 12.59.35 PM.png" alt=""><figcaption></figcaption></figure>
+
+Now, go to simulation --> Netlist/Run
+
+<figure><img src=".gitbook/assets/Screenshot 2023-11-07 at 1.46.21 PM.png" alt=""><figcaption></figcaption></figure>
