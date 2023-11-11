@@ -4,6 +4,12 @@ description: Analog IC Design
 
 # HSPICE
 
+## Creating Inverter
+
+<figure><img src=".gitbook/assets/Screenshot 2023-11-10 at 10.18.41 AM.png" alt=""><figcaption><p>create inverter - Cell name:inverter View Name: schematic</p></figcaption></figure>
+
+##
+
 ## Running Testbench&#x20;
 
 After designing the testbench, Click Tools --> PrimeWave&#x20;
