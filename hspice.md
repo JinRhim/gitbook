@@ -118,7 +118,14 @@ Set the input/output variables&#x20;
 
 <figure><img src=".gitbook/assets/Untitled (1).jpg" alt=""><figcaption></figcaption></figure>
 
-&#x20;Save the PrimeWave Script
+#### Whenever selecting the outputs,&#x20;
+
+* vin --> wire from vpulse&#x20;
+* vout --> wire that goes out of inverter&#x20;
+* isupply --> Click the power supply vsource&#x20;
+* Remove checkmark from /VMINUS. Select the checkmark for /VPLUS
+
+Save the PrimeWave Script
 
 <figure><img src=".gitbook/assets/Screenshot 2023-11-07 at 12.59.35 PM.png" alt=""><figcaption></figcaption></figure>
 
