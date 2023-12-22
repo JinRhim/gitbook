@@ -15,6 +15,7 @@
 * [Electrical Engineering](electrical-engineering/README.md)
   * [Making Battery Pack](electrical-engineering/making-battery-pack.md)
 * [HSPICE](hspice.md)
+* [FPGA: MLP Implementation](fpga-mlp-implementation.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
