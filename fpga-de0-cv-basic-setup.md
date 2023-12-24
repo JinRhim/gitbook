@@ -1,10 +1,4 @@
----
-description: >-
-  Implementing simple multilayer perceptron to FPGA DE0-CV (5CEBA4F23C7) board
-  for MNIST10 classification
----
-
-# FPGA: MLP Implementation
+# FPGA: DE0-CV basic setup
 
 * DE0-CV Board [Manuals](https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English\&CategoryNo=163\&No=921\&PartNo=4)&#x20;
 
