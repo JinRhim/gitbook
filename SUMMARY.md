@@ -15,7 +15,7 @@
 * [Electrical Engineering](electrical-engineering/README.md)
   * [Making Battery Pack](electrical-engineering/making-battery-pack.md)
 * [HSPICE](hspice.md)
-* [FPGA: DE0-CV basic setup](fpga-de0-cv-basic-setup.md)
+* [FPGA: DE10-Standard Board Setup](fpga-de10-standard-board-setup.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)

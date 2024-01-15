@@ -1,6 +1,11 @@
-# FPGA: DE0-CV basic setup
+---
+description: 'windows screenshot: win + s + shift'
+---
 
-* DE0-CV Board [Manuals](https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English\&CategoryNo=163\&No=921\&PartNo=4)&#x20;
+# FPGA: DE10-Standard Board Setup
+
+* DE10-Standard Board [Manuals](https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English\&CategoryNo=165\&No=1081\&PartNo=2#contents)
+* DE10-Standard Board [Project Builder](https://www.terasic.com.tw/cgi-bin/page/archive.pl?Language=English\&CategoryNo=205\&No=1081\&PartNo=4)
 
 ### Quartus Installation Steps in Windows 10&#x20;
 
@@ -25,7 +30,7 @@ Go to Individual Files → Install Intel Cyclone V Device Support. Put .qdz file
 2. Select the file directory which you stored .qdz file -> Install Cyclone V Library&#x20;
 3. Turn on Quartus&#x20;
 4. File -> New Project Wizard -> select directory -> Empty Project -> No need to add files&#x20;
-5. In Family Device Board Settings, select Cyclone V with model name 5CEBA4F23C7&#x20;
+5. In Family Device Board Settings, select Cyclone V with model name 5CSXFC6D6F31C6N
 
 <figure><img src=".gitbook/assets/p3.png" alt=""><figcaption></figcaption></figure>
 
