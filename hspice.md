@@ -63,7 +63,7 @@ Create new cellview file --> name it inverter\_testbench
 
 After designing the testbench, Click Tools --> PrimeWave&#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 In the Primewave, go to the Simulation --> Options&#x20;
 

@@ -21,11 +21,11 @@ Go to Individual Files → Install Intel Cyclone V Device Support. Put .qdz file
 
 1. In the Windows search bar, type "device installer" -> Quartus installer will pop up
 
-<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 2. Select the file directory which you stored .qdz file -> Install Cyclone V Library&#x20;
 3. Turn on Quartus&#x20;
@@ -37,8 +37,6 @@ Go to Individual Files → Install Intel Cyclone V Device Support. Put .qdz file
 6. Skip EDA Tool Setting. The output should resemble below pic
 
 <figure><img src=".gitbook/assets/p4.png" alt=""><figcaption></figcaption></figure>
-
-
 
 
 
@@ -60,12 +58,12 @@ endmodule
 3. Project -> add/remove files to project -> add current file/remove unncessary file&#x20;
 4. Processing -> Start Compilation
 
-<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. In project directory, make folder "modelsim". This will be used to store modelsim files&#x20;
 6. Turn on Modelsim -> File -> New -> Project
 
-<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 7. Add Existing File -> Add test.v&#x20;
 
@@ -134,3 +132,59 @@ add wave sim:/testbench/*
 
 <figure><img src=".gitbook/assets/p7.png" alt=""><figcaption></figcaption></figure>
 
+After seeing the correct waveform, move to next step&#x20;
+
+### RAM testing by IP-Catalog in Verilog&#x20;
+
+1. Create a new Project&#x20;
+2. Go to Tools -> IP Catalog. At right side, following screen will pop up.&#x20;
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>IP Catalog </p></figcaption></figure>
+
+3. Select RAM: 1-PORT and name it **ram32x4.v**
+
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+4. Uncheck 'q' output port&#x20;
+
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+5. Leave the RAM initialization blank as the testbench will write on it
+
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+
+6. It will generate ram32x4.v and ram32x4\_bb.v \
+   **ram32x4.v** -> RTL file which contains actual implementation \
+   **ram32x4\_bb.v** -> black box version that needs to be included in top-level design\
+
+7. After creating files, go to Project -> Add/Remove Files.  Following files should be included:&#x20;
+
+* ram32x4.v&#x20;
+* ram32x4\_bb.v&#x20;
+* ram32x4.qip&#x20;
+
+<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+8. In project directory, create new file with name 'modelsim'. Open Modelsim and create new project in created file. \
+   Name the project as **ram32x4\_testbench**&#x20;
+
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+9. Add Existing File -> **ram32x4.v**&#x20;
+10. Create New File -> **ram32x4\_testbench** with filetype Verilog&#x20;
+
+<figure><img src=".gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+Following screen will pop up:
+
+<figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+11. Go to [Intel FPGAcademy](https://fpgacademy.org/courses.html) and download lab8 file. It contains testbench file for ram32x4
+12. Copy and paste file to ram32x4\_testbench. Change the module name to ram32x4\_testbench&#x20;
+13. Right click ram32x4\_testbench -> Compile -> Compile All&#x20;
+
+<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>

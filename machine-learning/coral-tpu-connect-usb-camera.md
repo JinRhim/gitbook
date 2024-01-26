@@ -136,7 +136,7 @@ echo "\n==USB drive has been unmounted.==\n"
 
 put those files inside the USB.
 
-&#x20;![](<../.gitbook/assets/image (3).png>)
+&#x20;![](<../.gitbook/assets/image (3) (1).png>)
 
 Now, connect to Coral Dev Board&#x20;
 

@@ -2,7 +2,7 @@
 
 ## Today's stuff
 
-<table data-header-hidden><thead><tr><th width="80" data-type="checkbox"></th><th width="120" data-type="select">Type</th><th>Action</th></tr></thead><tbody><tr><td>false</td><td></td><td>😇 1:1 with Gloria</td></tr><tr><td>false</td><td></td><td>🧠 Brainstorm brand ideas</td></tr><tr><td>false</td><td></td><td>👩🏽‍💻 Code up new homepage</td></tr><tr><td>false</td><td></td><td>🐶 Walk the pooch</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="80" data-type="checkbox"></th><th width="120">Type<select><option value="meeting" label="Meeting"></option><option value="task" label="Task"></option></select></th><th>Action</th></tr></thead><tbody><tr><td>false</td><td><span data-option="meeting">Meeting</span></td><td>😇 1:1 with Gloria</td></tr><tr><td>false</td><td><span data-option="task">Task</span></td><td>🧠 Brainstorm brand ideas</td></tr><tr><td>false</td><td><span data-option="task">Task</span></td><td>👩🏽‍💻 Code up new homepage</td></tr><tr><td>false</td><td><span data-option="task">Task</span></td><td>🐶 Walk the pooch</td></tr></tbody></table>
 
 ## Notes & ideas
 
