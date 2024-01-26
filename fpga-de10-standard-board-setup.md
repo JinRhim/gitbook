@@ -134,23 +134,3 @@ add wave sim:/testbench/*
 
 <figure><img src=".gitbook/assets/p7.png" alt=""><figcaption></figcaption></figure>
 
-### Implementing Simple Project to DE0-CV Board
-
-In order to turn on LED, both sliding switch have to be HIGH.&#x20;
-
-* Input a -> Sliding Switch 0 -> PIN\_U13
-* Input b -> Sliding Switch 1 -> PIN\_V13
-* Output -> LEDR0 -> PIN\_AA2
-
-1. Go to Verilog -> Assignments -> Pin Planner&#x20;
-
-<figure><img src=".gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
-
-2. Pin Planner should look below:&#x20;
-
-<figure><img src=".gitbook/assets/p8 (3).png" alt=""><figcaption></figcaption></figure>
-
-
-
