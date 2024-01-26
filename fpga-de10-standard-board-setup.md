@@ -139,13 +139,13 @@ After seeing the correct waveform, move to next step&#x20;
 1. Create a new Project&#x20;
 2. Go to Tools -> IP Catalog. At right side, following screen will pop up.&#x20;
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>IP Catalog </p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>IP Catalog </p></figcaption></figure>
 
 3. Select RAM: 1-PORT and name it **ram32x4.v**
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Uncheck 'q' output port&#x20;
 
@@ -169,6 +169,11 @@ After seeing the correct waveform, move to next step&#x20;
 
 <figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
+8. Double click the ram32x4.v file. Change **ram32x4.v** file module name to **project\_3\_ram\_tutorial**. The module name must match the project name. \
+   <mark style="color:blue;">module ram32x4 -> module (Your Project Name)</mark>
+
+<figure><img src=".gitbook/assets/Screenshot 2024-01-25 214823.png" alt=""><figcaption></figcaption></figure>
+
 8. In project directory, create new file with name 'modelsim'. Open Modelsim and create new project in created file. \
    Name the project as **ram32x4\_testbench**&#x20;
 
@@ -184,7 +189,11 @@ Following screen will pop up:
 <figure><img src=".gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 11. Go to [Intel FPGAcademy](https://fpgacademy.org/courses.html) and download lab8 file. It contains testbench file for ram32x4
-12. Copy and paste file to ram32x4\_testbench. Change the module name to ram32x4\_testbench&#x20;
+12. Copy and paste file to **ram32x4\_testbench**. Change the module name to ram32x4\_testbench&#x20;
 13. Right click ram32x4\_testbench -> Compile -> Compile All&#x20;
 
 <figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+14. Simulation -> Start Simulation -> Select **ram32x4\_testbench**&#x20;
+
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
