@@ -16,6 +16,7 @@
   * [Making Battery Pack](electrical-engineering/making-battery-pack.md)
 * [HSPICE](hspice.md)
 * [FPGA: DE10-Standard Board Setup](fpga-de10-standard-board-setup.md)
+* [DE10: using IP-Catalog to use ROM](de10-using-ip-catalog-to-use-rom.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
