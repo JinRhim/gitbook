@@ -6,7 +6,7 @@
 2. Verilog -> New Project Wizard -> select the created file&#x20;
 3. In the created project directory, create the file 'rom\_initialization.mif' (Make sure the extension is .mif, not .txt)
 
-<figure><img src=".gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 4. Paste the following sample code to .mif file and save. The following code will initialize ROM content with 8-bit width and 32 rows.&#x20;
 
@@ -55,12 +55,12 @@ END;
 4. Tools -> IP-Catalog. \
    Following window will show at the right side of screen
 
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 5. Library -> Basic Functions -> On Chip Memory -> ROM:1-Port \
    For simplicity of this demo, I will use ROM:1-Port to minimize input and output wiring.&#x20;
 
-<figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 6. Name file as **rom32x8.v**
 7. In the setting**,**&#x20;
@@ -69,19 +69,19 @@ END;
 * 32 words -> there will be 32 rows of 8-bit data
 * Select **M10K** for Cyclone V&#x20;
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 * Uncheck the 'q' output port&#x20;
 
-<figure><img src=".gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 * Select the created rom\_initialization.mif file as memory content data&#x20;
 
-<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 * It will generate rom32x8.v and rom32x8\_bb.v
 
-<figure><img src=".gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 8. Project -> Add/Remove Files in Project -> Add following files:&#x20;
 
@@ -89,11 +89,11 @@ END;
 * rom32x8.v&#x20;
 * rom32x8\_bb.v&#x20;
 
-<figure><img src=".gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 9. Change the module name of rom32x8\_bb.v file so that it does not overlap with ram32x8.v
 
-<figure><img src=".gitbook/assets/Screenshot 2024-01-29 182640.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-29 182640.png" alt=""><figcaption></figcaption></figure>
 
 ### Creating Top Module&#x20;
 
@@ -135,7 +135,7 @@ endmodule
 
 The top module must match the project name
 
-<figure><img src=".gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 2. Compile the project&#x20;
 
@@ -143,11 +143,11 @@ The top module must match the project name
 
 1. Create 'modelsim' file in project directory&#x20;
 
-<figure><img src=".gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 2. Open Modelsim -> File -> New Project&#x20;
 
-<figure><img src=".gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 3 . Add Existing File -> Add&#x20;
 
@@ -157,7 +157,7 @@ The top module must match the project name
 
 4. Create New **SystemVerilog** File -> \[your project name] + "testbench"   &#x20;
 
-<figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 5. Paste following code in testbench. For each clock, the testbench will generate random number and feed in to module.
 
@@ -210,16 +210,16 @@ endmodule
 
 6. Compile Project -> Questionmark should disappear&#x20;
 
-<figure><img src=".gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 7. Simulate -> Start Simulation -> Library -> Add **altera\_mf\_ver** (required for RAM/ROM)
 8. Select work -> project7\_testbench
 
-<figure><img src=".gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 9. Add all the variables to waveforms by typing
 
@@ -227,7 +227,7 @@ endmodule
 add wave sim:/your_testbench_name/*
 ```
 
-<figure><img src=".gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 If the timescale is set to ns,&#x20;
 
@@ -275,7 +275,7 @@ run 1000000
 # Time:               650000, Pixel: 0a, ROM address: 00, ROM Output: 20, Sum: 0000, Sum Output: 04ef
 ```
 
-<figure><img src=".gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 The module should output the sum of multiplied product.\
 \
