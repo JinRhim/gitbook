@@ -17,7 +17,7 @@
 * [HSPICE](hspice.md)
 * [FPGA: DE10-Standard Board Setup](fpga-de10-standard-board-setup/README.md)
   * [DE10: using IP-Catalog to use ROM](fpga-de10-standard-board-setup/de10-using-ip-catalog-to-use-rom.md)
-  * [Unsigned X Signed Int Multiplication](fpga-de10-standard-board-setup/unsigned-x-signed-int-multiplication.md)
+  * [Saving memory in .sv file](fpga-de10-standard-board-setup/saving-memory-in-.sv-file.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
