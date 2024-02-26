@@ -10,11 +10,6 @@
     * [Coral TPU: Output UART](readme/google-coral-tpu/coral-tpu-output-uart.md)
   * [Create Onnx and TensorRT](machine-learning/create-onnx-and-tensorrt.md)
   * [Edge Impulse](readme/edge-impulse.md)
-* [Microcontroller](microcontroller/README.md)
-  * [JPG to JPEG](microcontroller/jpg-to-jpeg.md)
-* [Electrical Engineering](electrical-engineering/README.md)
-  * [Making Battery Pack](electrical-engineering/making-battery-pack.md)
-* [HSPICE](hspice.md)
 * [FPGA: DE10-Standard Board Setup](fpga-de10-standard-board-setup/README.md)
   * [DE10: using IP-Catalog to use ROM](fpga-de10-standard-board-setup/de10-using-ip-catalog-to-use-rom.md)
   * [Saving memory in .sv file](fpga-de10-standard-board-setup/saving-memory-in-.sv-file.md)
@@ -33,7 +28,7 @@
   * [Drug Utilization Review](pharmacy/drug-utilization-review.md)
   * [Catheter](pharmacy/catheter.md)
   * [EEG](pharmacy/eeg.md)
-
-## This week
-
-* [15 Aug - Mon](this-week/15-aug-mon.md)
+* [Misc](misc/README.md)
+  * [JPG to JPEG](misc/jpg-to-jpeg.md)
+  * [HSPICE](misc/hspice.md)
+  * [Making Battery Pack](misc/making-battery-pack.md)
