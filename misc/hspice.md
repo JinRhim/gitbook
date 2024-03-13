@@ -61,7 +61,7 @@ Create new cellview file --> name it inverter\_testbench
 
 ## Running Testbench&#x20;
 
-After designing the testbench, Click Tools --> PrimeWave&#x20;
+After designing the testbench, Click Tools -> PrimeWave&#x20;
 
 <figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
@@ -132,3 +132,80 @@ Save the PrimeWave Script
 Now, go to simulation --> Netlist/Run
 
 <figure><img src="../.gitbook/assets/Screenshot 2023-11-07 at 1.46.21 PM.png" alt=""><figcaption></figcaption></figure>
+
+### In order to see Node Voltages&#x20;
+
+First, include OP Sweep in testbench.&#x20;
+
+<figure><img src="../.gitbook/assets/• Analyses - ENGR849wilson_current_mirrorschematic.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+After running testbench, press Ctrl + B -> Check all&#x20;
+
+<figure><img src="../.gitbook/assets/Backannotate Operating Points -• ENOR849cascode_current_mirr....png" alt=""><figcaption></figcaption></figure>
+
+## Creating Netlist from testbench&#x20;
+
+Simulation -> Netlist -> Create
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Following is the sample netlist created from 4t4r testbench
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+```
+*  Generated for: PrimeSim
+*  Design library name: test_1
+*  Design cell name: 4t4r
+*  Design view name: schematic
+
+
+.param vg=1
+.option PARHIER = LOCAL
+.option PORT_VOLTAGE_SCALE_TO_2X = 1
+.option RUNLVL = 3
+
+.option WDF=1
+.temp 25
+.lib '/packages/process_kit/generic/generic_90nm/updated_oct2010/SAED_PDK90nm/hspice/SAED90nm.lib' TT_12
+
+*Custom Compiler Version S-2021.09-5
+*Wed Mar 13 14:44:54 2024
+
+.global gnd!
+********************************************************************************
+* Library          : test_1
+* Cell             : 4t4r
+* View             : schematic
+* View Search List : hspice hspiceD schematic spice veriloga
+* View Stop List   : hspice hspiceD
+********************************************************************************
+m4 net16 gate2 te2 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m3 net12 gate1 te1 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m2 net8 gate2 te2 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m1 net4 gate1 te1 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+r1026 te2 gnd! r=1
+r2 s1 net8 r=10k
+r4 s2 net16 r=20K
+r1025 te1 gnd! r=1
+r1 s1 net4 r=5k
+r3 s2 net12 r=15K
+vg1 gate1 gnd! dc='vg'
+vs1 s1 gnd! dc=1.2
+vg2 gate2 gnd! dc='vg'
+vs2 s2 gnd! dc=1.2
+
+
+.dc vg 0 1.0 0.01
+.op All 0
+.option opfile=1 split_dp=1
+.option probe=1
+.probe dc v(*) level=1
+.probe dc i(r1025) i(r1026)
+
+
+
+.end
+```
