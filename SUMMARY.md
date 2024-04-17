@@ -16,6 +16,7 @@
 * [Synopsys HSPICE](synopsys-hspice/README.md)
   * [HSPICE](synopsys-hspice/hspice.md)
   * [HSPICE Export/Import Netlist](synopsys-hspice/hspice-export-import-netlist.md)
+  * [SPICE Tutorial](synopsys-hspice/spice-tutorial.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
