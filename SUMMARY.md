@@ -17,6 +17,7 @@
   * [HSPICE](synopsys-hspice/hspice.md)
   * [HSPICE Export/Import Netlist](synopsys-hspice/hspice-export-import-netlist.md)
   * [SPICE .sp: Basic Components](synopsys-hspice/spice-.sp-basic-components.md)
+  * [Memresistor Mapping](synopsys-hspice/memresistor-mapping.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
