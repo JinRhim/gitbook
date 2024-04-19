@@ -88,14 +88,21 @@ vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
 
 ### ## DC Operating Point Analysis
 
-<pre><code><strong>** Vd and Vg Voltage Source. 
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.33.25 PM.png" alt=""><figcaption></figcaption></figure>
+
+<pre><code><strong>** Vds and Vgs Voltage Source. 
 </strong><strong>
 </strong><strong>.INCLUDE "7nm_TT_160803.pm"
+</strong><strong>
 </strong>.OPTION LIST NODE POST
-*temperature in degree C
+
+*temperature
 .temp 25
 
+*MOSFET NMOS 
 m1 0 gg dd 0 nmos_rvt L=7n nfin=1
+
+*Power Source 
 Vds dd 0 DC 0.7
 Vgs gg 0 DC 0
 .OP
@@ -105,6 +112,8 @@ Vgs gg 0 DC 0
 </code></pre>
 
 ### ## Transient Analysis&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.47.04 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 .include "7nm_TT_160803.pm"
@@ -135,3 +144,8 @@ vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
 .tran 10p 8n
 .end
 ```
+
+
+
+
+
