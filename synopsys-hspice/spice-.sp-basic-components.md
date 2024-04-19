@@ -106,3 +106,32 @@ Vgs gg 0 DC 0
 
 ### ## Transient Analysis&#x20;
 
+```
+.include "7nm_TT_160803.pm"
+
+.temp 100
+
+*MOSFETs
+m1 out in vdd vdd pmos_rvt l=7n nfin=1
+m2 out in 0 0 nmos_rvt l=7n nfin=1
+
+*Output capacitance
+cload out 0 5f
+
+*voltage sources
+vdd vdd 0 0.7
+
+*square wave input
+vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
+
+*CMOS Simulation - the output should be inverse of DC Input. 
+*DC input at 0
+*vin in 0 DC 0
+*DC input at 0.7V
+*vin in 0 DC 0.7
+
+.options list node post
+*Transient Analysis for 2 cycles
+.tran 10p 8n
+.end
+```
