@@ -69,4 +69,9 @@ W1: [-0.44 -0.3 -0.16 -0.02 0. 0.02 0.16 0.3 ]
 W2: [-0.44 -0.3 -0.16 -0.02 0. 0.02 0.16 0.3 0.44 0.58 0.72 0.86 1. ]
 ```
 
-However, **negative resistance is not possible**. All the negative weights will form another subtractor circuit so that the negative circuit subtracts the current from the positive circuit.
+However, **negative resistance is not possible**. All the negative weights will form another subtractor circuit so that the negative circuit subtracts the current from the positive circuit.&#x20;
+
+```
+abs(W1 || W2): [0 0.02 0.16 0.3 0.44 0.58 0.72 0.86 1]
+```
+
