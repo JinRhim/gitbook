@@ -4,9 +4,11 @@ description: Weights.csv to Memeresistor circuits in Synopsys HSPICE
 
 # Memresistor Mapping
 
-## Abstract&#x20;
+Abstract&#x20;
 
-In order to classify the MNIST dataset, the simplest model was trained in Python Script.&#x20;
+In order to classify the MNIST dataset, the CNN model was trained in Python script and tested in the Cadence. The goal is to transcribe the Python/Cadence model to Synopsys HSPICE.&#x20;
+
+## Dataset input&#x20;
 
 * Input: 28X28 uint8 (0 \~ 255) grayscale Images&#x20;
 * Trim the 1st, 2nd, 27th, and 28th row and column (usually those are zero paddings)
@@ -38,10 +40,33 @@ The resulting MNIST dataset should be a size of 12X12.
 
 The resulting Dataset is now fed to the following CNN Model&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 3.08.46 PM.png" alt=""><figcaption></figcaption></figure>
+## CNN Model Structure&#x20;
+
+<figure><img src="../.gitbook/assets/Untitled presentation.jpg" alt=""><figcaption></figcaption></figure>
 
 * 144 input Layer&#x20;
 * 32 hidden layer&#x20;
 * 10 output layer&#x20;
 
-In analog circuit, the resistance is represented by the inverse of python script weights.&#x20;
+## Conductance to Resistance Conversion
+
+The weights are given by the Excel files which were verified in Cadence.&#x20;
+
+* W1QRun3.csv -> 64 Row, 144 Column&#x20;
+* W2QRun3.csv -> 10 Row, 64 Column&#x20;
+
+In the analog circuit, the resistance is represented by the inverse of Excel file weights.&#x20;
+
+The goal is to map the Excel file weight values to resistance.&#x20;
+
+* High Weights -> High Current, Conductance -> Need low resistance
+* Low Weights -> Low Current, Conductance -> Need high resistance
+
+The total possible values of Excel weight files are:&#x20;
+
+```
+W1: [-0.44 -0.3 -0.16 -0.02 0. 0.02 0.16 0.3 ]
+W2: [-0.44 -0.3 -0.16 -0.02 0. 0.02 0.16 0.3 0.44 0.58 0.72 0.86 1. ]
+```
+
+However, **negative resistance is not possible**. All the negative weights will form another subtractor circuit so that the negative circuit subtracts the current from the positive circuit.
