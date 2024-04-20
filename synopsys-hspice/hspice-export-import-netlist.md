@@ -4,7 +4,7 @@
 
 use resistor from analoglib and nmos4t from SAED\_PDK\_90
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Create a simple testbench with op-sweep
 

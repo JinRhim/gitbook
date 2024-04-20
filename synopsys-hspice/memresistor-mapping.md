@@ -6,7 +6,7 @@ description: Weights.csv to Memeresistor circuits in Synopsys HSPICE
 
 Abstract&#x20;
 
-In order to classify the MNIST dataset, the CNN model was trained in Python script and tested in the Cadence. The goal is to transcribe the Python/Cadence model to Synopsys HSPICE.&#x20;
+In order to classify the MNIST dataset, the CNN model was trained in Python script and tested in the Cadence circuit simulation. The goal is to transcribe the Python/Cadence model to Synopsys HSPICE.&#x20;
 
 ## Dataset input&#x20;
 
@@ -17,12 +17,12 @@ In order to classify the MNIST dataset, the CNN model was trained in Python scri
 
 The resulting MNIST dataset should be a size of 12X12.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.05 PM.png" alt=""><figcaption><p>Origial 28X28 Pixel Image</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.05 PM.png" alt=""><figcaption><p><strong>Origial 28X28 Pixel Image</strong></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.51 PM.png" alt=""><figcaption><p>Downsampled 12X12 Image</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.51 PM.png" alt=""><figcaption><p><strong>Downsampled 12X12 Image</strong></p></figcaption></figure>
 
 ```
-# Quantized 12X12 4-bit pixel 
+# Quantized 12X12 4-bit pixel for number 5
  
  [ 0  0  0  0  0  0  0  0  0  0  0  0]
  [ 0  0  0  0  0  0  1  4  3  6  6  0]
@@ -72,6 +72,37 @@ W2: [-0.44 -0.3 -0.16 -0.02 0. 0.02 0.16 0.3 0.44 0.58 0.72 0.86 1. ]
 However, **negative resistance is not possible**. All the negative weights will form another subtractor circuit so that the negative circuit subtracts the current from the positive circuit.&#x20;
 
 ```
+# Absolute value of resistance
 abs(W1 || W2): [0 0.02 0.16 0.3 0.44 0.58 0.72 0.86 1]
+```
+
+As you can see, the conductance is evenly distributed based on 0.14 for 8 different values (excluding 0) so that the resistance can be easily translated to 8-bit values.&#x20;
+
+The goal is the translate those Conductance to Resistance in an inverse relationship.&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 5.54.43 PM.png" alt=""><figcaption></figcaption></figure>
+
+If we set the conversion formula to be&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+We know that the graph must pass through points (5000,1) and (25000, 0.02). Based on the calculation,&#x20;
+
+* Alpha = 6125&#x20;
+* Beta = -0.225&#x20;
+
+Based on the formula, those 8 conductance values are translated to&#x20;
+
+```
+| Conductance | Resistance |
+|-------------|------------|
+| 0.02        | 25,000     |
+| 0.16        | 15,909.1   |
+| 0.30        | 11,666.7   |
+| 0.44        | 9,210.53   |
+| 0.58        | 7,608.7    |
+| 0.72        | 6,481.48   |
+| 0.86        | 5,645.16   |
+| 1.00        | 5,000      |
 ```
 
