@@ -160,3 +160,7 @@ The 4-bit pixel range is from 0 to 15. Thus, each bit = 1/15 = 6.66% of each dut
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-20 at 2.46.52 PM.png" alt=""><figcaption></figcaption></figure>
 
+Those PWM signals will be fed to the memristor array instead of the PWM voltage
+
+<figure><img src="../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
+
