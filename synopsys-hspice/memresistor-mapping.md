@@ -126,7 +126,7 @@ However, this method has several issues:&#x20;
 
 <figure><img src="../.gitbook/assets/PWM_SignalGenerator.drawio.png" alt=""><figcaption></figcaption></figure>
 
-Instead of using DAC, the quantized 4-bit pixel values will be converted to the PWM signal from 200mV to 400mV. The higher the pixel value, the higher the PWM duty cycle as higher the average voltage
+Instead of using DAC, the quantized 4-bit pixel values will be converted to the PWM signal, with D = 400mV and D' = 200mV. The higher the pixel value, the higher the PWM duty cycle as higher the average voltage
 
 The Period will be 40 nanoseconds as the sawtooth generator generates a clock in 25MHz.&#x20;
 
