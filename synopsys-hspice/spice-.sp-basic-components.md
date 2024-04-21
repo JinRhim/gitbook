@@ -67,9 +67,9 @@ Vbs bb 0 DC 0 (Body)
 * 2n High, 2n Low
 
 ```
-Vin <High Voltage> <Low Voltage(gnd)> PULSE <Initial Voltage> <Peak Voltage> <delay time before pulse start> <Rise Time> <Fall time> <High Width> <Total Pulse width>
+Vin <High Voltage> <Low Voltage> <gnd> PULSE <Initial Voltage> <Peak Voltage> <delay time before pulse start> <Rise Time> <Fall time> <High Width> <Total Pulse width>
 
-Vin <High Voltage> <Low Voltage(gnd)> 
+Vin <High Voltage> <Low Voltage> <gnd> 
 
 PULSE <Initial Voltage> <Peak Voltage> <delay time before pulse start> <Rise Time> <Fall time> <High Width> <Total Pulse width>
 ```

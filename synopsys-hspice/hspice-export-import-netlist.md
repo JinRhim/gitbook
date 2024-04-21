@@ -80,3 +80,48 @@ Copy _**/Users/faculty/jianghao/jin/SAED\_PDK\_90\_analogLib\_device\_map.xml**_
 * Correctly imported Netlist file should look below:
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+
+
+### Sample Spice directive output for transient analysis
+
+```
+.param vg=1
+.option PARHIER = LOCAL
+.option PORT_VOLTAGE_SCALE_TO_2X = 1
+.option RUNLVL = 3
+.option WDF=1
+.temp 25
+.lib '/packages/process_kit/generic/generic_90nm/updated_oct2010/SAED_PDK90nm/hspice/SAED90nm.lib' TT_12
+
+.OPTION LIST NODE POST
+
+.global gnd!
+
+.subckt _4t4r
+r4 net33 te2 r=400
+r2 net25 te2 r=200
+r3 net29 te1 r=300
+r1 net21 te1 r=100
+m4 gg dd net33 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m1 gg dd net21 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m2 gg dd net25 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+m3 gg dd net29 gnd! n12 w=0.24u l=0.1u nf=1 m=1
+.ends _4t4r
+
+*Power Source 
+vdd dd 0 0 pulse 0 0.7 0 10p 10p 2n 4n
+vgs gg 0 0 pulse 0 0.7 0 10p 10p 2n 4n
+
+
+v_sense1 te1 0 DC 0.2 
+v_sense2 te2 0 DC 0.2 
+
+.OP
+
+.TRAN 10ps 200ns
+
+*print currents of voltage sources
+.print I(Vdd) I(Vgs)
+.END
+```
