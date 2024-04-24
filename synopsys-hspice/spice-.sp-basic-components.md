@@ -71,10 +71,12 @@ Vin <High Voltage Node Connection> <Low Voltage Node Connection> PULSE <Initial 
 
 * Example 
 * PWM Power Source - start:0.4V for 20ns, 0.2V from 20ns to 40ns 
+
 Vpulse1 s1 0 PULSE(0.2V 0.4V 0ns 0ps 0ps 20ns 40ns)
 
 * However, in order to start the low signal first, use delay 
 * This signal is delayed for 20ns 
+
 Vpulse2 s2 0 PULSE(0.2V 0.4V 20ns 1ps 1ps 20ns 40ns)
 ```
 
