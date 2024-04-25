@@ -160,7 +160,27 @@ The 4-bit pixel range is from 0 to 15. Thus, each bit = 1/15 = 6.66% of each dut
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-20 at 2.46.52 PM.png" alt=""><figcaption></figcaption></figure>
 
-Those PWM signals will be fed to the memristor array instead of the PWM voltage
+Those PWM signals will be fed to the memristor array instead of the PWM voltage.&#x20;
+
+However, if most of the pixels are nonzero values, then at the beginning of the PWM cycle all the currents will flow to the output circuit. To prevent this, the odd number of PWM pixel inputs will have an inverted rise time.&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
+
+## Making SPICE file&#x20;
+
+In order to simulate the following file, We need&#x20;
+
+1. V\_PWM (0.4V to 0.2V Pixel Input)
+2. V\_Select (Gate input)
+3. V\_Sense (0.2V power supply to detect the current flow)&#x20;
+4. Resistor array
+5. NMOS array&#x20;
+
+First, the W1 Excel file is converted to a numpy array and then transposed, so that the dimension of w1 is (64, 144).  To generate the PWM signal, the first image of the MNIST test dataset was selected (number 5). The image was compressed to a 4-bit 12X12 image. The image is reshaped to (1,144) images.&#x20;
+
+However,&#x20;
+
+
 

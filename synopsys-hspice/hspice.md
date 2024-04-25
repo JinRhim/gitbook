@@ -149,7 +149,7 @@ After running testbench, press Ctrl + B -> Check all&#x20;
 
 Simulation -> Netlist -> Create
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Following is the sample netlist created from 4t4r testbench
 
