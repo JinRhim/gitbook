@@ -86,11 +86,12 @@ Vpulse2 s2 0 PULSE(0.2V 0.4V 20ns 1ps 1ps 20ns 40ns)
 
 ## Sample Code&#x20;
 
-### ## DC Operating Point Analysis
+### # DC Operating Point Analysis
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.33.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 <pre><code><strong>** Vds and Vgs Voltage Source. 
+</strong><strong>** The file should be .sp format 
 </strong><strong>
 </strong><strong>.INCLUDE "7nm_TT_160803.pm"
 </strong><strong>
@@ -111,7 +112,28 @@ Vgs gg 0 DC 0
 .END
 </code></pre>
 
-### ## Transient Analysis&#x20;
+#### &#x20;\[PrimeWave] DC Operating Point Current Consumption Analysis  &#x20;
+
+1. Include "7nm\_TT\_160803.pm" in the same directory.
+2. Run Simulation
+
+```spice
+csh -c 'source /packages/synopsys/setup/full_custom.csh; hspice sim.sp > sim.out'
+```
+
+3. sim.out file shows the leakage current and power consumption.&#x20;
+
+```
+ **** voltage sources
+ subckt                        
+ element  0:vds      0:vgs     
+  volts    700.0000m    0.     
+  current   -2.8708n  125.6137f
+  power      2.0096n    0.     
+     total voltage source power dissipation=    2.0096n       watts
+```
+
+### # Transient Analysis&#x20;
 
 <figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.47.04 PM.png" alt=""><figcaption></figcaption></figure>
 
@@ -144,6 +166,8 @@ vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
 .tran 10p 8n
 .end
 ```
+
+#### \[Primewave] Transient Analysis&#x20;
 
 
 
