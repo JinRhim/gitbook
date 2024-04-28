@@ -169,7 +169,12 @@ vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
 
 #### \[Primewave] Transient Analysis&#x20;
 
+1. Run the HSPICe simulation, as shown in DC operating point analysis&#x20;
+2. Run PrimeWave (export display if you are using Mac Xquartz)
 
+```
+export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_custom.csh; primewave &'
+```
 
 
 
