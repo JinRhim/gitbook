@@ -82,8 +82,6 @@ Vpulse2 s2 0 PULSE(0.2V 0.4V 20ns 1ps 1ps 20ns 40ns)
 
 <figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
-
-
 ## Sample Code&#x20;
 
 ### # DC Operating Point Analysis
@@ -167,14 +165,27 @@ vin in 0 0 pulse 0 0.7 0 50p 50p 2n 4n
 .end
 ```
 
-#### \[Primewave] Transient Analysis&#x20;
+#### \[Primewave] Transient Analysis - Testing CMOS Delay&#x20;
 
-1. Run the HSPICe simulation, as shown in DC operating point analysis&#x20;
+1. Run the HSPICE simulation, as shown in DC operating point analysis&#x20;
 2. Run PrimeWave (export display if you are using Mac Xquartz)
 
 ```
 export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_custom.csh; primewave &'
 ```
 
+3. Device Manager -> Analog Netlist File -> Selet PrimeSim HSPICE&#x20;
+4. Analog NEtlist File: Select .sp file&#x20;
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+5. Select Vin and Vout and run the simulation&#x20;
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+7. In graph, Measurement Tool -> Time Domain -> Delay&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 2.43.44 PM.png" alt=""><figcaption><p>Measurement Tool in PrimeSim</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
