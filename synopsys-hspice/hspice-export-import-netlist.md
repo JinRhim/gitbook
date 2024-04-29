@@ -90,7 +90,7 @@ Setting up environment variables for IC Validator version S-2021.06-2
 
 5. Simulation -> Run&#x20;
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;The current sensed at the 200mV power supply becomes 0 as the PWM signal ends.&#x20;
 

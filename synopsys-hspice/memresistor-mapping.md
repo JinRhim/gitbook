@@ -164,7 +164,7 @@ Those PWM signals will be fed to the memristor array instead of the PWM voltage.
 
 However, if most of the pixels are nonzero values, then at the beginning of the PWM cycle all the currents will flow to the output circuit. To prevent this, the odd number of PWM pixel inputs will have an inverted rise time.&#x20;
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
 
