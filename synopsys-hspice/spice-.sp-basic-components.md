@@ -177,7 +177,7 @@ export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_cu
 3. Device Manager -> Analog Netlist File -> Selet PrimeSim HSPICE&#x20;
 4. Analog NEtlist File: Select .sp file&#x20;
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. Select Vin and Vout and run the simulation&#x20;
 
@@ -189,6 +189,17 @@ export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_cu
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-8.
+\[PrimeWave] Measuring Current Consumption in Transient Analysis&#x20;
+
+1. Select Power supply in CMOS &#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.08.42 PM.png" alt=""><figcaption></figcaption></figure>
+
+2. In the measurement tool, select Level -> Average&#x20;
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.10.36 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.12.31 PM.png" alt=""><figcaption></figcaption></figure>
+
