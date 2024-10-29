@@ -66,3 +66,16 @@ However, in some parts of university, the MQTT communication did not worked. To 
 
 <figure><img src=".gitbook/assets/IMG_2039 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/openmv_camera_1.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/autobrightness_adjusted_v1.gif" alt=""><figcaption></figcaption></figure>
+
+Due to its STM32 H7 limitation with 2mb memory, it does not get higher than 10FPS. However, I am still surprised that 2MB memory can handle 96X96 RGB Images with convolution and bounding box. \
+\
+This computer vision setup with OpenMV H7 is easy and can be run by tiny LiPO battery, yet it causes significant delay in exoglove reaction.&#x20;
+
+
+
+## Google Coral Dev Board with EfficientNet.&#x20;
+
+Google Coral Dev board is priced around $120. It have dedicated TPU that accelerates convolution operation.&#x20;
