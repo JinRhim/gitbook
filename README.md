@@ -60,6 +60,8 @@ Initially, the goal was to save the average distance in an array of lengths of 5
 
 <figure><img src=".gitbook/assets/openmvide_v1.gif" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/openmv_laptop_image_1.gif" alt=""><figcaption></figcaption></figure>
+
 However, in some parts of university, the MQTT communication did not worked. To make the system as concise as possible, I was going to make a simple OpenMV H7 extension board with nRF52860, but it took too long to figure out the configuration. Instead, I made a simple shield with ESP8266 using ESP-one. ESP-one is for short-distance communication between two ESP8266 microcontrollers.&#x20;
 
 <figure><img src=".gitbook/assets/IMG_2337 Large.jpeg" alt=""><figcaption></figcaption></figure>
