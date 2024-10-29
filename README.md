@@ -97,3 +97,6 @@ The EfficientNet that was trained on glove and apple is shown below:&#x20;
 The python script adds distance in array of length of 8, removes outlier and sends the average value so that every 500ms one distance information is being sent to ESP32. This value is being sent to UART so that the Shield board that is connected to ESP8266 can send distance by ESP-one. Thinking back, I should've used BLE or just MQTT communication to minimize GPIO use.
 
 <figure><img src=".gitbook/assets/coral_extension_board_uart.gif" alt=""><figcaption></figcaption></figure>
+
+## Electromyography with OYMotion&#x20;
+
