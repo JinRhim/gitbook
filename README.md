@@ -1,6 +1,6 @@
 # EMG-CV fusion Exoglove Control
 
-## Sony Spresense Competition
+Sony Spresense Competition
 
 In 2022 Summer, I had an amazing internship experience with Zhenyu and Jimmy for deploying the Tensorflow Lite model in a Sony Spresense Microcontroller.  First, the tensorflow model was trained based on Ninapro Database 5 and was fine-tuned based on Jimmy's EMG signal (he had the most muscle). With index motion of 0, 1, 2, and 3 which are for thumbs up, releasing, grabbing, and O.K sign, we were able to deploy a quantized model in the Sony Spresense board.&#x20;
 
@@ -78,8 +78,22 @@ This computer vision setup with OpenMV H7 is easy and can be run by tiny LiPO ba
 
 
 
-## Google Coral Dev Board with EfficientNet.&#x20;
+### Google Coral Dev Board with EfficientNet.&#x20;
 
-Google Coral Dev board is priced at around $120. It has a dedicated TPU that accelerates convolution operation. Initially, I was going to use SSDMobileNetV2 which I already trained, but there was a sample Google Colab code from the Coral team, so I just used the EfficientNet&#x20;
+Google Coral Dev board is priced at around $120. It has a dedicated TPU that accelerates convolution operation. Initially, I was going to use the SSDMobileNetV2 TFLite model which I already trained, but there was a sample Google Colab code from the Coral team, so I just used the EfficientNet. (Also SSDMobileNetV2 caused endless StrideSlice errors) The following link is how I trained EfficientNet:
 
-<figure><img src=".gitbook/assets/ENGR696 Presentation (2).jpg" alt=""><figcaption><p>SSDMobileNetV2 </p></figcaption></figure>
+[https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/readme/google-coral-tpu/coral-tpu-train-efficientdet](readme/coral-tpu-train-efficientdet.md)
+
+<figure><img src=".gitbook/assets/ENGR696 Presentation (2).jpg" alt=""><figcaption><p>SSDMobileNetV2 TFLite model trained on RTX3080</p></figcaption></figure>
+
+One of the models that classify COCO datset worked as below. Unfortunatley, it did not classify Apple and Pen.&#x20;
+
+<figure><img src=".gitbook/assets/coral-camera (1).gif" alt=""><figcaption></figcaption></figure>
+
+The EfficientNet that was trained on glove and apple is shown below:&#x20;
+
+<figure><img src=".gitbook/assets/coral_distance_1 (1).gif" alt=""><figcaption></figcaption></figure>
+
+The python script adds distance in array of length of 8, removes outlier and sends the average value so that every 500ms one distance information is being sent to ESP32. This value is being sent to UART so that the Shield board that is connected to ESP8266 can send distance by ESP-one. Thinking back, I should've used BLE or just MQTT communication to minimize GPIO use.
+
+<figure><img src=".gitbook/assets/coral_extension_board_uart.gif" alt=""><figcaption></figcaption></figure>
