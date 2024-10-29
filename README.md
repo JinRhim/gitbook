@@ -30,11 +30,9 @@ Eventually I ended up using OpenMV H7 for small, compact size setup and Google C
 
 The goal of those microcontrollers are to calculate the distance between hand model (which is the prototype of the wearable exoglove) and grabbable object and send this filtered distance information (likely to be uint8) to the ESP32 which will receive distance information while processing EMG signals.
 
-The dataset was made by Microsoft VoTT which I wrote in&#x20;
+The dataset was made by Microsoft VoTT which I wrote in [https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/\~/changes/116/readme/how-to-make-ml-dataset-using-microsoft-vott](machine-learning/how-to-make-ml-dataset-using-microsoft-vott.md)
 
-
-
-### MQTT communication
+### OpenMV H7: MQTT communication
 
 I set up the MQTT communication by setting my macbook as broker. Just in case if I have to come back here and remeber what MQTT commnads are:
 
@@ -60,3 +58,8 @@ Initially, the goal was to save average distance in array of length of 5, remove
 
 <figure><img src=".gitbook/assets/openmvide_v1.gif" alt=""><figcaption></figcaption></figure>
 
+However, in some parts of university, the MQTT communication did not work. To make the system as concise as possible, I was going to make a simple OpenMV H7 extension board with nRF52860, but it took too long to figure out the configuration. Instead, I made a simple shield with ESP8266 using ESP-one. ESP-one is for short-distance communication between two ESP8266 microcontrollers.&#x20;
+
+<figure><img src=".gitbook/assets/IMG_2337 Large.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/IMG_2039 Large.jpeg" alt=""><figcaption></figcaption></figure>
