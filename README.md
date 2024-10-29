@@ -80,4 +80,6 @@ This computer vision setup with OpenMV H7 is easy and can be run by tiny LiPO ba
 
 ## Google Coral Dev Board with EfficientNet.&#x20;
 
-Google Coral Dev board is priced around $120. It have dedicated TPU that accelerates convolution operation.&#x20;
+Google Coral Dev board is priced at around $120. It has a dedicated TPU that accelerates convolution operation. Initially, I was going to use SSDMobileNetV2 which I already trained, but there was a sample Google Colab code from the Coral team, so I just used the EfficientNet&#x20;
+
+<figure><img src=".gitbook/assets/ENGR696 Presentation (2).jpg" alt=""><figcaption><p>SSDMobileNetV2 </p></figcaption></figure>
