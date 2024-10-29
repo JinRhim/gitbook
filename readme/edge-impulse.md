@@ -109,7 +109,7 @@ Designed for Machine Learning, Sony Spresense board is one of the alternative bo
 
 Although it doesn't have Cortex M7 which can run heavier object detection models, it officially supports tensorflow library in Arduino IDE so its easy to port CIFAR-10 image classification in there easily with microSD card. Support from Edge Impulse also makes this board versatile.&#x20;
 
-<figure><img src="../.gitbook/assets/IMG_2142 Large.jpeg" alt=""><figcaption><p> sony spresense extension board Arduino Nicla Vision OpenMV H7 Google Coral Dev Board Nvidia Jetson Nano 4GB </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2142 Large (1).jpeg" alt=""><figcaption><p> sony spresense extension board Arduino Nicla Vision OpenMV H7 Google Coral Dev Board Nvidia Jetson Nano 4GB </p></figcaption></figure>
 
 Sony Spresense board is acturally tiny without the extension board. If you are only using computer vision, then you do not need expansive extension board as the mainboard have camera port.
 
