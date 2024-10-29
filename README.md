@@ -28,9 +28,11 @@ Eventually I ended up using OpenMV H7 for small, compact size setup and Google C
 
 
 
-The goal of those microcontrollers are to calculate the distance between hand model (which is the prototype of the wearable exoglove) and grabbable object and send this filtered distance information (likely to be uint8) to the ESP32 which will receive distance information while processing EMG signals.
+The goal of those microcontrollers is to calculate the distance between the hand model (which is the prototype of the wearable exoglove) and the grabbable object and send this filtered distance information (likely to be uint8) to the ESP32 which will receive distance information while processing EMG signals.
 
 The dataset was made by Microsoft VoTT which I wrote in [https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/\~/changes/116/readme/how-to-make-ml-dataset-using-microsoft-vott](machine-learning/how-to-make-ml-dataset-using-microsoft-vott.md)
+
+<figure><img src=".gitbook/assets/Screenshot 2023-09-01 at 4.06.47 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### OpenMV H7: MQTT communication
 
@@ -54,12 +56,13 @@ mosquitto_sub -h test.mosquitto.org -t "openmv/test" -v
 /opt/homebrew/opt/mosquitto/sbin/mosquitto -c /opt/homebrew/etc/mosquitto/mosquitto.conf
 ```
 
-Initially, the goal was to save average distance in array of length of 5, remove outlier, and send the average distance value to MQTT communication.&#x20;
+Initially, the goal was to save the average distance in an array of lengths of 5, remove outliers, and send the average distance value to MQTT communication.&#x20;
 
 <figure><img src=".gitbook/assets/openmvide_v1.gif" alt=""><figcaption></figcaption></figure>
 
-However, in some parts of university, the MQTT communication did not work. To make the system as concise as possible, I was going to make a simple OpenMV H7 extension board with nRF52860, but it took too long to figure out the configuration. Instead, I made a simple shield with ESP8266 using ESP-one. ESP-one is for short-distance communication between two ESP8266 microcontrollers.&#x20;
+However, in some parts of university, the MQTT communication did not worked. To make the system as concise as possible, I was going to make a simple OpenMV H7 extension board with nRF52860, but it took too long to figure out the configuration. Instead, I made a simple shield with ESP8266 using ESP-one. ESP-one is for short-distance communication between two ESP8266 microcontrollers.&#x20;
 
 <figure><img src=".gitbook/assets/IMG_2337 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/IMG_2039 Large.jpeg" alt=""><figcaption></figcaption></figure>
+
