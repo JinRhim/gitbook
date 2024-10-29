@@ -130,3 +130,5 @@ Below is an example of noise from touching a metallic table. In here, I am actua
 
 ### External ADC: ADS1115&#x20;
 
+Because ESP32 ADC had a linearity issue and was practically 8bit + extension bits, I used 16-bit ADS1115.
+
