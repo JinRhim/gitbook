@@ -94,6 +94,10 @@ The EfficientNet that was trained on glove and apple is shown below:&#x20;
 
 <figure><img src=".gitbook/assets/coral_distance_1 (1).gif" alt=""><figcaption></figcaption></figure>
 
+It uses \~ 5W of power during active inferencing
+
+<figure><img src=".gitbook/assets/coral_dev_board_power_consumption.jpeg" alt=""><figcaption></figcaption></figure>
+
 The python script adds distance in array of length of 8, removes outlier and sends the average value so that every 500ms one distance information is being sent to ESP32. This value is being sent to UART so that the Shield board that is connected to ESP8266 can send distance by ESP-one. Thinking back, I should've used BLE or just MQTT communication to minimize GPIO use.
 
 <figure><img src=".gitbook/assets/coral_extension_board_uart.gif" alt=""><figcaption></figcaption></figure>
@@ -105,3 +109,24 @@ The goal of electromyography is to read the muscle signal and infer the user's i
 
 
 However, the Professor gave me the OYMotion EMG sensor - it was a growing company in China. Its configuration was better than the Myoware armband because the EMG pads and Amplifier circuits were separated with an audio jack&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2024-10-29 at 12.16.07 PM.png" alt=""><figcaption><p>OYMotion EMG Sensor</p></figcaption></figure>
+
+### Testing with Analog Discovery 2&#x20;
+
+Before connecting it to microcontroller ADC, I used AD2 to see how the EMG signal looks lile.&#x20;
+
+The setup was that I wear EMG sensor on both side of arm and do grabbing/releasing motion to see difference.
+
+<figure><img src=".gitbook/assets/OYMotion_AD2_flexing1.gif" alt=""><figcaption><p>OYMotion_AD2_Grabbing_and_Releasing. Orange is the sensor facing inside of arm and blue is the sensor facing outside of arm</p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/OYMotion_AD2_flexing2.gif" alt=""><figcaption></figcaption></figure>
+
+However, as you can see the grabbing and releasing motion of the EMG signal looks similar, and sometimes Linear Classification Model gives faulty results. Also, touching any kind of metallic objects or twisting motion that will lead to slight detachment of electrode will lead to noise.
+
+Below is an example of noise from touching a metallic table. In here, I am actually resting but my elbow is touching the metallic surface of lab test bench
+
+<figure><img src=".gitbook/assets/OYMotion_AD2_touching_table.gif" alt=""><figcaption><p>OYMotion AD2 noise</p></figcaption></figure>
+
+### External ADC: ADS1115&#x20;
+
