@@ -14,6 +14,7 @@
 * [FPGA: DE10-Standard Board Setup](fpga-de10-standard-board-setup/README.md)
   * [DE10: using IP-Catalog to use ROM](fpga-de10-standard-board-setup/de10-using-ip-catalog-to-use-rom.md)
   * [Saving memory in .sv file](fpga-de10-standard-board-setup/saving-memory-in-.sv-file.md)
+  * [MNIST Inference Project Installation Steps](fpga-de10-standard-board-setup/mnist-inference-project-installation-steps.md)
 * [Synopsys HSPICE](synopsys-hspice/README.md)
   * [HSPICE](synopsys-hspice/hspice.md)
   * [HSPICE Export/Import Netlist](synopsys-hspice/hspice-export-import-netlist.md)
