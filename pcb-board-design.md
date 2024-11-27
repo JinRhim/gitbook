@@ -10,6 +10,10 @@ LM21215 Buck Converter Design&#x20;
 
 ## STM32-based 12V to 110V Inverter&#x20;
 
+<figure><img src=".gitbook/assets/inverter_brd (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/inverter_sch (1).png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src=".gitbook/assets/IMG_3112 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/IMG_3113 Large.jpeg" alt=""><figcaption></figcaption></figure>
