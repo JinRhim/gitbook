@@ -63,7 +63,7 @@ END;
 <figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 6. Name file as **rom32x8.v**
-7. In the setting**,**&#x20;
+7. In the settin&#x67;**,**&#x20;
 
 * 'q' output: 8-bits (rom will output 8 bits for each address)
 * 32 words -> there will be 32 rows of 8-bit data
@@ -282,4 +282,4 @@ The module should output the sum of multiplied product.\
 \
 If **ROM Output: xx**&#x20;
 
-\-> Check the mif file format
+-> Check the mif file format

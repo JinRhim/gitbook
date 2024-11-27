@@ -132,3 +132,10 @@ Below is an example of noise from touching a metallic table. In here, I am actua
 
 Because ESP32 ADC had a linearity issue and was practically 8bit + extension bits, I used 16-bit ADS1115.
 
+
+
+## Final Result&#x20;
+
+<figure><img src=".gitbook/assets/IMG_2371 Large (1).jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/final_v1.gif" alt=""><figcaption></figcaption></figure>
