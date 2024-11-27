@@ -134,7 +134,7 @@ Because ESP32 ADC had a linearity issue and was practically 8bit + extension bit
 
 
 
-## Final Result![](.gitbook/assets/final_v4.gif)&#x20;
+## Final Result
 
 <figure><img src=".gitbook/assets/IMG_2371 Large (1).jpeg" alt=""><figcaption></figcaption></figure>
 
@@ -144,3 +144,4 @@ Because ESP32 ADC had a linearity issue and was practically 8bit + extension bit
 
 <figure><img src=".gitbook/assets/final_v3.gif" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/final_v4.gif" alt=""><figcaption></figcaption></figure>
