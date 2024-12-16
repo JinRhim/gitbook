@@ -20,10 +20,6 @@ LM21215 Buck Converter Design&#x20;
 
 
 
-<figure><img src=".gitbook/assets/IMG_3113 Large.jpeg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/IMG_3117 Large.jpeg" alt=""><figcaption></figcaption></figure>
-
 <figure><img src=".gitbook/assets/IMG_3135 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/IMG_3133 Large.jpeg" alt=""><figcaption></figcaption></figure>
