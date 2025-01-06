@@ -8,3 +8,37 @@ Our company rented a container trailer with a portable generator in Savannah, Ge
 
 <figure><img src=".gitbook/assets/IMG_4165 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
+## Cummins C100D6R Generator&#x20;
+
+Unlike the compact, newer generators that convert alternator AC voltages to DC voltage and then back to AC voltage using an inverter, this 100kW C100D6R generator is straightforward - a big diesel engine spins the alternator, and this 3-phase voltage is directly connected to the portable office trailer circuit box
+
+<figure><img src=".gitbook/assets/Screenshot 2025-01-05 at 6.03.28 PM.png" alt=""><figcaption><p>conventional generator versus compact, newer generation generator with inverter</p></figcaption></figure>
+
+In the first case, the diesel engine drives the alternator, which directly generates an AC voltage.&#x20;
+
+* Voltage and frequency depend on the engine's speed and load conditions
+* Need to spin at constant speed for exact 60Hz AC generation. Can be wasteful when low load&#x20;
+* Natural sine wave from alternator
+* Can easily have higher capacity&#x20;
+
+For later case, a smaller diesel engine drives the alternator, and the generatred AC voltage is converted to DC then converted back to AC voltage by inverter
+
+* Can easily make a smaller size generator. In case of increased load, the generator can simply increase RPM for higher power&#x20;
+* Due to diode rectifier and inverter, the cost goes up. Especially, higher capacity inverters are hard to make. (usually below <10kW) However, nowadays inverter components are becoming drastically cheaper to make better sine waves with filters and accurate feedback systems.&#x20;
+* An old, cheap-quality inverter with few MOSFETs that generates a square wave or sine wave with 2-3 steps can ruin sensitive electronics, but nowadays, all applications that need DC voltage use SPDT, which is insensitive to those kinds of variations.&#x20;
+
+## 4-Pole Alternator RPM&#x20;
+
+According to the datasheet, the Stamford alternator (UCI274D) have 4 poles.&#x20;
+
+* 2 pole alternator, for 1 full rotation where N-S rotates 360 degree, one complete AC cycle is done.&#x20;
+* 4-pole alternator, for 1 full rotation, each phase of the stator encounters two N poles and two S poles in one rotation, making two complete AC cycle --> Engine can spin half-time slower&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2025-01-05 at 6.46.38 PM.png" alt=""><figcaption></figcaption></figure>
+
+Where \[frequency] = \[RPM]\*\[Pole Number]/120. To make a 60Hz AC signal, the Cummins diesel engine needs to rotate at 1800 RPM. 1800 RPM X 4/2 = 3600 AC cycle/min. 3600 divided by 60 seconds equals 60 AC cycle --> 60Hz signal.&#x20;
+
+
+
+
+
