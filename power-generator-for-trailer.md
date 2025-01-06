@@ -42,11 +42,30 @@ Where \[frequency] = \[RPM]\*\[Pole Number]/120. To make a 60Hz AC signal, the C
 
 ## Wiring to the Trailer Office&#x20;
 
-How does wiring to the trailer work? You can see the trailer office and generator is connected by L5-50 Power Cable.&#x20;
+How does wiring to the trailer work? You can see the trailer office and generator are interconnected with the L5-50 Power Cable.&#x20;
 
 * The generator make L1(V\_a), L2(V\_b), L3(V\_c), neutral, and ground pins&#x20;
-* However, in L5 socket there is only 3 pins
-*
+* However, in the L6-50 socket, there are only 3 pins - the 3 cables are likely L1, neutral, ground or L1, L2, neutral.&#x20;
 
 <figure><img src=".gitbook/assets/IMG_4164 Large.jpeg" alt=""><figcaption></figcaption></figure>
+
+### Typical Output Voltage Setup for Generator
+
+| **Configuration** | **Voltage** | **Description**                                                               |
+| ----------------- | ----------- | ----------------------------------------------------------------------------- |
+| 1 Phase           | 240V        | Standard single-phase output for homes, welder or grinder                     |
+| 3 Phase           | 208V        | Three-phase Wye configuration, common for commercial/industrial applications. |
+| 3 Phase           | 480V        | High-voltage three-phase output for heavy industrial machinery like motors    |
+
+The reason why there are only 3 wires connected to the trailer office is that it is running in **240/120 VAC/1 phase** mode. In this case, we only need 3 cables - L1, L2, neutral for return.&#x20;
+
+* L1 to L2 is exactly 180 degrees apart (not 120 degrees apart as 3-phase) - L1 to L2 can generate 240V&#x20;
+* L1 to Ground = 120V&#x20;
+* L2 to Ground = 120V&#x20;
+
+
+
+
+
+
 
