@@ -63,7 +63,9 @@ The reason why there are only 3 wires connected to the trailer office is that it
 * L1 to Ground = 120V&#x20;
 * L2 to Ground = 120V&#x20;
 
+<figure><img src=".gitbook/assets/Screenshot 2025-01-05 at 8.11.44 PM.png" alt=""><figcaption><p>L6 Power Socket Configuration</p></figcaption></figure>
 
+<figure><img src=".gitbook/assets/Untitled presentation.jpg" alt=""><figcaption></figcaption></figure>
 
 
 

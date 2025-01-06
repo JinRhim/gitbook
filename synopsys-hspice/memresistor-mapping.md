@@ -43,7 +43,7 @@ The resulting Dataset is now fed to the following CNN Model&#x20;
 
 ## CNN Model Structure&#x20;
 
-<figure><img src="../.gitbook/assets/Untitled presentation.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Untitled presentation (1).jpg" alt=""><figcaption></figcaption></figure>
 
 * 144 input Layer&#x20;
 * 32 hidden layer&#x20;
