@@ -34,11 +34,19 @@ According to the datasheet, the Stamford alternator (UCI274D) have 4 poles.&#x20
 * 2 pole alternator, for 1 full rotation where N-S rotates 360 degree, one complete AC cycle is done.&#x20;
 * 4-pole alternator, for 1 full rotation, each phase of the stator encounters two N poles and two S poles in one rotation, making two complete AC cycle --> Engine can spin half-time slower&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot 2025-01-05 at 6.46.38 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2025-01-05 at 6.46.38 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 Where \[frequency] = \[RPM]\*\[Pole Number]/120. To make a 60Hz AC signal, the Cummins diesel engine needs to rotate at 1800 RPM. 1800 RPM X 4/2 = 3600 AC cycle/min. 3600 divided by 60 seconds equals 60 AC cycle --> 60Hz signal.&#x20;
 
 
 
+## Wiring to the Trailer Office&#x20;
 
+How does wiring to the trailer work? You can see the trailer office and generator is connected by L5-50 Power Cable.&#x20;
+
+* The generator make L1(V\_a), L2(V\_b), L3(V\_c), neutral, and ground pins&#x20;
+* However, in L5 socket there is only 3 pins
+*
+
+<figure><img src=".gitbook/assets/IMG_4164 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
