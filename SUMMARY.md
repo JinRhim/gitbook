@@ -21,7 +21,7 @@
   * [SPICE .sp: Basic Components](synopsys-hspice/spice-.sp-basic-components.md)
   * [Memresistor Mapping](synopsys-hspice/memresistor-mapping.md)
   * [8-bit PWM Generator Design](synopsys-hspice/8-bit-pwm-generator-design.md)
-* [Power Generator for Trailer](power-generator-for-trailer.md)
+* [Power Generator/Starlink Enterprise for Trailer](power-generator-starlink-enterprise-for-trailer.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
