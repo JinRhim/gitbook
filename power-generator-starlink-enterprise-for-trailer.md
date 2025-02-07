@@ -81,6 +81,14 @@ The reason why there are only 3 wires connected to the trailer office is that it
 
 <figure><img src=".gitbook/assets/IMG_4165 Medium.jpeg" alt=""><figcaption></figcaption></figure>
 
+Currently, The generator is hooked up to the two-trailer office. During the snowstorm where we turned on the maximum AC, the current usage was around 168A and I was afraid that we might have to order larger generator as the blackout start current required was 3 times higher than the nominal current consumption.&#x20;
+
+Right now, it is using around 41.6A, and sometimes it drops to as low as 2.6A when the weather is good. Despite the low current consumption, the giant generator has to keep spinning, which is where low efficiency comes in. According to the datasheet, it consumes
+
+* 2.8 gallons (10.6L)/hour at 50% load&#x20;
+
+Compared to a small, compact generator which sips the fuel, the inefficiency difference is drastic. However, those small generators cannot handle a sudden, max load during the freezing morning when we turn on the max heater.&#x20;
+
 ## Starlink Enterprise Setup
 
 Because our company ATT 4G Modem Hotspot was sluggish and even sending emails took more than 5 minutes, my boss bought StarLink Enterprise with 4TB of data. The issue was that no one knew how to set it up so the boss gave me an assignment to set it up.&#x20;
