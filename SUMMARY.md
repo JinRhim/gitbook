@@ -22,6 +22,7 @@
   * [Memresistor Mapping](synopsys-hspice/memresistor-mapping.md)
   * [8-bit PWM Generator Design](synopsys-hspice/8-bit-pwm-generator-design.md)
 * [Power Generator/Starlink Enterprise for Trailer](power-generator-starlink-enterprise-for-trailer.md)
+* [480V 3-Phase Motor](480v-3-phase-motor.md)
 * [Pharmacy](pharmacy/README.md)
   * [Case Study #1](pharmacy/case-study-1.md)
   * [Diuretics](pharmacy/diuretics.md)
