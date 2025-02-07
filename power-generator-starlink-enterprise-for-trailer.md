@@ -59,6 +59,10 @@ How does wiring to the trailer work? You can see the trailer office and generato
 
 <figure><img src=".gitbook/assets/IMG_4888 Medium.jpeg" alt=""><figcaption><p>Portable Generator L1,L2,L3,N, generator</p></figcaption></figure>
 
+
+
+<figure><img src=".gitbook/assets/IMG_4889 Small (1).jpeg" alt=""><figcaption></figcaption></figure>
+
 The reason why there are only 3 wires connected to the trailer office is that it is running in **240/120 VAC/1 phase** mode. In this case, we only need 3 cables - L1, L2, neutral for return.&#x20;
 
 * L1 to L2 is exactly 180 degrees apart (not 120 degrees apart as 3-phase) - L1 to L2 can generate 240V&#x20;
