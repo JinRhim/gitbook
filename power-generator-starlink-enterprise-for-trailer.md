@@ -75,6 +75,12 @@ The reason why there are only 3 wires connected to the trailer office is that it
 
 
 
+### Efficiency of Generator&#x20;
+
+<figure><img src=".gitbook/assets/IMG_4162 2 Medium.jpeg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/IMG_4165 Medium.jpeg" alt=""><figcaption></figcaption></figure>
+
 ## Starlink Enterprise Setup
 
 Because our company ATT 4G Modem Hotspot was sluggish and even sending emails took more than 5 minutes, my boss bought StarLink Enterprise with 4TB of data. The issue was that no one knew how to set it up so the boss gave me an assignment to set it up.&#x20;
