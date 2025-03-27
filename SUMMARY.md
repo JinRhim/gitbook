@@ -3,7 +3,7 @@
 * [EMG-CV fusion Exoglove Control](README.md)
 * [PCB Board Design](pcb-board-design.md)
 * [Machine Learning](<README (1).md>)
-  * [How to make ML Dataset using Microsoft Vott](machine-learning/how-to-make-ml-dataset-using-microsoft-vott.md)
+  * [How to make ML Dataset using Microsoft Vott: Implementation in Google Coral TPU](machine-learning/how-to-make-ml-dataset-using-microsoft-vott.md)
   * [Google Coral TPU](machine-learning/google-coral-tpu.md)
     * [Coral TPU: testing model with USB Camera](machine-learning/coral-tpu-connect-usb-camera.md)
     * [Coral TPU: Train EfficientDet](readme/coral-tpu-train-efficientdet.md)

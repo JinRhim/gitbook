@@ -288,7 +288,7 @@ if __name__ == "__main__":
 
 
 
-
+For Testing UART&#x20;
 
 
 
