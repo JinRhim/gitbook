@@ -94,6 +94,8 @@ The EfficientNet that was trained on glove and apple is shown below:&#x20;
 
 <figure><img src=".gitbook/assets/coral_distance_1 (1).gif" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/coral_distance_1 (2).gif" alt=""><figcaption></figcaption></figure>
+
 It uses \~ 5W of power during active inferencing
 
 <figure><img src=".gitbook/assets/coral_dev_board_power_consumption.jpeg" alt=""><figcaption></figcaption></figure>
