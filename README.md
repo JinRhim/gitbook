@@ -32,7 +32,13 @@ The goal of those microcontrollers is to calculate the distance between the hand
 
 The dataset was made by Microsoft VoTT which I wrote in [https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/\~/changes/116/readme/how-to-make-ml-dataset-using-microsoft-vott](how-to-make-ml-dataset-using-microsoft-vott.md)
 
+
+
+## Design #1 - Using OpenMV H7&#x20;
+
 <figure><img src=".gitbook/assets/Screenshot 2023-09-01 at 4.06.47 PM.png" alt=""><figcaption></figcaption></figure>
+
+
 
 ### OpenMV H7: MQTT communication
 
@@ -77,6 +83,56 @@ Due to its STM32 H7 limitation with 2mb memory, it does not get higher than 10FP
 This computer vision setup with OpenMV H7 is easy and can be run by tiny LiPO battery, yet it causes significant delay in exoglove reaction.&#x20;
 
 
+
+
+
+## Design #2: using Google Coral Dev Board&#x20;
+
+<figure><img src=".gitbook/assets/697_FinalPresentation (1).png" alt=""><figcaption></figcaption></figure>
+
+* **Google Coral Dev Board**
+  * Measures distance to a target (e.g. hand/object).
+  * Sends distance data via UART to ESP8266.
+* **ESP8266**
+  * Receives distance data from Coral Dev Board over UART.
+  * Sends the distance wirelessly to ESP32 (e.g. via ESP-NOW or Wi-Fi).
+* **ESP32**
+  * Receives and parses distance data from ESP8266.
+  * Controls 4 individual 0.96" I2C OLED displays to show gesture and distance info.
+  * Reads EMG signals using ADS1115 at \~860 Hz from OYMotion EMG sensor.
+  * Performs signal preprocessing (zero-centering and average pooling).
+  * Uses logistic regression model to classify gestures (e.g., grab/release).
+  * Optionally uses threshold mode for simpler activation logic.
+  * Controls 4 servos via `ESP32Servo` based on predicted gestures.
+  * Supports slow, smooth servo movements (e.g., slow grab animation).
+  * Displays real-time state (gesture and/or distance) using custom bitmaps and text.
+* **ADS1115 (I2C)**
+  * Captures EMG signals with high precision.
+  * Configured for high sample rate and consistent performance (\~860 SPS).
+
+***
+
+#### 🧠 EMG Signal Processing
+
+* **Sampling**
+  * EMG signal is sampled using ADS1115 at \~860 samples per second.
+  * Each channel (e.g., 2 muscles) is read individually on its own timer.
+* **Buffering**
+  * Latest N samples (default: `ARRAY_SIZE = 10`) are stored in a circular buffer per channel.
+* **Zero-Centering**
+  * The average of the 10 samples is calculated.
+  * Each sample is subtracted from the average to remove DC bias.
+  * The absolute values of these centered samples are averaged to represent signal strength.
+*   **Example Output:**
+
+    ```
+    Raw samples → [1200, 1230, 1220, ..., 1215]
+    Centered → [|1200 - avg|, |1230 - avg|, ..., |1215 - avg|]
+    Average centered value → Feature for classification
+    ```
+* **Gesture Classification**
+  * The final averaged values from two EMG channels are fed into a pre-trained logistic regression classifier.
+  * Outputs one of 3 gestures (e.g., neutral, grab, release).
 
 ### Google Coral Dev Board with EfficientNet.&#x20;
 
