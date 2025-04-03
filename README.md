@@ -203,3 +203,202 @@ Because ESP32 ADC had a linearity issue and was practically 8bit + extension bit
 <figure><img src=".gitbook/assets/final_v3.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/final_v4.gif" alt=""><figcaption></figcaption></figure>
+
+
+
+## Side Project for STM32 Class: PID-Controlled Ball Balancer (Ball Centering System)
+
+<figure><img src=".gitbook/assets/balancer_v1.gif" alt=""><figcaption></figcaption></figure>
+
+* **Designed and implemented a real-time embedded system** that tracks and centers a ping pong ball on a 2D tilting plane using STM32 Nucleo and OpenMV H7 camera.
+* Utilized **OpenMV H7 with FOMO model** to perform real-time object detection; mapped X-Y coordinates transmitted via **UART (19200 baud)** to STM32.
+* Developed **FreeRTOS-based multitasking firmware** to handle:
+  * UART data reception and position processing.
+  * Real-time servo control via PWM signals (angle range: 60°–120°).
+  * I2C SSD1306 OLED display updates for position and system uptime.
+* Applied **data smoothing techniques** (moving average of last 4 positions) for jerk prevention
+* Built a 2-axis plane system using **dual servo motors** for real-time tilt adjustment based on deviation from center (mapped range: -15° to +15°).
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUd6155yh2Z72spwZrzBQT0NmaLPY3nOGucGZmDFntRZ444MXDxGGgwo4GbnYX9dxk1X271sjScUTwg_yHS3MMIps1Zng6EtymEjdX0k2cyXhjpbuHe2Dl0xahu9BLnPT5eKcy8j=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfPQw6yX1kSdvDSb0ilIU_pGzoxLFw-X7fC-lFO4f9cWB4kXVjgxXkNer1SmTRdFXPQyUPTHVM642EAh5yDqmguo7vwLl-m5zUMmIp6pDMcB5hdWmlJ-q9gPfk90BEn99wtkWlBfg=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUd5ZzXuZCh3t63ILPjwyOKy6JoPgexMCrbFEbl9rblLir8ca7P-1whLP58sdbd22EqOAJnXUvyjhqAgheHOX5ywTK9JoDmXBcEUj5VYzxRGlcvA8IpOA50Tqt-XMNNB9k2BTPG8tQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+* Microcontroller: Powered by STM32H7 ARM Cortex-M7 processor (480 MHz).
+* Camera: High-quality OV7725 image sensor for machine vision tasks.
+* UART, I2C, SPI, CAN, and USB for communication.
+* MicroSD card slot for data storage.
+* Programming: User-friendly Python API.
+* Power Efficiency: Low-power design suitable for embedded vision applications.
+* Size: Compact board with a built-in camera for portability.
+* Applications: Robotics, automation, object tracking, and DIY vision-based projects.
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUcgM-wG98_j1hpfi9ka9J1WVSXqybtz2Wm5P35o0wzAHM9VxvzGFKHdp9LlF771Um5O2C3rrs4rjlOo1HYJX9MGpocxPY__FC6fL_sPrZyqd1WjYX0Vd-Sd9Xh71snc9AxT3YV3jA=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUdRi3nYC6uEHj_iXeRusDxBckwct4YJhtjjZ-0CKtyP2vIVPHy0-wiya_qAefR-REp-GLLflzfjRwTaBc36uFCaAP80cH29i1twRYwo2KKcx4muwVSzB_olmMroZhdRLxoqolUvnQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfw_MwLijrTnLCMYI-25F0sWvXUSY21CqbDjK92zKgR7JVyBnmltfUxPY0uLr_2pbVr0g6NTPbCvgrEPAHbLa_FDGjmpRvD_Z1hyyeH5g-0I7tMha_3hYD5hI09Pf8TEblWTx_jrw=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+### OpenMV H7 Pseudocode&#x20;
+
+```
+uart = UART(3, 19200)
+sensor.reset()  # Reset and initialize the sensor.
+sensor.set_pixformat(sensor.RGB565)  # Set pixel format to RGB565 (or GRAYSCALE)
+sensor.set_framesize(sensor.QQVGA)  # Set frame size to QVGA (320x240)
+sensor.set_auto_exposure(0)
+while True:
+   clock.tick()
+   img = sensor.snapshot()
+   for i, detection_list in enumerate(model.predict([img], callback=fomo_post_process)):
+       if i == 0:
+           continue  # background class
+       if len(detection_list) == 0:
+           continue  # no detections for this class?
+       for (x, y, w, h), score in detection_list:
+           center_x = math.floor(x + (w / 2))
+           center_y = math.floor(y + (h / 2))
+
+           # Store the values in the arrays
+           x_values.append(center_x)
+           y_values.append(center_y)
+
+           # Keep only the last 5 values
+           if len(x_values) > 4:
+               x_values.pop(0)
+           if len(y_values) > 4:
+               y_values.pop(0)
+
+           # Calculate and print the average if we have 5 values
+           if len(x_values) == 4 and len(y_values) == 4:
+               avg_x = sum(x_values) / 4 - 35
+               avg_y = 115 - sum(y_values) / 4
+               # Map avg_x and avg_y from range 0-200 to 0-9
+               mapped_x = int(max(0, min(9, (avg_x - 0) * (9 - 0) / (100 - 0) + 0)))
+               mapped_y = int(max(0, min(9, (avg_y - 0) * (9 - 0) / (100 - 0) + 0)))
+               print(f"Mapped X: {mapped_x}, Mapped Y: {mapped_y}")
+               # Concatenate mapped_x and mapped_y into a single integer
+               combined_value = int(f"{mapped_x}{mapped_y}")
+               time.sleep_ms(2)
+
+               if combined_value != last_sent_value:
+                                   # Send the combined integer via UART
+                                   uart.write(f"{combined_value}\n".encode())
+                                   last_sent_value = combined_value  # Update the last sent value
+
+           img.draw_circle((center_x, center_y, 10), color=colors[i], thickness=10)
+
+   print(clock.fps(), "fps", end="\n")
+```
+
+* The FOMO model processes each frame captured by the camera.
+* Detected objects' bounding boxes are post-processed using Non-Maximum Suppression (NMS) to eliminate overlapping detections.
+* The x and y coordinates are stored in arrays to maintain a history of the last few positions.
+* When enough data points are available (4 in this case), the average position is computed to smooth out the tracking.The mapped x and y values are concatenated into a single integer value.
+* This integer is sent via UART to the STM32. If the current value differs from the last sent value, it ensures that redundant data is not sent.
+
+
+
+### STM32 Receiving Ball Coordinate throguh UART communication&#x20;
+
+<figure><img src=".gitbook/assets/ENGR844 Final Presentation.png" alt=""><figcaption></figcaption></figure>
+
+### Controlling Two servo by STM32 &#x20;
+
+* You can buy cheap 2-axis ball balancing frames that you can assemble for $10 in Aliexpress
+* Also bought 5V Servo for $8 in Aliexpress (with bunch of ESP32 WROOM boards)
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUeVn1a5T67lRLWU6_KeIGapfWyP0lBtpdfQ5biMlo1Zt99-6S8wESeibyUInwvFDUbO9kuTAhUkrdHQsDf6lWfsDIW9g6tCXsT2BapL05eWk8gXPSiRHtURZKARePR588jjIqqIEw=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+<figure><img src=".gitbook/assets/Screenshot 2025-04-03 at 3.48.59 PM.png" alt=""><figcaption></figcaption></figure>
+
+* Datasheet → 50Hz \~ 133 Hz PWM Signal Generation&#x20;
+* 72MHz/72 Prescaler = 1MHz. 1MHZ/20000 Timer → 50Hz. &#x20;
+* PWM Signal Generation: The servo angle is controlled by generating a PWM signal using the TIM1 timer. The Set\_Servo\_Angle function converts the desired angle (0°–180°) into a pulse width (500 µs–2500 µs) and updates the timer compare register.
+* Timer Output: The mapped pulse width is applied to the appropriate timer channel (TIM\_CHANNEL\_1 for X-axis, TIM\_CHANNEL\_4 for Y-axis), setting the servo to the calculated position.
+
+```
+void Set_Servo_Angle(TIM_HandleTypeDef *htim, uint32_t channel, float angle) {
+// Convert angle to pulse width
+	uint32_t pulse_width = (500 + ((angle / 180.0) * 2000)); // 0.5ms to 2.5ms pulse
+	__HAL_TIM_SET_COMPARE(htim, channel, pulse_width);
+}
+
+```
+
+### STM32 UART Setup
+
+Initializes UART1 in interrupt mode to receive data using HAL\_UART\_Receive\_IT.
+
+Upon receiving 3 bytes of UART data, triggers the HAL\_UART\_RxCpltCallback.
+
+* Processes the received data stored in rx\_buffer.
+* Sets update\_display flag to signal main loop for further actions.
+* Re-enables the UART interrupt for continuous reception using HAL\_UART\_Receive\_IT.
+
+Main loop reacts to the update\_display flag:
+
+* Extracts the X and Y coordinate data from rx\_buffer.
+* Converts received ASCII values into numerical deviations.
+* Maps deviations to servo angles and constrains them within limits.
+* Updates the servo positions using the Set\_Servo\_Angle function.
+* Updates the SSD1306 OLED display with the received coordinates and related information.
+
+Utilizes UART2 for terminal communication to print diagnostic and status messages.
+
+<pre><code><strong>// ===========================================================================================
+</strong>void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	UNUSED(huart);
+
+// Transmit received byte on UART2
+	HAL_UART_Transmit(&#x26;huart2, (uint8_t*) rx_buffer, 3, 10); // Transmit all received bytes
+//
+//	char message[40];
+//	snprintf(message, sizeof(message), "\r\nReceived byte via UART1: %c %c %c",
+//			rx_buffer[0], rx_buffer[1], rx_buffer[2]);
+//	print_terminal(message);
+	update_display = 1;
+
+	HAL_UART_Receive_IT(&#x26;huart1, (uint8_t*) rx_buffer, 3);
+
+}
+// ===========================================================================================
+
+void Set_Servo_Angle(TIM_HandleTypeDef *htim, uint32_t channel, float angle) {
+// Convert angle to pulse width
+	uint32_t pulse_width = (500 + ((angle / 180.0) * 2000)); // 0.5ms to 2.5ms pulse
+	__HAL_TIM_SET_COMPARE(htim, channel, pulse_width);
+}
+
+// ===========================================================================================
+
+// this should print to uart 2 which prints in computer console
+void print_terminal(const char *message) {
+	HAL_UART_Transmit(&#x26;huart2, (uint8_t*) message, strlen(message), 100);
+//HAL_UART_Transmit(&#x26;huart2, (uint8_t*) "\r\n", 2, 100); // Adds a newline for better readability
+}
+// ===========================================================================================
+</code></pre>
+
+### Servo Angle Mapping&#x20;
+
+* Mapping Deviation to Angles:
+* Numerical deviations (ranging from 0-9) are mapped to angles between -15° and +15° using the formula:
+* (deviation−4.5)×2.5(deviation - 4.5) \times 2.5(deviation−4.5)×2.5
+  * 0 deviation corresponds to -15°.
+  * 9 deviation corresponds to +15°.
+* Servo Angle Calculation:
+* Servo angles are derived from mapped deviations:
+  * X-axis angle: 90−x\_angle
+  * Y-axis angle: 90+y\_angle
+* Constrained within a safe range:
+  * Minimum: 60°
+  * Maximum: 120°
+
+### Temporary Soldering Board && Changing i2C Address 0x3C, 0x3D&#x20;
+
+<figure><img src=".gitbook/assets/IMG_3109 Medium.jpeg" alt=""><figcaption><p>SSD1306 Changing Address 0x3C, 0x3D </p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/IMG_3072 Medium.jpeg" alt=""><figcaption></figcaption></figure>
+
+![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUflt6u3EgCGSA1aaCVZuDunFZlRYDQDVPoAEYMyj6AFZDLqBwSrBxxKfoLxQ0W-T9Lup8hSmQBvZQSrAW2eSidvDIxB-SgPyhplL-oFB-apeqN6RrB8yqdn2r3u-w6fcqg-e972SQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUc8dm-tJKJ7QuNrNNDPwycQccPoUhaZfy5wVDuEist-_JQsX9aesYsBa_oIS88gOX7TKh4hVE0SrcE8c1idheEJIiatcNFbdGTbuig455F0l3lKFBYFnpPpKCUvArurvjHmQ1yM=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+
+
+
