@@ -1,4 +1,4 @@
-# EMG-CV fusion Exoglove Control
+# EMG-CV fusion Exoglove Control & PID Ball-Balancer
 
 Sony Spresense Competition
 
@@ -226,24 +226,32 @@ Because ESP32 ADC had a linearity issue and was practically 8bit + extension bit
 * Microcontroller: Powered by STM32H7 ARM Cortex-M7 processor (480 MHz).
 * Camera: High-quality OV7725 image sensor for machine vision tasks.
 * UART, I2C, SPI, CAN, and USB for communication.
-* MicroSD card slot for data storage.
-* Programming: User-friendly Python API.
+* MicroSD card slot for data storage (I never used one)
 * Power Efficiency: Low-power design suitable for embedded vision applications.
-* Size: Compact board with a built-in camera for portability.
-* Applications: Robotics, automation, object tracking, and DIY vision-based projects.
 
 ![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUcgM-wG98_j1hpfi9ka9J1WVSXqybtz2Wm5P35o0wzAHM9VxvzGFKHdp9LlF771Um5O2C3rrs4rjlOo1HYJX9MGpocxPY__FC6fL_sPrZyqd1WjYX0Vd-Sd9Xh71snc9AxT3YV3jA=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUdRi3nYC6uEHj_iXeRusDxBckwct4YJhtjjZ-0CKtyP2vIVPHy0-wiya_qAefR-REp-GLLflzfjRwTaBc36uFCaAP80cH29i1twRYwo2KKcx4muwVSzB_olmMroZhdRLxoqolUvnQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
 
 ![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfw_MwLijrTnLCMYI-25F0sWvXUSY21CqbDjK92zKgR7JVyBnmltfUxPY0uLr_2pbVr0g6NTPbCvgrEPAHbLa_FDGjmpRvD_Z1hyyeH5g-0I7tMha_3hYD5hI09Pf8TEblWTx_jrw=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
 
-### OpenMV H7 Pseudocode&#x20;
+### OpenMV H7 Codes&#x20;
 
-```
+````
 uart = UART(3, 19200)
 sensor.reset()  # Reset and initialize the sensor.
 sensor.set_pixformat(sensor.RGB565)  # Set pixel format to RGB565 (or GRAYSCALE)
 sensor.set_framesize(sensor.QQVGA)  # Set frame size to QVGA (320x240)
 sensor.set_auto_exposure(0)
+
+sensor.skip_frames(time=2000)  # Let the camera adjust.
+
+min_confidence = 0.4
+threshold_list = [(math.ceil(min_confidence * 255), 255)]
+
+last_sent_value = 0
+
+# Load built-in model
+model = ml.Model("trained")
+```
 while True:
    clock.tick()
    img = sensor.snapshot()
@@ -286,7 +294,7 @@ while True:
            img.draw_circle((center_x, center_y, 10), color=colors[i], thickness=10)
 
    print(clock.fps(), "fps", end="\n")
-```
+````
 
 * The FOMO model processes each frame captured by the camera.
 * Detected objects' bounding boxes are post-processed using Non-Maximum Suppression (NMS) to eliminate overlapping detections.
@@ -300,7 +308,9 @@ while True:
 
 <figure><img src=".gitbook/assets/ENGR844 Final Presentation.png" alt=""><figcaption></figcaption></figure>
 
-### Controlling Two servo by STM32 &#x20;
+<figure><img src=".gitbook/assets/balancer_uart.gif" alt=""><figcaption><p>Testing STM32 UART Communication with ESP32</p></figcaption></figure>
+
+### Controlling Two Servo by STM32 &#x20;
 
 * You can buy cheap 2-axis ball balancing frames that you can assemble for $10 in Aliexpress
 * Also bought 5V Servo for $8 in Aliexpress (with bunch of ESP32 WROOM boards)

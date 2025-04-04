@@ -1,6 +1,6 @@
 # Table of contents
 
-* [EMG-CV fusion Exoglove Control](README.md)
+* [EMG-CV fusion Exoglove Control & PID Ball-Balancer](README.md)
 * [PCB Board Design](pcb-board-design.md)
 * [How to make ML Dataset using Microsoft Vott: Implementation in Google Coral TPU](how-to-make-ml-dataset-using-microsoft-vott.md)
 * [Create Onnx and TensorRT](create-onnx-and-tensorrt.md)
