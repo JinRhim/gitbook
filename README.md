@@ -204,8 +204,6 @@ Because ESP32 ADC had a linearity issue and was practically 8bit + extension bit
 
 <figure><img src=".gitbook/assets/final_v4.gif" alt=""><figcaption></figcaption></figure>
 
-
-
 ## Side Project for STM32 Class: PID-Controlled Ball Balancer (Ball Centering System)
 
 <figure><img src=".gitbook/assets/balancer_v1.gif" alt=""><figcaption></figcaption></figure>
@@ -406,9 +404,13 @@ void print_terminal(const char *message) {
 
 <figure><img src=".gitbook/assets/IMG_3109 Medium.jpeg" alt=""><figcaption><p>SSD1306 Changing Address 0x3C, 0x3D </p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/IMG_3072 Medium.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_3072 Medium.jpeg" alt=""><figcaption><p>12V to 5V Buck Converter for 5V @ 5A power supply. With 5V 3A power supply, whenever servo moves the STM32 resets due to sudden voltage droop</p></figcaption></figure>
 
 ![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUflt6u3EgCGSA1aaCVZuDunFZlRYDQDVPoAEYMyj6AFZDLqBwSrBxxKfoLxQ0W-T9Lup8hSmQBvZQSrAW2eSidvDIxB-SgPyhplL-oFB-apeqN6RrB8yqdn2r3u-w6fcqg-e972SQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUc8dm-tJKJ7QuNrNNDPwycQccPoUhaZfy5wVDuEist-_JQsX9aesYsBa_oIS88gOX7TKh4hVE0SrcE8c1idheEJIiatcNFbdGTbuig455F0l3lKFBYFnpPpKCUvArurvjHmQ1yM=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
 
+## Issues - slow inference speed&#x20;
 
+<figure><img src=".gitbook/assets/balancer_demo_v1.gif" alt=""><figcaption></figcaption></figure>
 
+* Sometimes the OpenMV H7 fails to detect the white ball on a black background, despite the ball being the only object to detect.&#x20;
+* Also, the bounding box is highly sensitive to the light condition&#x20;
