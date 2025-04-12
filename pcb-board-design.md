@@ -88,7 +88,14 @@ Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one s
 
 <figure><img src=".gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
+### Altium Board Design&#x20;
 
+0603 Green LED for 5V power indication
+
+* Input: Barrel Jack&#x20;
+* Output: 2.54mm 2X1 Header Pin&#x20;
+
+<figure><img src=".gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
 ## LM21215 Buck Converter Design&#x20;
 
