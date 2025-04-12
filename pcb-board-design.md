@@ -68,7 +68,23 @@ Peak Inductor Current = 0.736 + {5V\*(8.4V-5V)}/{1.6\*8.4\*27\*10^-6\*500\*10^3}
 
 I\_peak = 829mA&#x20;
 
-For the output capacitor, I will just use 100uF 0805 X7R capacitors @25V lying around labs, parallel with a 100nF capacitor for higher frequency filtering and reducing ESR.&#x20;
+I chose 744062330 33uH Bourn Inductor whose saturation current 780mA, rated current 980mA, and DC resistance of 150mΩ
+
+### Capacitor&#x20;
+
+For the input capacitor, I have to use a 1210 22uF capacitor (**GRT32ER61E226KE13 or GRM32ER71E226KE15L(this one is in Altium Lib)**) that could withstand 12V input voltage since the 0805 capacitor capacitance drastically decreases as the voltage increases.&#x20;
+
+<figure><img src=".gitbook/assets/image (48).png" alt=""><figcaption><p>SimSurfing DC Bias Check for 1210 Capacitor </p></figcaption></figure>
+
+<figure><img src=".gitbook/assets/image (49).png" alt=""><figcaption><p>Impedance Check </p></figcaption></figure>
+
+For the output capacitor, I will just use 22uF Murata MLCC Capacitor @25V X5R (**GRT21BR61E226ME13L**) which I bought it for a bulk during my undergrad project. This will be used  for both input and output, and the capacitance decrease in high voltage isn't that bad.&#x20;
+
+Based on the Texas Instruments Evaluation board BOM, I will use **GRM188R61E104KA01D** for the 100nF decoupling capacitor which should have low ESR value.&#x20;
+
+<figure><img src=".gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+
+Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one selected by texaus instrument have lowest impedance between 100KHz and 1MHZ.&#x20;
 
 
 
