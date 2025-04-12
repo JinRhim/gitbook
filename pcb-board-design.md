@@ -86,7 +86,7 @@ Based on the Texas Instruments Evaluation board BOM, I will use **GRM188R61E104K
 
 Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one selected by texaus instrument have lowest impedance between 100KHz and 1MHZ.&#x20;
 
-
+<figure><img src=".gitbook/assets/image (51).png" alt=""><figcaption></figcaption></figure>
 
 
 
