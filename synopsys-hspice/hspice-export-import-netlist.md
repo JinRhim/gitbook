@@ -8,15 +8,15 @@ description: How to generate SPICE file and test it through the PrimeSim
 
 use resistor from analoglib and nmos4t from SAED\_PDK\_90
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Create a simple testbench with op-sweep
 
 Go to Simulation -> Netlist -> Create. IT will create a Netlist with voltage source + resistors + nmos
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -57,7 +57,7 @@ Copy _**/Users/faculty/jianghao/jin/SAED\_PDK\_90\_analogLib\_device\_map.xml**_
 $csh -c 'source /packages/synopsys/setup/full_custom.csh; hspice test1.sp > test1.out'
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. In the .out file, it should generate the following files:
 
@@ -82,15 +82,15 @@ Setting up environment variables for IC Validator version S-2021.06-2
 
 2. Design Manager -> File -> Create Test Suite -> Name {filename}\_tb
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select PrimeSim HSPICE and select Netlist File&#x20;
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. Simulation -> Run&#x20;
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 &#x20;The current sensed at the 200mV power supply becomes 0 as the PWM signal ends.&#x20;
 

@@ -10,15 +10,7 @@ description: Analog IC Design
 
 Inside Inverter, create nmos and pmos&#x20;
 
-<div>
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-15 at 11.13.03 AM.png" alt=""><figcaption><p>create nmos4t-0.25um </p></figcaption></figure>
-
- 
-
-<figure><img src="../.gitbook/assets/Screenshot 2023-11-15 at 11.11.02 AM.png" alt=""><figcaption><p>create pmos4t-0.5um</p></figcaption></figure>
-
-</div>
+<div><figure><img src="../.gitbook/assets/Screenshot 2023-11-15 at 11.13.03 AM.png" alt=""><figcaption><p>create nmos4t-0.25um </p></figcaption></figure> <figure><img src="../.gitbook/assets/Screenshot 2023-11-15 at 11.11.02 AM.png" alt=""><figcaption><p>create pmos4t-0.5um</p></figcaption></figure></div>
 
 Connect NMOS and PMOS with wires and add wire names and tags&#x20;
 
@@ -149,11 +141,11 @@ After running testbench, press Ctrl + B -> Check all&#x20;
 
 Simulation -> Netlist -> Create
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Following is the sample netlist created from 4t4r testbench
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 *  Generated for: PrimeSim

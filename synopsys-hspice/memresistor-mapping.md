@@ -85,7 +85,7 @@ The goal is the translate those Conductance to Resistance in an inverse relation
 
 If we set the conversion formula to be&#x20;
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We know that the graph must pass through points (5000,1) and (25000, 0.02). Based on the calculation,&#x20;
 
@@ -164,7 +164,7 @@ Those PWM signals will be fed to the memristor array instead of the PWM voltage.
 
 However, if most of the pixels are nonzero values, then at the beginning of the PWM cycle all the currents will flow to the output circuit. To prevent this, the odd number of PWM pixel inputs will have an inverted rise time.&#x20;
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
 

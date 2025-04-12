@@ -20,13 +20,41 @@ There are typical buck converter components where&#x20;
 * LC filter for PWM&#x20;
 * feedback loop
 
+
+
+### Calculating EN Voltage Divider Value&#x20;
+
 In order to use a smaller Inductor and capacitor for 0.5A application, I need to calculate R4, R5, L1 values
 
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+* I<sub>p</sub> = 0.7 µA
+* I<sub>h</sub> = 1.55 µA
+* V<sub>EN\_falling</sub> = 1.19 V
+* V<sub>EN\_rising</sub> = 1.22 V
+* In my case, Vstart = 8.4V (4.2V\*2) and Vstop = 6.4V (3.2V\*2), as 2S 18650 BMS module cutoff voltage is set to 3.2V for battery life&#x20;
 
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
+The calculated R4 Value is around 1.17MΩ
 
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
+R5 = (1.14435\*10^6 \*1.19)/(6.4V - 1.19V+1.14435\*10^6\*(0.7+1.55)\*10^-6)&#x20;
+
+R5 = 175kΩ
+
+### Calculating Inductor Value&#x20;
+
+<figure><img src=".gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+* Vout = 5V&#x20;
+* Vinmax = 8.4V&#x20;
+* Kind = 0.3 (using Murata low ESR capacitor)
+* Iout = 0.5A&#x20;
+* Switching Freq = 500kHz&#x20;
+
+Lmin = 5\*(8.4-5)/(8.&#x34;_&#x30;\*0.3\*0.5\*500\*_&#x31;0^3) = 2.7\*10^-6 = 27uH&#x20;
 
 
 
