@@ -58,7 +58,11 @@ Lmin = 5\*(8.4-5)/(8.&#x34;_&#x30;\*0.3\*0.5\*500\*_&#x31;0^3) = 2.7\*10^-6 = 27
 
 <figure><img src=".gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
-RMS Inductor Current = sqrt(0.5^2+1/12)
+(5\*(8.4-5)/(8.4&#x30;_&#x32;.&#x37;_&#x31;0^-&#x36;_&#x35;0&#x30;_&#x31;0^3\*0.8))^2 = 3.5114&#x20;
+
+RMS Inductor Current = sqrt(0.5^2+1/12\*3.5114) = 736mA&#x20;
+
+
 
 ## LM21215 Buck Converter Design&#x20;
 
