@@ -56,7 +56,9 @@ R5 = 175kΩ
 
 Lmin = 5\*(8.4-5)/(8.&#x34;_&#x30;\*0.3\*0.5\*500\*_&#x31;0^3) = 2.7\*10^-6 = 27uH&#x20;
 
+<figure><img src=".gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
+RMS Inductor Current = sqrt(0.5^2+1/12)
 
 ## LM21215 Buck Converter Design&#x20;
 
