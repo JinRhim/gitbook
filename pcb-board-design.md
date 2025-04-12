@@ -62,6 +62,16 @@ Lmin = 5\*(8.4-5)/(8.&#x34;_&#x30;\*0.3\*0.5\*500\*_&#x31;0^3) = 2.7\*10^-6 = 27
 
 RMS Inductor Current = sqrt(0.5^2+1/12\*3.5114) = 736mA&#x20;
 
+<figure><img src=".gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+
+Peak Inductor Current = 0.736 + {5V\*(8.4V-5V)}/{1.6\*8.4\*27\*10^-6\*500\*10^3}&#x20;
+
+I\_peak = 829mA&#x20;
+
+For the output capacitor, I will just use 100uF 0805 X7R capacitors @25V lying around labs, parallel with a 100nF capacitor for higher frequency filtering and reducing ESR.&#x20;
+
+
+
 
 
 ## LM21215 Buck Converter Design&#x20;
