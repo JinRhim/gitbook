@@ -16,9 +16,13 @@ There are typical buck converter components where&#x20;
 
 * Input capacitor&#x20;
 * Voltage divider for setting the input voltage&#x20;
-* Bootstrapping Capacitor for turning on mosfet&#x20;
+* Bootstrapping Capacitor for turning on the MOSFET&#x20;
 * LC filter for PWM&#x20;
 * feedback loop
+
+In order to use a smaller Inductor and capacitor for 0.5A application, I need to calculate R4, R5, L1 values
+
+
 
 
 
