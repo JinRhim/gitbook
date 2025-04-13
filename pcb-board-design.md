@@ -1,6 +1,6 @@
 # PCB Board Design
 
-## TPS54202 Step-down Converter&#x20;
+TPS54202 Step-down Converter&#x20;
 
 * Min 4.5V \~ 28V Input&#x20;
 * Output 5V/3.3V 2A&#x20;
@@ -95,7 +95,19 @@ Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one s
 * Input: Barrel Jack&#x20;
 * Output: 2.54mm 2X1 Header Pin&#x20;
 
-<figure><img src=".gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (53).png" alt=""><figcaption><p>Keysight 5003 and 5007 for GND pin and Inductor pin for measuring inductor voltage ripple </p></figcaption></figure>
+
+Fortunately, TI datasheet gives us the guideline for the PCB design&#x20;
+
+<figure><img src=".gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
+
+* Bootstrapping capacitor as near as possible to IC&#x20;
+* VIN/GND plane, switch signal can travel VIA&#x20;
+* Feedback line can be long and narrow, as adding tiny to the path won't change the outcome as voltage divider is at 100kΩ and 13.3kΩ
+
+
+
+
 
 ## LM21215 Buck Converter Design&#x20;
 
