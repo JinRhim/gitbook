@@ -8,7 +8,7 @@ description: How to generate SPICE file and test it through the PrimeSim
 
 use resistor from analoglib and nmos4t from SAED\_PDK\_90
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Create a simple testbench with op-sweep
 
@@ -57,7 +57,7 @@ Copy _**/Users/faculty/jianghao/jin/SAED\_PDK\_90\_analogLib\_device\_map.xml**_
 $csh -c 'source /packages/synopsys/setup/full_custom.csh; hspice test1.sp > test1.out'
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 3. In the .out file, it should generate the following files:
 

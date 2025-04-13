@@ -26,7 +26,7 @@ There are typical buck converter components where&#x20;
 
 In order to use a smaller Inductor and capacitor for 0.5A application, I need to calculate R4, R5, L1 values
 
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 * I<sub>p</sub> = 0.7 µA
 * I<sub>h</sub> = 1.55 µA
@@ -34,7 +34,7 @@ In order to use a smaller Inductor and capacitor for 0.5A application, I need to
 * V<sub>EN\_rising</sub> = 1.22 V
 * In my case, Vstart = 8.4V (4.2V\*2) and Vstop = 6.4V (3.2V\*2), as 2S 18650 BMS module cutoff voltage is set to 3.2V for battery life&#x20;
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The calculated R4 Value is around 1.17MΩ
 
@@ -97,7 +97,7 @@ Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one s
 
 <figure><img src=".gitbook/assets/image (53).png" alt=""><figcaption><p>Keysight 5003 and 5007 for GND pin and Inductor pin for measuring inductor voltage ripple. I also added LED for power indicator </p></figcaption></figure>
 
-Fortunately, TI datasheet gives us the guideline for the PCB design&#x20;
+Fortunately, TI datasheet gives us the guidelines for the PCB design&#x20;
 
 <figure><img src=".gitbook/assets/image (55).png" alt=""><figcaption></figcaption></figure>
 
@@ -111,7 +111,15 @@ Fortunately, TI datasheet gives us the guideline for the PCB design&#x20;
 
 <figure><img src=".gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
-I tried to avoid adding ground plane around inductor to prevent eddy current. Switch output will be traveling through 4 10mil vias.&#x20;
+<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+I tried to avoid adding ground plane around inductor to prevent eddy current. Switch output will be traveling through 4 10mil vias, which can handle 850mA based on **Saturn PCB design**. The average inductor current for me will be 500mA so it should be fine. Also, 5003 keysight pin will also work as VIA.&#x20;
+
+<figure><img src=".gitbook/assets/image (61).png" alt=""><figcaption><p>Saturn PCB Design Via guide </p></figcaption></figure>
+
+The problem of this design is that&#x20;
+
+* 8.4V power has to travel through the back with VIA and 22uF, 0.1uF capacitor is far away for SWOUT path
 
 <figure><img src=".gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
