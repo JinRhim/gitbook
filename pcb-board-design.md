@@ -95,7 +95,7 @@ Compared to other 0.1uF capacitors which have lowest impedance @10MHz, the one s
 * Input: Barrel Jack&#x20;
 * Output: 2.54mm 2X1 Header Pin&#x20;
 
-<figure><img src=".gitbook/assets/image (53).png" alt=""><figcaption><p>Keysight 5003 and 5007 for GND pin and Inductor pin for measuring inductor voltage ripple </p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (53).png" alt=""><figcaption><p>Keysight 5003 and 5007 for GND pin and Inductor pin for measuring inductor voltage ripple. I also added LED for power indicator </p></figcaption></figure>
 
 Fortunately, TI datasheet gives us the guideline for the PCB design&#x20;
 
@@ -105,9 +105,15 @@ Fortunately, TI datasheet gives us the guideline for the PCB design&#x20;
 * VIN/GND plane, switch signal can travel VIA&#x20;
 * Feedback line can be long and narrow, as adding tiny to the path won't change the outcome as voltage divider is at 100kΩ and 13.3kΩ
 
+### Altium Designer&#x20;
 
+<figure><img src=".gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
 
+I tried to avoid adding ground plane around inductor to prevent eddy current. Switch output will be traveling through 4 10mil vias.&#x20;
+
+<figure><img src=".gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
 
 ## LM21215 Buck Converter Design&#x20;
 
