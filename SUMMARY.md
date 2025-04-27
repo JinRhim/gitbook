@@ -2,6 +2,7 @@
 
 * [EMG-CV fusion Exoglove Control & PID Ball-Balancer](README.md)
 * [PCB Board Design](pcb-board-design.md)
+* [USB-PD Stepper Motor Controller Shield Board with TI DRV8825 for STM32 blue pill](usb-pd-stepper-motor-controller-shield-board-with-ti-drv8825-for-stm32-blue-pill.md)
 * [How to make ML Dataset using Microsoft Vott: Implementation in Google Coral TPU](how-to-make-ml-dataset-using-microsoft-vott.md)
 * [Create Onnx and TensorRT](create-onnx-and-tensorrt.md)
 * [Edge Impulse](edge-impulse.md)
