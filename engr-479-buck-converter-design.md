@@ -1,4 +1,4 @@
-# PCB Board Design
+# ENGR 479-Buck Converter Design
 
 TPS54202 Step-down Converter&#x20;
 
@@ -110,8 +110,6 @@ Fortunately, TI datasheet gives us the guidelines for the PCB design&#x20;
 <figure><img src=".gitbook/assets/image (56).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 I tried to avoid adding ground plane around inductor to prevent eddy current. Switch output will be traveling through 4 10mil vias, which can handle 850mA based on **Saturn PCB design**. The average inductor current for me will be 500mA so it should be fine. Also, 5003 keysight pin will also work as VIA.&#x20;
 
