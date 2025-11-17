@@ -66,7 +66,7 @@ Intervention?
 \
 
 
-![](https://lh4.googleusercontent.com/mrh4ElX\_T4JpYolZAU\_dReTG9ocyvCt6rw9qTdYScNDgURoOxnzNZkvcuGr9egwB\_J-NsWoc6Ks4KYgtxcqeSYW\_xtXLN1QE-7iVeXoV\_RcjKxMVj3AC6la\_fgW\_HTgMwS38zNUCfeyWAaiP7vCIVQ)\
+![](https://lh4.googleusercontent.com/mrh4ElX_T4JpYolZAU_dReTG9ocyvCt6rw9qTdYScNDgURoOxnzNZkvcuGr9egwB_J-NsWoc6Ks4KYgtxcqeSYW_xtXLN1QE-7iVeXoV_RcjKxMVj3AC6la_fgW_HTgMwS38zNUCfeyWAaiP7vCIVQ)\
 \
 
 
@@ -705,4 +705,4 @@ Practice of pharmacy need to be performed in pharmacy.
 \
 
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 12.41.00 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-08-24 at 12.41.00 AM.png" alt=""><figcaption></figcaption></figure>

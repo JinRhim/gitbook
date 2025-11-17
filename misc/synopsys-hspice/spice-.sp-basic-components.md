@@ -8,7 +8,7 @@ description: Basic Synopsys .sp file
 
 ### MOSFET : NMOS&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 3.45.05 PM.png" alt=""><figcaption><p>NMOS</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-18 at 3.45.05 PM.png" alt=""><figcaption><p>NMOS</p></figcaption></figure>
 
 * Body is connected to ground&#x20;
 
@@ -31,7 +31,7 @@ m0 [ Source Gate Drain Body ] [NMOS-TYPE Length FinType]
 
 ### MOSFET: PMOS
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-18 at 3.45.40 PM.png" alt=""><figcaption><p>PMOS</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-18 at 3.45.40 PM.png" alt=""><figcaption><p>PMOS</p></figcaption></figure>
 
 * Body is connected to the Power source
 
@@ -80,13 +80,13 @@ Vpulse1 s1 0 PULSE(0.2V 0.4V 0ns 0ps 0ps 20ns 40ns)
 Vpulse2 s2 0 PULSE(0.2V 0.4V 20ns 1ps 1ps 20ns 40ns)
 ```
 
-<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
 
 ## Sample Code&#x20;
 
 ### # DC Operating Point Analysis
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.33.25 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-19 at 1.33.25 PM.png" alt=""><figcaption></figcaption></figure>
 
 <pre><code><strong>** Vds and Vgs Voltage Source. 
 </strong><strong>** The file should be .sp format 
@@ -133,7 +133,7 @@ csh -c 'source /packages/synopsys/setup/full_custom.csh; hspice sim.sp > sim.out
 
 ### # Transient Analysis&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 1.47.04 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-19 at 1.47.04 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 .include "7nm_TT_160803.pm"
@@ -177,29 +177,29 @@ export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_cu
 3. Device Manager -> Analog Netlist File -> Selet PrimeSim HSPICE&#x20;
 4. Analog NEtlist File: Select .sp file&#x20;
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. Select Vin and Vout and run the simulation&#x20;
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 7. In graph, Measurement Tool -> Time Domain -> Delay&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 2.43.44 PM.png" alt=""><figcaption><p>Measurement Tool in PrimeSim</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-29 at 2.43.44 PM.png" alt=""><figcaption><p>Measurement Tool in PrimeSim</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 \[PrimeWave] Measuring Current Consumption in Transient Analysis&#x20;
 
 1. Select Power supply in CMOS &#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.08.42 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-29 at 3.08.42 PM.png" alt=""><figcaption></figcaption></figure>
 
 2. In the measurement tool, select Level -> Average&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.10.36 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-29 at 3.10.36 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-29 at 3.12.31 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-29 at 3.12.31 PM.png" alt=""><figcaption></figcaption></figure>
 

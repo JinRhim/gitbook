@@ -17,9 +17,9 @@ In order to classify the MNIST dataset, the CNN model was trained in Python scri
 
 The resulting MNIST dataset should be a size of 12X12.
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.05 PM.png" alt=""><figcaption><p><strong>Origial 28X28 Pixel Image</strong></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-19 at 2.30.05 PM.png" alt=""><figcaption><p><strong>Origial 28X28 Pixel Image</strong></p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 2.30.51 PM.png" alt=""><figcaption><p><strong>Downsampled 12X12 Image</strong></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-19 at 2.30.51 PM.png" alt=""><figcaption><p><strong>Downsampled 12X12 Image</strong></p></figcaption></figure>
 
 ```
 # Quantized 12X12 4-bit pixel for number 5
@@ -43,7 +43,7 @@ The resulting Dataset is now fed to the following CNN Model&#x20;
 
 ## CNN Model Structure&#x20;
 
-<figure><img src="../.gitbook/assets/Untitled presentation (1).jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled presentation (1).jpg" alt=""><figcaption></figcaption></figure>
 
 * 144 input Layer&#x20;
 * 32 hidden layer&#x20;
@@ -81,11 +81,11 @@ As you can see, the conductance is evenly distributed based on 0.14 for 8 differ
 
 The goal is the translate those Conductance to Resistance in an inverse relationship.&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-19 at 5.54.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-19 at 5.54.43 PM.png" alt=""><figcaption></figcaption></figure>
 
 If we set the conversion formula to be&#x20;
 
-<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 We know that the graph must pass through points (5000,1) and (25000, 0.02). Based on the calculation,&#x20;
 
@@ -113,7 +113,7 @@ Based on the formula, those 8 conductance values are translated to&#x20;
 
 The quantized 4-bit input pixels can be converted to voltage through DAC and then fed to a Memresistor array to do analog computing. The resulting current is converted to a digital signal.&#x20;
 
-<figure><img src="../.gitbook/assets/Untitled Diagram.drawio.png" alt=""><figcaption><p>DAC to memresistor to ADC analog calculation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Untitled Diagram.drawio.png" alt=""><figcaption><p>DAC to memresistor to ADC analog calculation</p></figcaption></figure>
 
 However, this method has several issues:&#x20;
 
@@ -124,7 +124,7 @@ However, this method has several issues:&#x20;
 
 ### New Design: Pixels to PWM signal&#x20;
 
-<figure><img src="../.gitbook/assets/PWM_SignalGenerator.drawio.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/PWM_SignalGenerator.drawio.png" alt=""><figcaption></figcaption></figure>
 
 Instead of using DAC, the quantized 4-bit pixel values will be converted to the PWM signal, with D = 400mV and D' = 200mV. The higher the pixel value, the higher the PWM duty cycle as higher the average voltage
 
@@ -158,15 +158,15 @@ The 4-bit pixel range is from 0 to 15. Thus, each bit = 1/15 = 6.66% of each dut
 * Pixel 14 = 93.34% Duty. 400mV\*0.9334+200mV\*0.0666 = 386.7mV&#x20;
 * Pixel 15 = 100% Duty. 400mV\*1 + 200mV\*0 = 400mV&#x20;
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-04-20 at 2.46.52 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-04-20 at 2.46.52 PM.png" alt=""><figcaption></figcaption></figure>
 
 Those PWM signals will be fed to the memristor array instead of the PWM voltage.&#x20;
 
 However, if most of the pixels are nonzero values, then at the beginning of the PWM cycle all the currents will flow to the output circuit. To prevent this, the odd number of PWM pixel inputs will have an inverted rise time.&#x20;
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Memresistor_Array.drawio.png" alt=""><figcaption></figcaption></figure>
 
 ## Making SPICE file&#x20;
 

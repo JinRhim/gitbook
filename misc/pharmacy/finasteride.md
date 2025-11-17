@@ -24,8 +24,8 @@ The expected increased prescription of this drug has made it important to more f
    \
    While finasteride is metabolized by hepatic CYP3A4 isoenzymes, no drug interactions of clinical importance have been identified, likely due to the hormonal mechanisms of action and relatively large therapeutic window of effect. Finasteride does not appear to affect the CYP450-linked drug metabolizing enzyme system. Compounds that have been tested in man have included antipyrine, digoxin, propranolol, theophylline, and warfarin and no clinically meaningful interactions were found. Finasteride has not been associated with clinically important drug interactions during clinical trials, including a 4-year safety trial of 3,040 males aged 45 to 78 years. while finasteride markedly inhibited UGT1A4 activity in vitro in a drug transporter study; the data strongly suggested that finasteride is unlikely to cause clinically significant drug-drug interactions mediated via inhibition of the hepatic UGT enzymes involved in drug metabolism in vivo
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 12.46.59 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-08-24 at 12.46.59 AM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 12.47.32 AM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screen Shot 2023-08-24 at 12.47.32 AM.png" alt=""><figcaption></figcaption></figure>
 
 \
