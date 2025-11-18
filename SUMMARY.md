@@ -34,3 +34,7 @@
     * [Memresistor Mapping](misc/synopsys-hspice/memresistor-mapping.md)
     * [8-bit PWM Generator Design](misc/synopsys-hspice/8-bit-pwm-generator-design.md)
 * [USB-C PD Test Board](usb-c-pd-test-board.md)
+
+## Motor
+
+* [Motor Control in Simulink](motor/motor-control-in-simulink.md)

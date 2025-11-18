@@ -26,7 +26,7 @@ There are typical buck converter components where&#x20;
 
 In order to use a smaller Inductor and capacitor for 0.5A application, I need to calculate R4, R5, L1 values
 
-<figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * I<sub>p</sub> = 0.7 µA
 * I<sub>h</sub> = 1.55 µA
@@ -34,7 +34,7 @@ In order to use a smaller Inductor and capacitor for 0.5A application, I need to
 * V<sub>EN\_rising</sub> = 1.22 V
 * In my case, Vstart = 8.4V (4.2V\*2) and Vstop = 6.4V (3.2V\*2), as 2S 18650 BMS module cutoff voltage is set to 3.2V for battery life&#x20;
 
-<figure><img src=".gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The calculated R4 Value is around 1.17MΩ
 

@@ -177,7 +177,7 @@ export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_cu
 3. Device Manager -> Analog Netlist File -> Selet PrimeSim HSPICE&#x20;
 4. Analog NEtlist File: Select .sp file&#x20;
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. Select Vin and Vout and run the simulation&#x20;
 
@@ -189,7 +189,7 @@ export DISPLAY="127.0.0.1:10.0"; csh -c 'source /packages/synopsys/setup/full_cu
 
 <figure><img src="../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 \[PrimeWave] Measuring Current Consumption in Transient Analysis&#x20;
 
