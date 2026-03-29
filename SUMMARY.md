@@ -1,7 +1,6 @@
 # Table of contents
 
 * [EMG-CV fusion Exoglove Control & PID Ball-Balancer](README.md)
-* [ENGR 479-Buck Converter Design](engr-479-buck-converter-design.md)
 * [USB-PD Stepper Motor Controller Shield Board with TI DRV8825 for STM32 blue pill](usb-pd-stepper-motor-controller-shield-board-with-ti-drv8825-for-stm32-blue-pill.md)
 * [How to make ML Dataset using Microsoft Vott: Implementation in Google Coral TPU](how-to-make-ml-dataset-using-microsoft-vott.md)
 * [Create Onnx and TensorRT](create-onnx-and-tensorrt.md)
@@ -33,6 +32,7 @@
     * [SPICE .sp: Basic Components](misc/synopsys-hspice/spice-.sp-basic-components.md)
     * [Memresistor Mapping](misc/synopsys-hspice/memresistor-mapping.md)
     * [8-bit PWM Generator Design](misc/synopsys-hspice/8-bit-pwm-generator-design.md)
+  * [ENGR 479-Buck Converter Design](misc/engr-479-buck-converter-design.md)
 * [USB-C PD Test Board](usb-c-pd-test-board.md)
 
 ## Motor

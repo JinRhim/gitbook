@@ -14,8 +14,7 @@ The original goal was to make an AP33771C board for implementing 12V power suppl
 However, JLCpcb ran out of TI CSD nmos and numerous other molex connectors + Trump Tariff. \
 \
 To change this, I change from AP33771C to IP2721 which I commonly saw in some Chinese PCB. \
-\
-
+<br>
 
 <figure><img src=".gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
@@ -27,8 +26,7 @@ Two Issues&#x20;
 * Outputs 15.9V? (I shouldve paid more attention to the silkscreen) &#x20;
 * Higher resistor value for current reader - current reading is off
 
-\
-
+<br>
 
 
 

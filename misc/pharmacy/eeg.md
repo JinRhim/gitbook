@@ -14,8 +14,7 @@ The potential source of error in this experiment is that the pressure shown in t
 
 
 
-ECG\
-
+ECG<br>
 
 1\.  Yes, there was variation between the beats. Because not all of the heartbeats are exactly same, the beat interval should change. Breathing interval, change in anxiety, amount of movements and anxiety can cause the change in heartbeat, thus the slight variability between the peak-to-peak interval can be normal.&#x20;
 
@@ -23,45 +22,38 @@ ECG\
 
 [2. A)  Accord](#user-content-fn-1)[^1]ing to the Normal Electrocardiography Intervals, the average P wave is 0.08 seconds, the average T wave is 0.16 seconds, and the average QRS interval is 0.08 to 0.1 seconds. However, the lab result shows that the P wave is 0.03s, the T wave is 0.08s, and the QRS complex is 0.02 seconds. The lab data shows the significant deviation from average. The difference can be due to wrong measurement methods, such as wrong attachment position or partially detached cables, or ambiguous PQRST wave that makes hard to distinguish from each other.
 
-\
-
+<br>
 
 2\. B)  For example, time it takes to finish p-wave shows how long does it takes to depolarize atria. Other waves also shows the time duration of each part of heart depolarization and repolarization. Based on those informations, the heart rhythm and the phase of atria and ventricle contraction can be estimated, helping the understanding of heart function.
 
-\
-
+<br>
 
 ECG, BP and Exercise&#x20;
 
-\
-
+<br>
 
 3\. A)
 
 Figure 1. Change in heart rate measured for 2 minutes interval
 
-![](https://lh4.googleusercontent.com/lUKjMMW1yL2-dw36x3C\_GpYpVZIl2MvFMbST3QtiDAa-pnFtmk1dT7X4lw25AVs5pD-iqxEpnne2dXnQvQtZ-lZ3KgO04dDfb7lyO7esixUyCNJ3B8P7FHVgDEnYUcXbJuiU8wekwB2lrw\_Vh-Z2Vg)
+![](https://lh4.googleusercontent.com/lUKjMMW1yL2-dw36x3C_GpYpVZIl2MvFMbST3QtiDAa-pnFtmk1dT7X4lw25AVs5pD-iqxEpnne2dXnQvQtZ-lZ3KgO04dDfb7lyO7esixUyCNJ3B8P7FHVgDEnYUcXbJuiU8wekwB2lrw_Vh-Z2Vg)
 
 \
-\
-
+<br>
 
 3\. B) The change in heart rate slowly decreases, from 69.56 to -5.66 to -14.04 BPM.&#x20;
 
-\
-
+<br>
 
 3\. C) Other variable, such as psychological state, might affected the change in heartbeat. If the test subject had nervousness that could induce fight or flight response, it could lead to high resting heartbeat rate, making the comparison inaccurate.  &#x20;
 
-\
-
+<br>
 
 4\. The resting heart rate for subject was 69.86 BPM. Heart rate increased 49.86 after 6 minutes of exercise compared to resting state. The percent increase is 71.37%.&#x20;
 
 119.72-69.8669.86\*100 = 71.37%
 
-\
-
+<br>
 
 5\. For our group, subject’s maximum heart rate was 139.42 BPM. For team #1, it was 83.63 BPM. For team #2, it was 151.63 BPM. For team #4, it was 94.77 BPM. There might be variations in maximum heart rate since everyone has different ventricular output capacity. Also, for the subjects who exercise often would have lower heart rate increase. The amount each subject moved in order to increase the heartbeat during the experiment also differed from each other without any kinds of strict standard.&#x20;
 
@@ -69,13 +61,12 @@ Figure 1. Change in heart rate measured for 2 minutes interval
 
 Figure 2. Systolic/Diastolic Blood Pressure Measurements for 2 minutes interval
 
-![](https://lh6.googleusercontent.com/tFar8OJBgWaNwLN9tql0XrkgoskDRalEJEQj71XDa\_TDjqx-DGQx4iXVAoiky1BGfbwjA9t5NtG2CdVzgkbFDLJmiWVmDDZNMai4wUoJsYtqXVvvKeMXlL67OWNfDvWIBvbsxiJFT\_RcY6SppwnXSw)
+![](https://lh6.googleusercontent.com/tFar8OJBgWaNwLN9tql0XrkgoskDRalEJEQj71XDa_TDjqx-DGQx4iXVAoiky1BGfbwjA9t5NtG2CdVzgkbFDLJmiWVmDDZNMai4wUoJsYtqXVvvKeMXlL67OWNfDvWIBvbsxiJFT_RcY6SppwnXSw)
 
 
 
 6\. B) There is no notable trends in in systolic and diastolic blood pressure in data collected. Potential source of error is the wrong measurement of blood pressure. Heavy breathing might hindered the detection of korotkoff sound, which might be mixed with breathing sound. Also, movement of torso due to increased inhalation and exhalation caused the movement of arm and changed the pressure that was applied to the brachial artery, making the rate of decreasing pressure inconsistent. Also, because the blood pressure had to be measured fast, the examiner might made hasty measurements under the stress.&#x20;
 
-\
-
+<br>
 
 [^1]: 

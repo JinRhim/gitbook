@@ -4,8 +4,7 @@ description: Week 2 Quiz
 
 # PHP 317 Quiz 2
 
-\
-
+<br>
 
 1. Beta Blockers
 
@@ -18,8 +17,7 @@ description: Week 2 Quiz
 | Nibivolol             | Bystolic  | Beta-blocker used for the treatment of hypertension and post myocardial infarction |
 
 \
-\
-
+<br>
 
 2\. ACE Inhibitors (Angiotensin Converting Enzyme Inhibitors)
 
@@ -30,8 +28,7 @@ description: Week 2 Quiz
 | Ramipril   | Altace            | ACE inhibitor used for hypertension and heart failure |
 
 \
-\
-
+<br>
 
 3\. ARBs. (Angiotensin Receptor Blockers)
 
@@ -40,8 +37,7 @@ description: Week 2 Quiz
 | Valsartan  | Diovan  | Angiotensin Receptor Blocker (ARB) used for hypertension and heart failure |
 | Olmesartan | Benicar | Angiotensin Receptor Blocker (ARB) used for hypertension                   |
 
-\
-
+<br>
 
 4\. CCBs. (Calcium Channel Blockers)
 
@@ -52,8 +48,7 @@ description: Week 2 Quiz
 
 \
 \
-\
-
+<br>
 
 5\. ACE Inhibitor + Calcium Channel Blocker
 
@@ -62,8 +57,7 @@ description: Week 2 Quiz
 
 \
 \
-\
-
+<br>
 
 6\. Diurectics (Cardiovascular / Renal)
 
@@ -73,21 +67,18 @@ description: Week 2 Quiz
 | Furosemide                         | Lasix            | Loop diuretic used for edema and hypertension                      |
 | Spironolactone                     | Aldactone        | Potassium sparing diuretic used for hypertension and heart failure |
 
-\
-
+<br>
 
 7\. Nitrates&#x20;
 
-\
-
+<br>
 
 | Isosorbide Mononitrate | Imdur                         | Nitrate used for angina |
 | ---------------------- | ----------------------------- | ----------------------- |
 | Nitroglycerin          | Nitor-Bid Nitro-Dur Nitrostat | Nitrate used for angina |
 
 \
-\
-
+<br>
 
 8\. Miscellaneous
 

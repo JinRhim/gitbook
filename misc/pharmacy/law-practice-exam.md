@@ -1,30 +1,24 @@
 # Law Practice Exam
 
 1\. What were the exposure groups of interest? How were they measured?\
-\
-
+<br>
 
 1. The exposure groups were the group prescribed with P2Y12 inhibitor (clopidogrel, ticagrelor or prasugrel).\
-   \
-
+   <br>
 
 2\. What were the primary outcomes of interest? How were they measured?\
-\
-
+<br>
 
 1. rate of readmission in 90 days and long-term mortality were the primary outcomes of interest.&#x20;
 2. It was measured by a logistic regression model, Kaplan-Meier curves, and a cox proportional hazards.\
-   \
-
+   <br>
 
 3\. What statistical method was used to adjust for confounding?\
-\
-
+<br>
 
 1. propensity score matching to account for the nonrandom use of ticagrelor and prasugrel. A logistic regression model was used to estimate propensity scores among patients receiving ticagrelor or prasugrel with demographic and clinical variables included as predictors
 2. Adjusted odds ratio/cox proportional hazards/Kaplan-Meier curves were also used.\
-   \
-
+   <br>
 
 4\. What potential confounders were addressed in the study? What potential confounders were NOT addressed in the study?\
 &#x20;
@@ -33,26 +27,22 @@
 2. Potential confounders not addressed in the study include economic status, exercising habits, stress level, or food intakes.
 
 \
-\
-
+<br>
 
 1. In figure 3, what is the literal interpretation of the hazard ratio?
 2.
    1. There was no significant difference in the hazard rates of mortality between patients treated with ticagrelor and patients treated with prasugrel. Hazard ratio being 1.3, 95% confidence interval 0.8 to 2.2, p = 0.31.\
-      \
-
+      <br>
 3. In figure 3, what does the Kaplan-Meier curve tell us?
 4.
    1. The figure 3 shows Kaplan-Meier curve for cumulative long-term mortality. It is demonstrating long-term mortality in propensity matched patients. The 1-year mortality rate for patients discharged on ticagrelor was 5.4% (95% CI 3.3% to 7.4%), whereas that for prasugrel was 3.7% (95% CI 2.2% to 5.2%).\
-      \
-
+      <br>
 5. Did the authors adequately address the study limitations? Are there limitations which could
 
 have affected the study results?
 
 1. Yes, there were several limitations. First, the study was unable to account for all potential confounders as it is an observational study. Secondly, all hospitals participating in this study are actively engaged in statewide collaborative quality improvement initiatives. Therefore, these findings may not be generalizable to hospitals that do not participate in those initiatives. Third, this is studied over older Medicare patients in the state of Michigan, so limiting generalizability. Lastly, the study was not account for medication compliance, treatment discontinuation, or treatment switching.\
-   \
-
+   <br>
 2. What does this study suggest about antiplatelet medications after percutaneous coronary
 
 Intervention?
@@ -60,34 +50,27 @@ Intervention?
 1. The study compared older patients treated with ticagrelor versus prasugrel after PCI for ACS by retrospective observational analysis. There were no significant differences in the rates of 90 day readmission or long term mortality between older patients treated with ticagrelor and patients treated with prasugrel after PCI for ACS. These 2 treatments appear similarly effective.&#x20;
 2. This study suggest that stent thrombosis is becoming less common due to advances in stent technologies. Thus, pathologic bleeding from excessive platelet inhibition may contribute more toward morbidity and mortality among patients taking antiplatelet medications.\
    \
-   \
+   <br>
 
-
-\
-
+<br>
 
 ![](https://lh4.googleusercontent.com/mrh4ElX_T4JpYolZAU_dReTG9ocyvCt6rw9qTdYScNDgURoOxnzNZkvcuGr9egwB_J-NsWoc6Ks4KYgtxcqeSYW_xtXLN1QE-7iVeXoV_RcjKxMVj3AC6la_fgW_HTgMwS38zNUCfeyWAaiP7vCIVQ)\
-\
-
+<br>
 
 1\. In figure 3, what is the literal interpretation of the hazard ratio?\
-\
-
+<br>
 
 1. Although the cox model hazard ratio is 1.3, and 95% CI is 0.8 to 2.2 which contains 0. Also, the p valuve which is 0.31 shows that this result is statistically insignificant
 
-\
-
+<br>
 
 2\. In figure 3, what does the Kaplan-Meier curve tell us?&#x20;
 
-\
-
+<br>
 
 1. Kaplan-Meier curve shows long-term mortality in propensity-matched patients. Ticagrelor discharge patient 1-year mortality was 5.4% (95% CI 3.3% to 7.4%), whereas prasugrel dischanged patient 1-year mortality  was 3.7% (95% CI 2.2% to 5.2%).
 
-\
-
+<br>
 
 3\. Did the authors adequately address the study limitations? Are there limitations which could have affected the study results?&#x20;
 
@@ -100,13 +83,11 @@ Intervention?
 7. Researcher bias might be present&#x20;
 8. Potential of hospital data collection method variation.&#x20;
 
-\
-
+<br>
 
 4\. What does this study suggest about antiplatelet medications after percutaneous coronary intervention?&#x20;
 
-\
-
+<br>
 
 1. In this study about ticagrelor and prasugrel treatments in older Medicare patients who underwent PCI for ACS, there were no significant differences in the rates of 90-day hospital readmission or long-term mortality. With prasugrel’s potential earlier patent expiration and generic drug approval, it may emerge as a more cost-effective agent compared with ticagrelor in the near future.
 
@@ -124,8 +105,7 @@ A and B
 
 Answer: C
 
-\
-
+<br>
 
 2\. Which of the following would be the best answer regarding the FDA’s authority to implement Risk Evaluation and Mitigation Strategies (REMS)
 
@@ -137,8 +117,7 @@ a.          The FDA has no authority as it is a voluntary program for manufactur
 
 &#x20;   Answer: C
 
-\
-
+<br>
 
 3\. The Durham-Humphrey Amendment of 1951 did which of the following:
 
@@ -151,8 +130,7 @@ a.          Specifically allowed prescriptions to be transmitted in writing, ora
 
 Answer: E
 
-\
-
+<br>
 
 4\. Which of the following would be correct regarding the issue of whether there should be a third class of drug, also known as “behind the counter” drugs:
 
@@ -165,8 +143,7 @@ a.          Pharmacists have historically opposed the concept until recently
 
 Answer: B
 
-\
-
+<br>
 
 5\. Which of the following would be correct regarding the authority of physicians to dispense medications:
 
@@ -180,8 +157,7 @@ a.          Physicians are not permitted to dispense medications under federal l
 Answer: E
 
 \
-\
-
+<br>
 
 6\.  Patent held by manufacturers for drugs do not apply to pharmacy compounded products.
 
@@ -191,8 +167,7 @@ a.          True
 
 Answer: B
 
-\
-
+<br>
 
 7\. Pursuant to the FDA’s Orange Book, which of the following would be correct:
 
@@ -205,8 +180,7 @@ a.          Bioequivalent drugs are presumed to be therapeutically equivalent
 
 Answer: E
 
-\
-
+<br>
 
 8\. Repezidid is marketed as an OTC drug in 100 mg strength and as prescription only in the 200 mg strength. The reason for the difference is most likely:
 
@@ -218,8 +192,7 @@ a.          The 200 mg strength is less safe
 
 Answer: B
 
-\
-
+<br>
 
 9\. Pharmacies must dispense a medication in a child resistant container unless:
 
@@ -232,8 +205,7 @@ a.          The patient requests otherwise
 
 Answer: D
 
-\
-
+<br>
 
 10\. The FDA is responsible for enforcing the Poison Prevention Packaging Act.
 
@@ -243,29 +215,25 @@ a.          True
 
 Answer: B
 
-\
-
+<br>
 
 11\. A state decided to reschedule all opioid drug products scheduled as C-III under federal law to C-II pursuant to state law. Which of the following is correct:
 
 Answer: The state law would not conflict with federal law and thus likely not be preempted.
 
-\
-
+<br>
 
 12\. The maximum amount of codeine that can be contained in a schedules V cough syrup is:
 
 Answer: 200 mg per 100 mL
 
-\
-
+<br>
 
 13\. IPs employed by a hospital may utilize the hospitals’ DEA number to prescribe dispense if
 
 Answer: the hospital has assigned the IP a specific internal code with suffix
 
-\
-
+<br>
 
 14\. Dr. Jones is a new dentist in town. He asks the pharmacist at Friendly Pharmacy if he can obtain Ativan, a schedule IV anti-anxiety drug, to use on his patients in the office prior to procedures. Dr. Jones would like to write a prescription for office use. Is this allowable?
 
@@ -277,8 +245,7 @@ a.          Yes. Practitioners have no restriction in writing controlled substan
 
 Answer: D
 
-\
-
+<br>
 
 15\. Which one of the following best describes the corresponding responsibility doctrine:
 
@@ -290,8 +257,7 @@ a.          Requires that the prescriber correspond with the pharmacist prior to
 
 Answer: D
 
-\
-
+<br>
 
 16\. Dispense under the CSA includes which of the following?
 
@@ -304,8 +270,7 @@ a.          Administering a controlled substance
 
 Answer: E
 
-\
-
+<br>
 
 17\. A pharmacist received a prescription from a prescriber for a very suspicious person from out of state. The pharmacists suspected that the person was diverter and not really a patient but could not confirm it and dispensed the prescription anyway. Later the pharmacist was visited by the DEA and the Board of Pharmacy who told the pharmacist that the person had been duping physician all over the area into writing controlled substance prescriptions and was selling the drugs on the street.
 
@@ -317,8 +282,7 @@ a.          The pharmacist has not violated the law since the prescription was f
 
 Answer: D
 
-\
-
+<br>
 
 18\. A faxed prescription for any C-II drug from the prescriber to the pharmacy is acceptable in place of the original for which of the following:
 
@@ -330,8 +294,7 @@ a.          In any situation
 
 Answer: B
 
-\
-
+<br>
 
 19\. Under CSA and federal law, which of the following would be the best answer regarding the partial filling of a C-II drug.
 
@@ -344,8 +307,7 @@ a.          It is not permitted.
 
 Answer: D
 
-\
-
+<br>
 
 20\. Which of the following would be correct regarding records of controlled substances:
 
@@ -358,8 +320,7 @@ a.          They must be kept for at least 2 years.
 
 Answer: E
 
-\
-
+<br>
 
 21\. Which of the following would be an acceptable record of receipt for Percocet (schedule II drug)?
 
@@ -371,34 +332,29 @@ a.          DEA 222 form
 
 Answer: A
 
-\
-
+<br>
 
 22\. The purpose of state pharmacy board is:
 
 Answer: Protect the public
 
-\
-
+<br>
 
 23\. A pharmacist was charged with violation of the state and federal controlled substance laws. Although all the evidence clearly demonstrate that the pharmacist committed the act, he was acquitted in court on the basis of an illegal search.
 
 Answer: Could still bring disciplinary action
 
-\
-
+<br>
 
 24\. Most state pharmacy boards have the authority to implement...
 
 Answer: Incarceration and....
 
-\
-
+<br>
 
 25\.  Question from the board of pharmacy about technician question.
 
-\
-
+<br>
 
 26\. RI’s PMP is the electronic monitoring program of scheduled drugs by patient, prescriber and facility for which controls?
 
@@ -411,8 +367,7 @@ a.          C-II
 
 Answer: D
 
-\
-
+<br>
 
 27\. A pharmacist in State A receives a prescription for Drug X. Under federal law, Drug X is allowed to have refills. However, a law in State A prohibits any refills for Drug X. If a prescriber were to authorize 3 refills on the prescription, should the pharmacist allow the patient to receive the refills?
 
@@ -424,8 +379,7 @@ a.          Yes, federal law controls over stricter state laws
 
 Answer: D
 
-\
-
+<br>
 
 28\. A pharmacist submitted fraudulent prescription drug claims to Medicaid for reimbursement and was ultimately caught. The Board of Pharmacy became involved to determine whether the pharmacist’s license should be revoked. Which of the following would be the best answer:
 
@@ -437,8 +391,7 @@ a.          The board would likely hold a hearing pursuant to its judicial funct
 
 Answer: A
 
-\
-
+<br>
 
 29\. Administrative agencies have which of the following responsibilities:
 
@@ -451,8 +404,7 @@ a.          Administering and enforcing state pharmacy practice acts
 
 Answer: E
 
-\
-
+<br>
 
 30\. Which of the following correctly describe a regulation
 
@@ -465,8 +417,7 @@ a.          A regulation cannot become final until it has gone through a notice 
 
 Answer: D
 
-\
-
+<br>
 
 31\. The final regulation of the FDA would be published:
 
@@ -478,8 +429,7 @@ a.          Chronologically in the Federal Register
 
 Answer: A
 
-\
-
+<br>
 
 32\. Which of the following was responsible for establishing two classes of drugs - prescription and over-the-counter?
 
@@ -489,23 +439,20 @@ a.          Durham-Humphrey Amendment
 2. Prescription Drug Marketing Act
 3. Food and Drug Administration Modernization Act
 
-\
-
+<br>
 
 33\. phill works for a pharmacy in state A phills pharmacy is beind sued by a patient, whose attorney is citing a case with similar fact decided over 5 years ago by the supreme court of stateb….
 
 C no because State A and State B are different jurisdictions
 
-\
-
+<br>
 
 34\. Jake a pharmacist dispensed a prescription drug to a patient without placing a pharmacy generated label on the container. The FDA brought action against the pharmacist for violating the FDCA. The pharmacist contend that the FDCA is not applicable which of the
 
 a. the FDA most likely would have authority over the pharmacist based upon the interstate commerce clause of the US constitution
 
 \
-\
-
+<br>
 
 35\. Which of the following accurately describe the FDA:
 
@@ -518,15 +465,13 @@ a.          It is a component of the Department of Health and Human Services
 
 Answer: E
 
-\
-
+<br>
 
 36\. A manufacturer of ketchup advertised that its particular brand ketchup would effectively treat gout.
 
 Answer: It’s still a food and drug
 
-\
-
+<br>
 
 37\. The most important distinguishing factor in whether a product is a drug or not is
 
@@ -538,8 +483,7 @@ a.          Whether it is a chemical entity
 
 Answer: C
 
-\
-
+<br>
 
 38\. Primetized is the established name of a prescription drug listed in the USP as containing 0.65 mg of the active ingredient per tablet. Maker Labs produces pimetized with 0.5 mg of active ingredient per tablet. Which of the following would be the best answer?
 
@@ -552,8 +496,7 @@ a.         Maker’s product would be considered adulterated
 
 Answer: E
 
-\
-
+<br>
 
 39\. Which of the following would be correct regarding the United States Pharmacopeia (USP)
 
@@ -566,8 +509,7 @@ a.         The FDA publishes the USP
 
 Answer: C
 
-\
-
+<br>
 
 40\. A drug product’s label states that the drug is 0.25 mg. Tests show that the product is actually 0.5 mg. This product is:
 
@@ -586,15 +528,13 @@ a.         Adulterated
 
     Answer: B
 
-    \
-
+    <br>
 
     2\. A low red blood cell count may occur in patients’ with SLE.  Why? Explain your answer. (2pt)
 
     &#x20;Patient exhibits pancytopenia coupled with low reticulocyte count. This suggests that there is something wrong with the bone marrow, the bone marrow is not producing enough red blood cells. This is contrary to the destruction of red blood cells that would be observed in the spleen. The lack of red blood cells is much greater due to inadequate production than rapid destruction.
 
-    \
-
+    <br>
 
     &#x20;
 
@@ -606,22 +546,18 @@ a.         Adulterated
     \
     \
     \
-    \
-
+    <br>
 
     4\. Why was this patient treated with an immunosuppressive drug(s) and antibiotics? (2pt)
 
-    \
-
+    <br>
 
     In order to suppress an excessive fever of 38.2 degrees, the immunosuppressive drug was administered to decrease excessive autoimmune reaction.  Also to lower the risk of infection due to lowered immune response, antibiotics were administered. ( possibility of relapsing inflammatory disorders, including systemic lupus erythematosus (SLE), antineutrophil cytoplasmic antibody-associated vasculitis, and adult-onset Still’s disease, antibiotics were also administered.)&#x20;
 
     \
-    \
+    <br>
 
-
-    \
-
+    <br>
 
     5\. Circle ALL of the following hematologic findings that were abnormal. (1pt)
 
@@ -634,8 +570,7 @@ a.         Adulterated
     \
     \
     \
-    \
-
+    <br>
 
     6\. Why was the patient administered IV immunoglobulin rather that an alternate immunosuppressive treatment?  Explain your answer.  (2pt)
 
@@ -643,8 +578,7 @@ a.         Adulterated
 
     \
     \
-    \
-
+    <br>
 
     &#x20;
 
@@ -656,8 +590,7 @@ a.         Adulterated
 
     \
     \
-    \
-
+    <br>
 
     &#x20;
 
@@ -699,10 +632,8 @@ b. If the definition is changed to include Ben’s professional services, what c
 
 Practice of pharmacy need to be performed in pharmacy.
 
-\
+<br>
 
-
-\
-
+<br>
 
 <figure><img src="../../.gitbook/assets/Screen Shot 2023-08-24 at 12.41.00 AM.png" alt=""><figcaption></figcaption></figure>

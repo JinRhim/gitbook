@@ -10,8 +10,7 @@ Chips to use \
 \- AP33771C USB PD sink for receiving a 12V signal \
 \- Buck converter for 12V --> 5V conversion \
 \- STM32 30-pin mounting female socket \
-\- TI DRV8825 for controlling stepper motor \
-
+\- TI DRV8825 for controlling stepper motor <br>
 
 ## USB-PD Sink Chip&#x20;
 

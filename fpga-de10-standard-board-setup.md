@@ -159,8 +159,7 @@ After seeing the correct waveform, move to next step&#x20;
 
 6. It will generate ram32x4.v and ram32x4\_bb.v \
    **ram32x4.v** -> RTL file which contains actual implementation \
-   **ram32x4\_bb.v** -> black box version that needs to be included in top-level design\
-
+   **ram32x4\_bb.v** -> black box version that needs to be included in top-level design<br>
 7. After creating files, go to Project -> Add/Remove Files.  Following files should be included:&#x20;
 
 * ram32x4.v&#x20;

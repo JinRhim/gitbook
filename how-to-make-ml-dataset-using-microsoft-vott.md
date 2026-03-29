@@ -176,8 +176,7 @@ Click the Export Setting Button which is shown in the red box above.&#x20;
 * Test/Train Split --> 100
 * Export Unassigned --> UNCHECKED
 
-If you do not uncheck this, all the images which you did not labeled will be included in dataset also. \
-
+If you do not uncheck this, all the images which you did not labeled will be included in dataset also. <br>
 
 <figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames which you only viewed will not be exported. In this case, frame_1000 and frame_1004</p></figcaption></figure>
 
@@ -1146,8 +1145,8 @@ Copy 3 files to USB:&#x20;
 
 usb\_transfer.sh scripts are in the previous post&#x20;
 
-{% content-ref url="broken-reference" %}
-[Broken link](broken-reference)
+{% content-ref url="/broken/pages/7c6ctqNhbMLZF9XYyucK" %}
+[Broken link](/broken/pages/7c6ctqNhbMLZF9XYyucK)
 {% endcontent-ref %}
 
 Now, turn on the Google Coral Dev Board and mount the USB. (you need to create /media/usb directory) The USB path might differ
