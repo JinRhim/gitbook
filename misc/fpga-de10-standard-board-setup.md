@@ -11,32 +11,32 @@ description: 'windows screenshot: win + s + shift'
 
 Install Quartus Prime Standard[ 18.1.0.625 ](https://www.intel.com/content/www/us/en/software-kit/665987/intel-quartus-prime-standard-edition-design-software-version-18-1-for-windows.html)with ModelSim - upper version does not support Cyclone IV, V family
 
-<figure><img src=".gitbook/assets/p1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p1.png" alt=""><figcaption></figcaption></figure>
 
 Go to Individual Files → Install Intel Cyclone V Device Support. Put .qdz file in the same path as installation file.&#x20;
 
-<figure><img src=".gitbook/assets/p2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p2.png" alt=""><figcaption></figcaption></figure>
 
 ### Setting up Quartus Project&#x20;
 
 1. In the Windows search bar, type "device installer" -> Quartus installer will pop up
 
-<figure><img src=".gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 2. Select the file directory which you stored .qdz file -> Install Cyclone V Library&#x20;
 3. Turn on Quartus&#x20;
 4. File -> New Project Wizard -> select directory -> Empty Project -> No need to add files&#x20;
 5. In Family Device Board Settings, select Cyclone V with model name 5CSXFC6D6F31C6N
 
-<figure><img src=".gitbook/assets/p3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p3.png" alt=""><figcaption></figcaption></figure>
 
 6. Skip EDA Tool Setting. The output should resemble below pic
 
-<figure><img src=".gitbook/assets/p4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p4.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -53,17 +53,17 @@ assign out = a & b;
 endmodule 
 ```
 
-<figure><img src=".gitbook/assets/p5.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p5.png" alt=""><figcaption></figcaption></figure>
 
 3. Project -> add/remove files to project -> add current file/remove unncessary file&#x20;
 4. Processing -> Start Compilation
 
-<figure><img src=".gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. In project directory, make folder "modelsim". This will be used to store modelsim files&#x20;
 6. Turn on Modelsim -> File -> New -> Project
 
-<figure><img src=".gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 7. Add Existing File -> Add test.v&#x20;
 
@@ -101,7 +101,7 @@ endmodule
 
 9. Right click the test\_HDL file -> compile -> compile all
 
-<figure><img src=".gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
 ```
 project open D:/DE0-CV/tutorial_1/modelsim/test_simulation
@@ -113,11 +113,11 @@ project open D:/DE0-CV/tutorial_1/modelsim/test_simulation
 
 10. Go to Simulate -> Start Simulation -> Select testbench&#x20;
 
-<figure><img src=".gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 Following screen will pop up.&#x20;
 
-<figure><img src=".gitbook/assets/p6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p6.png" alt=""><figcaption></figcaption></figure>
 
 11. View -> Wave
 12. Enter following Command to console. (This will add all signals to wave window)&#x20;
@@ -126,11 +126,11 @@ Following screen will pop up.&#x20;
 add wave sim:/testbench/*
 ```
 
-<figure><img src=".gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
 13. Simulate -> Run 100
 
-<figure><img src=".gitbook/assets/p7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/p7.png" alt=""><figcaption></figcaption></figure>
 
 After seeing the correct waveform, move to next step&#x20;
 
@@ -139,23 +139,23 @@ After seeing the correct waveform, move to next step&#x20;
 1. Create a new Project&#x20;
 2. Go to Tools -> IP Catalog. At right side, following screen will pop up.&#x20;
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>IP Catalog </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1).png" alt=""><figcaption><p>IP Catalog </p></figcaption></figure>
 
 3. Select RAM: 1-PORT and name it **ram32x4.v**
 
-<figure><img src=".gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 4. Uncheck 'q' output port&#x20;
 
-<figure><img src=".gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 5. Leave the RAM initialization blank as the testbench will write on it
 
-<figure><img src=".gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 6. It will generate ram32x4.v and ram32x4\_bb.v \
    **ram32x4.v** -> RTL file which contains actual implementation \
@@ -166,36 +166,36 @@ After seeing the correct waveform, move to next step&#x20;
 * ram32x4\_bb.v&#x20;
 * ram32x4.qip&#x20;
 
-<figure><img src=".gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 8. Double click the ram32x4.v file. Change **ram32x4.v** file module name to **project\_3\_ram\_tutorial**. The module name must match the project name. \
    <mark style="color:blue;">module ram32x4 -> module (Your Project Name)</mark>
 
-<figure><img src=".gitbook/assets/Screenshot 2024-01-25 214823.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-25 214823.png" alt=""><figcaption></figcaption></figure>
 
 8. In project directory, create new file with name 'modelsim'. Open Modelsim and create new project in created file. \
    Name the project as **ram32x4\_testbench**&#x20;
 
-<figure><img src=".gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 9. Add Existing File -> **ram32x4.v**&#x20;
 10. Create New File -> **ram32x4\_testbench** with filetype Verilog&#x20;
 
-<figure><img src=".gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 Following screen will pop up:
 
-<figure><img src=".gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 11. Go to [Intel FPGAcademy](https://fpgacademy.org/courses.html) and download lab8 file. It contains testbench file for ram32x4
 12. Copy and paste file to **ram32x4\_testbench**. Change the module name to ram32x4\_testbench&#x20;
 13. Right click ram32x4\_testbench -> Compile -> Compile All&#x20;
 
-<figure><img src=".gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 14. Simulation -> Start Simulation -> Select **ram32x4\_testbench**&#x20;
 
-<figure><img src=".gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -209,7 +209,7 @@ Following screen will pop up:
 2. Verilog -> New Project Wizard -> select the created file&#x20;
 3. In the created project directory, create the file 'rom\_initialization.mif' (Make sure the extension is .mif, not .txt)
 
-<figure><img src=".gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
 
 4. Paste the following sample code to .mif file and save. The following code will initialize ROM content with 8-bit width and 32 rows.&#x20;
 
@@ -258,12 +258,12 @@ END;
 4. Tools -> IP-Catalog. \
    Following window will show at the right side of screen
 
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
 
 5. Library -> Basic Functions -> On Chip Memory -> ROM:1-Port \
    For simplicity of this demo, I will use ROM:1-Port to minimize input and output wiring.&#x20;
 
-<figure><img src=".gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21).png" alt=""><figcaption></figcaption></figure>
 
 6. Name file as **rom32x8.v**
 7. In the settin&#x67;**,**&#x20;
@@ -272,19 +272,19 @@ END;
 * 32 words -> there will be 32 rows of 8-bit data
 * Select **M10K** for Cyclone V&#x20;
 
-<figure><img src=".gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
 
 * Uncheck the 'q' output port&#x20;
 
-<figure><img src=".gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
 
 * Select the created rom\_initialization.mif file as memory content data&#x20;
 
-<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 * It will generate rom32x8.v and rom32x8\_bb.v
 
-<figure><img src=".gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 8. Project -> Add/Remove Files in Project -> Add following files:&#x20;
 
@@ -292,11 +292,11 @@ END;
 * rom32x8.v&#x20;
 * rom32x8\_bb.v&#x20;
 
-<figure><img src=".gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
 
 9. Change the module name of rom32x8\_bb.v file so that it does not overlap with ram32x8.v
 
-<figure><img src=".gitbook/assets/Screenshot 2024-01-29 182640.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-01-29 182640.png" alt=""><figcaption></figcaption></figure>
 
 ### Creating Top Module&#x20;
 
@@ -338,7 +338,7 @@ endmodule
 
 The top module must match the project name
 
-<figure><img src=".gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 2. Compile the project&#x20;
 
@@ -346,11 +346,11 @@ The top module must match the project name
 
 1. Create 'modelsim' file in project directory&#x20;
 
-<figure><img src=".gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
 
 2. Open Modelsim -> File -> New Project&#x20;
 
-<figure><img src=".gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
 
 3 . Add Existing File -> Add&#x20;
 
@@ -360,7 +360,7 @@ The top module must match the project name
 
 4. Create New **SystemVerilog** File -> \[your project name] + "testbench"   &#x20;
 
-<figure><img src=".gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
 
 5. Paste following code in testbench. For each clock, the testbench will generate random number and feed in to module.
 
@@ -413,16 +413,16 @@ endmodule
 
 6. Compile Project -> Questionmark should disappear&#x20;
 
-<figure><img src=".gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 7. Simulate -> Start Simulation -> Library -> Add **altera\_mf\_ver** (required for RAM/ROM)
 8. Select work -> project7\_testbench
 
-<figure><img src=".gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
 
 9. Add all the variables to waveforms by typing
 
@@ -430,7 +430,7 @@ endmodule
 add wave sim:/your_testbench_name/*
 ```
 
-<figure><img src=".gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
 
 If the timescale is set to ns,&#x20;
 
@@ -478,7 +478,7 @@ run 1000000
 # Time:               650000, Pixel: 0a, ROM address: 00, ROM Output: 20, Sum: 0000, Sum Output: 04ef
 ```
 
-<figure><img src=".gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
 
 The module should output the sum of multiplied product.
 
