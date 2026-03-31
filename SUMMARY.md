@@ -40,5 +40,5 @@
 ***
 
 * [Minor PCB Project](minor-pcb-project/README.md)
-  * [USB-C PD Test Board](minor-pcb-project/usb-c-pd-test-board.md)
+  * [USB-C PD Test Board](usb-c-pd-test-board.md)
   * [DRV8305 Breadboard Test Board](minor-pcb-project/drv8305-breadboard-test-board.md)
