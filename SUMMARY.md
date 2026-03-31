@@ -32,8 +32,13 @@
     * [8-bit PWM Generator Design](misc/synopsys-hspice/8-bit-pwm-generator-design.md)
   * [ENGR 479-Buck Converter Design](misc/engr-479-buck-converter-design.md)
   * [FPGA: DE10-Standard Board Setup](misc/fpga-de10-standard-board-setup.md)
-* [USB-C PD Test Board](usb-c-pd-test-board.md)
 
 ## Motor
 
 * [Motor Control in Simulink](motor/motor-control-in-simulink.md)
+
+***
+
+* [Minor PCB Project](minor-pcb-project/README.md)
+  * [USB-C PD Test Board](minor-pcb-project/usb-c-pd-test-board.md)
+  * [DRV8305 Breadboard Test Board](minor-pcb-project/drv8305-breadboard-test-board.md)

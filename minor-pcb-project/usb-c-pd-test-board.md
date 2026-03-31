@@ -4,9 +4,9 @@ description: No STUUSB4500, no I2C programming, only resistor selection
 
 # USB-C PD Test Board
 
-<figure><img src=".gitbook/assets/스크린샷 2025-11-16 192655.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/스크린샷 2025-11-16 192655.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/스크린샷 2025-11-16 192751.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/스크린샷 2025-11-16 192751.png" alt=""><figcaption></figcaption></figure>
 
 \
 The original goal was to make an AP33771C board for implementing 12V power supply so I could only use my USB-C charger for my all other projects.\
@@ -16,9 +16,9 @@ However, JLCpcb ran out of TI CSD nmos and numerous other molex connectors + Tru
 To change this, I change from AP33771C to IP2721 which I commonly saw in some Chinese PCB. \
 <br>
 
-<figure><img src=".gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/unnamed (1) (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/unnamed (1) (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 Two Issues&#x20;
 
