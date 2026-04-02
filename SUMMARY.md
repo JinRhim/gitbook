@@ -36,6 +36,7 @@
 ## Motor
 
 * [Motor Control in Simulink](motor/motor-control-in-simulink.md)
+* [Motor Encoders](motor/motor-encoders.md)
 
 ***
 
