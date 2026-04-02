@@ -28,8 +28,16 @@ Some encoders have extra index signals for homing&#x20;
 
 ### Incremental Analog Encoder&#x20;
 
-Those are the raw output of Analog Encoder, and is 1Vpp sine and cosine functions. If your motor controller has the Interpolator (which converts 1Vpp sine and cosine function to 3.3V logic level), you can directly connect those analog signals to motor controller.&#x20;
+* 1Vpp sine and cosine signal. Direct output from optical/magnetic encoder sensor &#x20;
 
-However, because those are analog signal with 1Vpp, those signals are extremely susceptible to noise, especially without encoder wire shield or&#x20;
+Your motor controller should have internal interpolator ic. (1Vpp Analog signal -> 3.3V/5V logic)&#x20;
 
-<figure><img src="../.gitbook/assets/10m_cable_after_COS_10k_res (2) (2).png" alt=""><figcaption></figcaption></figure>
+Because those are analog signal with \~500mVpp, they are extremely susceptible to noise. With long wires, the signal ca go down to \~400mV range. \
+Also with Motor Phase Cable passing nearby, those encoder signals are easily distorted.&#x20;
+
+Especially with high interpolation, which it divides one cosine/sine period into multiple small segments, the encoder will likely to skip some bits.
+
+<figure><img src="../.gitbook/assets/10m_cable_after_COS_10k_res (2) (2).png" alt=""><figcaption><p>Purple: COS+(500mV)<br>Yellow: COS- (500mV) <br>White: COS+ - COS- Differential (1Vpp)</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/BK000011.png" alt=""><figcaption><p>Purple: COS+<br>Yellow: SIN+<br>Cyan, Green: INDEX Differential</p></figcaption></figure>
+
