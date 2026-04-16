@@ -37,6 +37,7 @@
 
 * [Motor Control in Simulink](motor/motor-control-in-simulink.md)
 * [Motor Encoders](motor/motor-encoders.md)
+* [Axis Control with EtherCAT](motor/axis-control-with-ethercat.md)
 
 ***
 
