@@ -237,7 +237,7 @@ CASE nStep OF
 
 END_CASE;
 
-
+// Axis1Ref ~ Axis4Ref should be linked in each Axis "Link to PLC"
 mcPowerAxis1(
     Axis := Axis1Ref,
     Enable := ,
@@ -388,4 +388,19 @@ Now, Each Axis should be linked to the object that was instantiated in the code.
 <figure><img src="../.gitbook/assets/Screenshot 2026-04-10 123029 (2).png" alt=""><figcaption></figcaption></figure>
 
 If you go to the \[Login], you should be able to see all the active variables
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-04-10 123108.png" alt=""><figcaption></figcaption></figure>
+
+### Checking Packet Loss during cycling&#x20;
+
+* one of the criteria to test in TwinCAT III is to check the signal loss.  Especially with unshielded Ethernet wire/questionable Bob schmitt layout due to compact space, Motor 48V 40khz PWM phase output passing right next to RJ45 cable, I always question whether this 1ms latency control is going to work or not&#x20;
+* Go to \[Device 3 (EtherCAT)]
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-04-10 140752.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Screenshot 2026-04-10 140805 (1).png" alt=""><figcaption></figcaption></figure>
+
+* You can check the Lost frames in here&#x20;
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
