@@ -34,21 +34,9 @@ CIN: _4 x 10 uF + 2 x 470 nF + 100 uF electrolytic_
 
 ## Inductor Selection:&#x20;
 
-```markdown
-### Inductor Comparison Matrix
-
-| Parameter | 744325240 | 744393665068 (New) | Delta / Assessment |
-| :--- | :--- | :--- | :--- |
-| **Inductance** | *Not Specified* | 6.8 µH | Reference baseline needed for 744325240 |
-| **Saturation Current ($I_{sat}$)** | 17 A | 20 A | **+17.6% increase** (Higher headroom for transient motor loads) |
-| **Direct Current Resistance (DCR)**| 4.75 mΩ | 9.00 mΩ | **+89.5% increase** (Higher conduction/copper losses) |
-| **Dimensions (L × W × H)** | 10.50 × 10.20 × 5.00 mm | 11.30 × 10.00 × 6.00 mm | Slightly larger footprint (+0.8mm L, +1.0mm H, -0.2mm W) |
-| **Footprint Area** | 107.10 mm² | 113.00 mm² | **+5.5% larger** layout real estate required |
-| **Status / Application** | Existing Baseline | Brand New Product | Requires layout modification validation |
-
-```
-
-
-
-
-
+| Inductor                            | 744325240            | 744393665068         |
+| ----------------------------------- | -------------------- | -------------------- |
+| **Inductance**                      | 2.4 µH               | 6.8 µH               |
+| **Saturation Current ($I\_{sat}$)** | 17 A                 | 20 A                 |
+| **DC Resistance (DCR)**             | 4.75 mΩ              | 9.00 mΩ              |
+| **Dimensions (L × W × H)**          | 10.5 × 10.2 × 5.0 mm | 11.3 × 10.0 × 6.0 mm |
