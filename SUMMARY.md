@@ -38,6 +38,7 @@
 * [Motor Control in Simulink](motor/motor-control-in-simulink.md)
 * [Motor Encoders](motor/motor-encoders.md)
 * [Axis Control with EtherCAT](motor/axis-control-with-ethercat.md)
+* [LMR2100R044 Test](motor/lmr2100r044-test.md)
 
 ***
 
