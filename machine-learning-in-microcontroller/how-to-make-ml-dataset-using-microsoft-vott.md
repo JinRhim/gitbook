@@ -25,7 +25,7 @@ I though if I make dataset based on OV sensors and recycle the dataset maybe it 
 
 If video is being taken from phone, this step can be skipped.&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-25 at 12.00.51 AM (2).png" alt="" width="301"><figcaption><p>OpenMV IDE Recording Setup</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-25 at 12.00.51 AM (2).png" alt="" width="301"><figcaption><p>OpenMV IDE Recording Setup</p></figcaption></figure>
 
 Download [OpenMV IDE](https://openmv.io/pages/download) and connect OpenMV H7. There are multiple resolutions to choose to capture image. (The default is QVGA: 320X240)
 
@@ -86,17 +86,17 @@ It is better to have high resolution so that whenever you are using the dataset 
 
 For autoexposure, setting it to FALSE will force OpenMV H7 to not become dark whenever the camera or object is static.&#x20;
 
-<figure><img src=".gitbook/assets/apple252.jpg" alt=""><figcaption><p>apple when camera is not moving</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/apple252.jpg" alt=""><figcaption><p>apple when camera is not moving</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/apple1059.jpg" alt=""><figcaption><p>apple when camera is moving</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/apple1059.jpg" alt=""><figcaption><p>apple when camera is moving</p></figcaption></figure>
 
 While it is possible to make dataset through Tools--> Dataset Editor-->New Dataset, it only takes one image which is inconvenient.
 
-<figure><img src=".gitbook/assets/Summer 2022 Research.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Summer 2022 Research.jpg" alt=""><figcaption></figcaption></figure>
 
 Instead, simply record the whole video by Pressing **Record** in the Frame Buffer windows. At the end of recording, it will prompt user to save video&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 9.50.36 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 9.50.36 PM.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -136,38 +136,38 @@ cap.release()
 
 ```
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.20.20 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.20.20 PM.png" alt=""><figcaption></figcaption></figure>
 
 It will output frames in same path. Inside of dataset, there should be multiple images.
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.20.01 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.20.01 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Installing Microsoft VoTT
 
 Go to [Microsoft VoTT github release](https://github.com/Microsoft/VoTT/releases) and install. Although it is no longer continued, it have .dmg files and .exe files in github release which makes it really easy to install. (The files are under Assets)
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.24.19 PM.png" alt=""><figcaption><p>install microsoft vott</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.24.19 PM.png" alt=""><figcaption><p>install microsoft vott</p></figcaption></figure>
 
 ### Setup Microsoft VoTT
 
 Open Microsoft VoTT, and click new projects
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.25.38 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.25.38 PM.png" alt=""><figcaption></figcaption></figure>
 
 * Display name --> type your dataset name
 * SEcurity Token --> Generate New Security Token
 * Source Connection --> Select the frames folder that you just made
 * Target Connection --> output folder&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.28.38 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.28.38 PM.png" alt=""><figcaption></figcaption></figure>
 
 Press "Save Project". Now the VoTT Project will pop up.&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.31.09 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.31.09 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 Press the "+" button next to TAGS and add the name of the object in the "Add new tag". In my case, it will be banana.
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.34.56 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.34.56 PM.png" alt=""><figcaption></figcaption></figure>
 
 Click the Export Setting Button which is shown in the red box above.&#x20;
 
@@ -178,17 +178,17 @@ Click the Export Setting Button which is shown in the red box above.&#x20;
 
 If you do not uncheck this, all the images which you did not labeled will be included in dataset also. <br>
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames which you only viewed will not be exported. In this case, frame_1000 and frame_1004</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 11.07.56 PM.png" alt=""><figcaption><p>Frames which you only viewed will not be exported. In this case, frame_1000 and frame_1004</p></figcaption></figure>
 
 Now, press project button so that you could go back to project.
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.38.17 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.38.17 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Labeling Dataset
 
 Now, select frame\_0.jpg and drag your mouse. The bounding box will pop up. After setting correct bounding box, Press NUMPAD 1.&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.40.58 PM.png" alt=""><figcaption><p>labeling banana</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.40.58 PM.png" alt=""><figcaption><p>labeling banana</p></figcaption></figure>
 
 Whatever saved in TAGS will show up after pressing NUMPAD 1. Press down key, and then keep continuing labeling next image.&#x20;
 
@@ -200,7 +200,7 @@ Drag, press 1, press down, drag, press 1, press down, ...&#x20;
 
 #### Do not label it wrong!&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-25 at 12.07.17 AM.png" alt=""><figcaption><p>Faulty COCO Dataset</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-25 at 12.07.17 AM.png" alt=""><figcaption><p>Faulty COCO Dataset</p></figcaption></figure>
 
 Above faulty labels are from official COCO Dataset. Try to label it correctly in order to not confuse the model. (I found this when I made script that draw bounding box on image)
 
@@ -208,7 +208,7 @@ Above faulty labels are from official COCO Dataset. Try to label it correctly in
 
 Once the labeling is done, press **Export Project**.
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.45.30 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.45.30 PM.png" alt=""><figcaption></figcaption></figure>
 
 However, sometimes it will say Export Failed! It does not mean all of your work disappeared.&#x20;
 
@@ -220,19 +220,19 @@ If it keeps failing, wait for a minute and hit the button for 10 times again.&#x
 
 now, next to the frames folder, there should be a vott output folder
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.48.50 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.48.50 PM.png" alt=""><figcaption></figcaption></figure>
 
 Inside the Vott output folder full of .json files, there will be file {Vott\_your\_file\_name}-PasccalVOC. Inside this folder, there should be your JPG image file and Annotations file.&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.51.18 PM.png" alt=""><figcaption><p>Vott PascalVOC output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.51.18 PM.png" alt=""><figcaption><p>Vott PascalVOC output</p></figcaption></figure>
 
 Annotation folder is for .xml&#x20;
 
 JPEGImages folder is for .jpg&#x20;
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.52.08 PM.png" alt=""><figcaption><p>JPEGImages</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.52.08 PM.png" alt=""><figcaption><p>JPEGImages</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screen Shot 2023-08-24 at 10.51.59 PM.png" alt=""><figcaption><p>Annotations</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screen Shot 2023-08-24 at 10.51.59 PM.png" alt=""><figcaption><p>Annotations</p></figcaption></figure>
 
 The xml files will look like below format:&#x20;
 
@@ -284,7 +284,7 @@ Initially, I wanted to use Jetson Nano for running my ssdmobilenet .tflite file.
 \
 Finally, I am free of endless h5py wheel configuration error.&#x20;
 
-<figure><img src=".gitbook/assets/IMG_2053.png" alt=""><figcaption><p>google coral dev board vs jetson nano</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2053.png" alt=""><figcaption><p>google coral dev board vs jetson nano</p></figcaption></figure>
 
 Below is the official tutorial from google:\
 [https://coral.ai/docs/dev-board/get-started](https://coral.ai/docs/dev-board/get-started)
@@ -294,7 +294,7 @@ Similar to Jetson Nano setup:&#x20;
 1. Download Image
 2. Flash through BalenaEtcher
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-23 at 3.04.22 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 at 3.04.22 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 (base) jin@cose-zwqin-r13:~/Documents$ ./etcher.AppImage 
@@ -303,7 +303,7 @@ packageUpdatable false
 ready -to- show: 1.1095
 ```
 
-<figure><img src=".gitbook/assets/IMG_2054.jpg" alt=""><figcaption><p>switch in Google Coral Dev Board</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2054.jpg" alt=""><figcaption><p>switch in Google Coral Dev Board</p></figcaption></figure>
 
 3. Once it is done, it will show following message through HDMI cable
 
@@ -335,13 +335,13 @@ I A start job is running for Scripts that should be run only once (1min 11s no l
 ```
 {% endcode %}
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.40.02 PM.png" alt=""><figcaption></figcaption></figure>
 
 5. If you connect the OTG usb-c cable to desktop, the device should pop up in "mdt device"
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.36.47 PM.png" alt=""><figcaption><p>wifi connect </p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.37.54 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.37.54 PM.png" alt=""><figcaption></figcaption></figure>
 
 ```
 (base) jin@cose-zwqin-r13:~$ mdt wait -for -device
@@ -382,9 +382,9 @@ In order to run the ssdmobilenet demo,&#x20;
 mendel@purple-jet:/$ edgetpu_demo --device
 ```
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.44.43 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.44.43 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.46.31 PM.png" alt=""><figcaption><p>Google Coral Dev Board Demo</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.46.31 PM.png" alt=""><figcaption><p>Google Coral Dev Board Demo</p></figcaption></figure>
 
 It will show the highway video.
 
@@ -444,15 +444,15 @@ Tutorial Link: [https://colab.research.google.com/github/google-coral/tutorials/
 
 If you follow the google tutorial, you can make your own Efficientdet.tflite file compiled for google coral dev board. I put them in separate github repository with some inference photos.&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 3.58.40 PM.png" alt="" width="239"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 3.58.40 PM.png" alt="" width="239"><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-20 at 4.01.14 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-20 at 4.01.14 PM.png" alt=""><figcaption></figcaption></figure>
 
 
 
 You need to manually copy .tflite file and label file to specific folders.
 
-<figure><img src=".gitbook/assets/IMG_2065 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2065 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 ```
 mendel@purple-jet:/home/coral/pycoral$ python3 examples/classify image.py - -mode
@@ -502,7 +502,7 @@ echo "\n==USB drive has been unmounted.==\n"
 
 put those files inside the USB.
 
-&#x20;![](<.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png>)
+&#x20;![](<../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png>)
 
 Now, connect to Coral Dev Board&#x20;
 
@@ -571,7 +571,7 @@ sudo chmod +x run_usb_camera_inference.sh
 
 The SSDMobileNet V2 1000 object detection demo will look like below:&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-23 at 6.53.36 PM (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-23 at 6.53.36 PM (1).png" alt=""><figcaption></figcaption></figure>
 
 You can also run face detection model. (However, you must run above script first so that it downloads all the models)&#x20;
 
@@ -1043,7 +1043,7 @@ model = object_detector.create(train_data=train_data,
                                train_whole_model=True)
 ```
 
-<figure><img src=".gitbook/assets/Screenshot from 2023-08-26 18-24-07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-24-07.png" alt=""><figcaption></figcaption></figure>
 
 ### Evaluate model
 
@@ -1071,7 +1071,7 @@ print("Done!")
 
 Now, your folder should have&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot from 2023-08-26 18-27-07.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-27-07.png" alt=""><figcaption></figcaption></figure>
 
 In the same directory, go to the terminal and type&#x20;
 
@@ -1109,7 +1109,7 @@ Compilation succeeded!
 
 Now, the folder should have&#x20;
 
-<figure><img src=".gitbook/assets/Screenshot from 2023-08-26 18-32-30.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot from 2023-08-26 18-32-30.png" alt=""><figcaption></figcaption></figure>
 
 The log file shows that most of the operations are supported.
 
@@ -1220,9 +1220,9 @@ If the streaming stops after a few seconds showing gstream render\_overlay\_gen.
 
 Check whether the script is running **edgetpu\_classify** instead of **edgetpu\_detect**
 
-<figure><img src=".gitbook/assets/IMG_2135 Large.jpeg" alt="" width="375"><figcaption><p>my setting: apple and hand </p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2135 Large.jpeg" alt="" width="375"><figcaption><p>my setting: apple and hand </p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/efficientdet_demo.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/efficientdet_demo.gif" alt=""><figcaption></figcaption></figure>
 
 Do not forget to&#x20;
 
@@ -1281,7 +1281,7 @@ mendel@undefined-eft:/home/jin/examples-camera/gstreamer$ python3 detect.py
 
 It should give you something like this:
 
-<figure><img src=".gitbook/assets/coral-camera.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/coral-camera.gif" alt=""><figcaption></figcaption></figure>
 
 ## Load your model&#x20;
 
@@ -1293,7 +1293,7 @@ After checking that the model is correctly working, go to github again and downl
 
 Put them inside the USB with your previously trained Efficienddet.tflite file and label map. &#x20;
 
-<figure><img src=".gitbook/assets/Screenshot 2023-08-28 at 2.02.53 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2023-08-28 at 2.02.53 PM.png" alt=""><figcaption></figcaption></figure>
 
 ### Modify code&#x20;
 
@@ -1411,15 +1411,15 @@ gstreamer.py
 
 Run the detect model.
 
-<figure><img src=".gitbook/assets/IMG_2154 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2154 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 ```
 $ python3 detect.py
 ```
 
-<figure><img src=".gitbook/assets/coral_distance_1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/coral_distance_1.gif" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/coral_distance_2.gif" alt=""><figcaption><p>google coral dev board: distance</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/coral_distance_2.gif" alt=""><figcaption><p>google coral dev board: distance</p></figcaption></figure>
 
 Unfortunately, I could not find the way to draw a line in svg. The distance is based on the pixel. Camera input is 640X480
 
@@ -1459,11 +1459,11 @@ UART3 TX (output) pin is the /dev/ttymxc2.&#x20;
 
 ### Connect Arduino to see output
 
-<figure><img src=".gitbook/assets/IMG_2159 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2159 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 I already have a arduino debugging tool that I made to test UART communication specific with little i2c display. This will display the UART output through the I2C display so I do not have to look at Serial Monitor.&#x20;
 
-<figure><img src=".gitbook/assets/IMG_2158 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2158 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 ### Writing simple script to test whether UART works or not&#x20;
 
@@ -1520,7 +1520,7 @@ sudo chmod a+rw /dev/ttymxc2
 
 To get permission.&#x20;
 
-<figure><img src=".gitbook/assets/IMG_2160 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2160 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
 It should print out number from 1 to 100.&#x20;
 
@@ -1598,7 +1598,7 @@ Run the code&#x20;
 python3 detect.py 
 ```
 
-<figure><img src=".gitbook/assets/uart_output.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/uart_output.gif" alt=""><figcaption></figcaption></figure>
 
 It will output the distance correctly! However, the numbers are float and there is no space between each distance.&#x20;
 
@@ -1610,15 +1610,15 @@ Lets make it more clean. Go to vim and edit the UART output line
 uart3.write(f"{int(distance)} ".encode()); 
 ```
 
-<figure><img src=".gitbook/assets/IMG_2164 Large.jpeg" alt=""><figcaption><p>editing through vim....</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2164 Large.jpeg" alt=""><figcaption><p>editing through vim....</p></figcaption></figure>
 
 Now the distance is converted to int and have space. (I do not need that much accuracy)&#x20;
 
 So, if you run this code
 
-<figure><img src=".gitbook/assets/IMG_2166 Medium.jpeg" alt=""><figcaption><p>distance output</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2166 Medium.jpeg" alt=""><figcaption><p>distance output</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/uart_output_v2.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/uart_output_v2.gif" alt=""><figcaption></figcaption></figure>
 
 The UART correctly receives the distance and prints them in integer format and with space
 
@@ -1628,7 +1628,7 @@ However, the GPIO usage probably cause delays in both Google Coral Dev board and
 
 I probably need to fix code so that It sends distance every 3 inferences.
 
-<figure><img src=".gitbook/assets/IMG_2167 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/IMG_2167 Medium (1).jpeg" alt=""><figcaption></figcaption></figure>
 
 As one inference is around 80ms, 3 inference would be \~250ms. Updating distance 4 times per second is probably unnoticeable.&#x20;
 

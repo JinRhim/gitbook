@@ -1,416 +1,365 @@
-# EMG-CV fusion Exoglove Control & PID Ball-Balancer
+---
+description: machine learning in microcontroller
+---
 
-Sony Spresense Competition
+# Edge Impulse
 
-In 2022 Summer, I had an amazing internship experience with Zhenyu and Jimmy for deploying the Tensorflow Lite model in a Sony Spresense Microcontroller.  First, the tensorflow model was trained based on Ninapro Database 5 and was fine-tuned based on Jimmy's EMG signal (he had the most muscle). With index motion of 0, 1, 2, and 3 which are for thumbs up, releasing, grabbing, and O.K sign, we were able to deploy a quantized model in the Sony Spresense board.&#x20;
+Edge impulse is probably the most easiest and simplest way to implement machine learning to the microcontroller. With several button clicks, you can have your own tiny machine learning running on the microcontroller.&#x20;
 
-However, we had to use ESP32 just for the sole purpose of wireless communication. ESP32 only receives the Bluetooth information and sends UART information to the Sony Spresense board.
-
-<figure><img src=".gitbook/assets/ENGR696 Presentation.jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/ENGR696 Presentation (1).jpg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/My-Movie.gif" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/JimmyDemo2.gif" alt=""><figcaption></figcaption></figure>
-
-That is how we got the free PS5 by winning the Sony Spresense competition. However, the goal was to design a portable exoglove that could be fused with growing computer vision system.&#x20;
-
-## Computer Vision&#x20;
-
-Thanks to the Professor Zhuwei Qin who bought different microcontrollers, I was able to test commonly used microcontrollers other than Raspberry Pi&#x20;
-
-<figure><img src=".gitbook/assets/IMG_2142 Large.jpeg" alt=""><figcaption></figcaption></figure>
-
-I wanted to use Sony Spresense for Computer Vision and calculating the distance, but I was only able to use Sony Spresense with EdgeImpulse which yielded really low fps. For Nvidia Jetson 4GB version, the Jetpack was outdated and was stuck at ubuntu 18.04. Although some Pytorch projects from 2019 did not caused the dependency issue, I wanted to test multiple different models.&#x20;
-
-Eventually I ended up using OpenMV H7 for small, compact size setup and Google Coral Dev board for running tensorflow model in high FPS.&#x20;
+It is marvelous how Edge Impulse manages to implement object detection in a tiny microcontroller with less than 1MB SRM. If you download the tensorflow model from tensorflow zoo and train with your dataset, the compressed tensorflow lite model will be 3 MB which is impossible to run in the microcontroller. Within the first 4 layers of the convolution operation, the tensorArena memory will run out.&#x20;
 
 
 
-The goal of those microcontrollers is to calculate the distance between the hand model (which is the prototype of the wearable exoglove) and the grabbable object and send this filtered distance information (likely to be uint8) to the ESP32 which will receive distance information while processing EMG signals.
+## Arduino Nano BLE 33 Sense: Voice Recognition through Edge Impulse&#x20;
 
-The dataset was made by Microsoft VoTT which I wrote in [https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/\~/changes/116/readme/how-to-make-ml-dataset-using-microsoft-vott](how-to-make-ml-dataset-using-microsoft-vott.md)
+Arduino Nano BLE 33 sense is a tiny microcontroller that has an onboard microphone that can be used for simple voice recognition. However, it is possible to connect the OV7670 camera and use it for computer vision projects too.&#x20;
 
-
-
-## Design #1 - Using OpenMV H7&#x20;
-
-<figure><img src=".gitbook/assets/Screenshot 2023-09-01 at 4.06.47 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_2138 2 Large.jpeg" alt=""><figcaption><p>BLE33 + OV7670</p></figcaption></figure>
 
 
 
-### OpenMV H7: MQTT communication
+The first thing to do is create [Edge Impulse](https://studio.edgeimpulse.com/login) Account. Do not use a Google account as it might cause an error while logging into the account in terminal.
 
-I set up the MQTT communication by setting my macbook as broker. Just in case if I have to come back here and remeber what MQTT commnads are:
+* create new project --> name the new project --> select \[Audio] for voice recognition
 
-* Turn on local MQTT server:&#x20;
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.06.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+In the Mac Terminal,&#x20;
 
 ```
-/usr/local/opt/mosquitto/sbin/mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
+$ brew update
+$ brew install node 
+$ brew install python3 
+$ pm install -g edge-impulse-cli --force
+$ brew install arduino-cli 
 ```
 
-* Turn on another termial and start:&#x20;
+You probably have node and python3 already
+
+Download [Nano 33 BLE Sense Edge Impulse Firmware](https://www.google.com/url?q=https://cdn.edgeimpulse.com/firmware/arduino-nano-33-ble-sense.zip\&sa=D\&source=editors\&ust=1693173294541943\&usg=AOvVaw0j2Pt7cyz48l72BZ05oKzM) and run flash\_mac.command&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 1.57.13 PM.png" alt=""><figcaption></figcaption></figure>
+
+&#x20;After flashing in the BLE33 Sense, go to the terminal and type&#x20;
 
 ```
-mosquitto_sub -h test.mosquitto.org -t "openmv/test" -v
+$ edge-impulse-daemon 
 ```
 
-* To turn off,&#x20;
+* Type your Edge Impulse ID and Password&#x20;
+* Select the project from the edge impulse&#x20;
+* name the device&#x20;
+
+To change the project of connected device,&#x20;
 
 ```
-/opt/homebrew/opt/mosquitto/sbin/mosquitto -c /opt/homebrew/etc/mosquitto/mosquitto.conf
+$ edge-impulse-daemon --clean
 ```
 
-Initially, the goal was to save the average distance in an array of lengths of 5, remove outliers, and send the average distance value to MQTT communication.&#x20;
+Now, the microcontroller is connected to the Edge Impulse. In your project, you should see the connected device
 
-<figure><img src=".gitbook/assets/openmvide_v1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.11.16 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/openmv_laptop_image_1.gif" alt=""><figcaption></figcaption></figure>
+### Collecting Data in Edge Impulse&#x20;
 
-However, in some parts of university, the MQTT communication did not worked. To make the system as concise as possible, I was going to make a simple OpenMV H7 extension board with nRF52860, but it took too long to figure out the configuration. Instead, I made a simple shield with ESP8266 using ESP-one. ESP-one is for short-distance communication between two ESP8266 microcontrollers.&#x20;
+* In the "record new data", select the sensor as "Built-in microphone".&#x20;
+* Select the length as 3000 ms or the length of the word you want to record
+* Press start sampling
+* Label the recording. In my case, I recorded "yes" or "no"
 
-<figure><img src=".gitbook/assets/IMG_2337 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.24.55 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/IMG_2039 Large.jpeg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.26.42 PM.png" alt=""><figcaption><p>select processing block</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/openmv_camera_1.gif" alt=""><figcaption></figcaption></figure>
+### Start Training
 
-<figure><img src=".gitbook/assets/autobrightness_adjusted_v1.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.27.53 PM.png" alt=""><figcaption></figcaption></figure>
 
-Due to its STM32 H7 limitation with 2mb memory, it does not get higher than 10FPS. However, I am still surprised that 2MB memory can handle 96X96 RGB Images with convolution and bounding box. \
-\
-This computer vision setup with OpenMV H7 is easy and can be run by tiny LiPO battery, yet it causes significant delay in exoglove reaction.&#x20;
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.29.32 PM.png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 2.33.48 PM.png" alt=""><figcaption></figcaption></figure>
 
+Unfortunately, for this voice recognition project, I did not leave much documentation because I had to focus on Computer Vision.&#x20;
 
 
 
-## Design #2: using Google Coral Dev Board&#x20;
+However, in the same manner, you can connect OV7670 and train a simple model with an input size of 32X32 RGB. However, In order to capture image it will take around 2 seconds.&#x20;
 
-<figure><img src=".gitbook/assets/697_FinalPresentation (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Untitled2 Large.jpeg" alt=""><figcaption></figcaption></figure>
 
-* **Google Coral Dev Board**
-  * Measures distance to a target (e.g. hand/object).
-  * Sends distance data via UART to ESP8266.
-* **ESP8266**
-  * Receives distance data from Coral Dev Board over UART.
-  * Sends the distance wirelessly to ESP32 (e.g. via ESP-NOW or Wi-Fi).
-* **ESP32**
-  * Receives and parses distance data from ESP8266.
-  * Controls 4 individual 0.96" I2C OLED displays to show gesture and distance info.
-  * Reads EMG signals using ADS1115 at \~860 Hz from OYMotion EMG sensor.
-  * Performs signal preprocessing (zero-centering and average pooling).
-  * Uses logistic regression model to classify gestures (e.g., grab/release).
-  * Optionally uses threshold mode for simpler activation logic.
-  * Controls 4 servos via `ESP32Servo` based on predicted gestures.
-  * Supports slow, smooth servo movements (e.g., slow grab animation).
-  * Displays real-time state (gesture and/or distance) using custom bitmaps and text.
-* **ADS1115 (I2C)**
-  * Captures EMG signals with high precision.
-  * Configured for high sample rate and consistent performance (\~860 SPS).
+<figure><img src=".gitbook/assets/ble33.gif" alt=""><figcaption><p>images shown through Ipad</p></figcaption></figure>
 
-***
+The inference time is 113ms, but acturally the time BLE33 take to process the image takes significant portion
 
-#### 🧠 EMG Signal Processing
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 3.19.10 PM.png" alt=""><figcaption></figcaption></figure>
 
-* **Sampling**
-  * EMG signal is sampled using ADS1115 at \~860 samples per second.
-  * Each channel (e.g., 2 muscles) is read individually on its own timer.
-* **Buffering**
-  * Latest N samples (default: `ARRAY_SIZE = 10`) are stored in a circular buffer per channel.
-* **Zero-Centering**
-  * The average of the 10 samples is calculated.
-  * Each sample is subtracted from the average to remove DC bias.
-  * The absolute values of these centered samples are averaged to represent signal strength.
-*   **Example Output:**
+It is better to use other powerful microcontrollers that have dedicate Camera ports and processors.&#x20;
 
-    ```
-    Raw samples → [1200, 1230, 1220, ..., 1215]
-    Centered → [|1200 - avg|, |1230 - avg|, ..., |1215 - avg|]
-    Average centered value → Feature for classification
-    ```
-* **Gesture Classification**
-  * The final averaged values from two EMG channels are fed into a pre-trained logistic regression classifier.
-  * Outputs one of 3 gestures (e.g., neutral, grab, release).
 
-### Google Coral Dev Board with EfficientNet.&#x20;
 
-Google Coral Dev board is priced at around $120. It has a dedicated TPU that accelerates convolution operation. Initially, I was going to use the SSDMobileNetV2 TFLite model which I already trained, but there was a sample Google Colab code from the Coral team, so I just used the EfficientNet. (Also SSDMobileNetV2 caused endless StrideSlice errors) The following link is how I trained EfficientNet:
+## Sony Spresense Board: image inference with Edge Impulse&#x20;
 
-[https://app.gitbook.com/o/sNvhSOVZyDyTTrC5zdxK/s/cv8SWQoAK05Ec2tRdE9v/readme/google-coral-tpu/coral-tpu-train-efficientdet](/broken/pages/J2kWuo7DY0y7pIZsB81o)
+Designed for Machine Learning, Sony Spresense board is one of the alternative board you could choose for computer vision. &#x20;
 
-<figure><img src=".gitbook/assets/ENGR696 Presentation (2).jpg" alt=""><figcaption><p>SSDMobileNetV2 TFLite model trained on RTX3080</p></figcaption></figure>
+* Sony's CXD5602 Arm Cortex M4F x 6 cores at 156mhz&#x20;
+* 1.5 MB SRAM
+* 8 MB flash memory&#x20;
+* 5 megapixel camera&#x20;
+* Have extension board that support Accelerometer/Microphone&#x20;
 
-One of the models that classify COCO datset worked as below. Unfortunatley, it did not classify Apple and Pen.&#x20;
+Although it doesn't have Cortex M7 which can run heavier object detection models, it officially supports tensorflow library in Arduino IDE so its easy to port CIFAR-10 image classification in there easily with microSD card. Support from Edge Impulse also makes this board versatile.&#x20;
 
-<figure><img src=".gitbook/assets/coral-camera (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_2142 Large (1).jpeg" alt=""><figcaption><p> sony spresense extension board Arduino Nicla Vision OpenMV H7 Google Coral Dev Board Nvidia Jetson Nano 4GB </p></figcaption></figure>
 
-The EfficientNet that was trained on glove and apple is shown below:&#x20;
+Sony Spresense board is acturally tiny without the extension board. If you are only using computer vision, then you do not need expansive extension board as the mainboard have camera port.
 
-<figure><img src=".gitbook/assets/coral_distance_1 (1).gif" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/IMG_2146 Large.jpeg" alt=""><figcaption><p>Sony spresense + Camera</p></figcaption></figure>
 
-<figure><img src=".gitbook/assets/coral_distance_1 (2).gif" alt=""><figcaption></figcaption></figure>
+Be careful with direction of camera port. Also, camera wires are flimsy.&#x20;
 
-It uses \~ 5W of power during active inferencing
+So, implementing object detection through Edge Impulse will be similar to steps that you have to go through BLE 33.&#x20;
 
-<figure><img src=".gitbook/assets/coral_dev_board_power_consumption.jpeg" alt=""><figcaption></figcaption></figure>
 
-The python script adds distance in array of length of 8, removes outlier and sends the average value so that every 500ms one distance information is being sent to ESP32. This value is being sent to UART so that the Shield board that is connected to ESP8266 can send distance by ESP-one. Thinking back, I should've used BLE or just MQTT communication to minimize GPIO use.
 
-<figure><img src=".gitbook/assets/coral_extension_board_uart.gif" alt=""><figcaption></figcaption></figure>
+### Download [Sony Spresense Board Edge Impulse Firmware](https://cdn.edgeimpulse.com/firmware/sony-spresense.zip)
 
-## Electromyography with OYMotion&#x20;
+Run flash\_mac.command&#x20;
 
-The goal of electromyography is to read the muscle signal and infer the user's intention. Thalamic Armband - which had been extensively used in EMG-related conference papers - is discontinued. My goal was to use some cheaper alternative - Myoware EMG sensor, AK8232, and some other commonly used sensors in arduino projects.&#x20;
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.06.15 PM.png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.05.32 PM.png" alt=""><figcaption><p>flash sony spresense firmware</p></figcaption></figure>
 
+### Create new Project
 
-However, the Professor gave me the OYMotion EMG sensor - it was a growing company in China. Its configuration was better than the Myoware armband because the EMG pads and Amplifier circuits were separated with an audio jack&#x20;
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.07.49 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/Screenshot 2024-10-29 at 12.16.07 PM.png" alt=""><figcaption><p>OYMotion EMG Sensor</p></figcaption></figure>
-
-### Testing with Analog Discovery 2&#x20;
-
-Before connecting it to microcontroller ADC, I used AD2 to see how the EMG signal looks lile.&#x20;
-
-The setup was that I wear EMG sensor on both side of arm and do grabbing/releasing motion to see difference.
-
-<figure><img src=".gitbook/assets/OYMotion_AD2_flexing1.gif" alt=""><figcaption><p>OYMotion_AD2_Grabbing_and_Releasing. Orange is the sensor facing inside of arm and blue is the sensor facing outside of arm</p></figcaption></figure>
-
-<figure><img src=".gitbook/assets/OYMotion_AD2_flexing2.gif" alt=""><figcaption></figcaption></figure>
-
-However, as you can see the grabbing and releasing motion of the EMG signal looks similar, and sometimes Linear Classification Model gives faulty results. Also, touching any kind of metallic objects or twisting motion that will lead to slight detachment of electrode will lead to noise.
-
-Below is an example of noise from touching a metallic table. In here, I am actually resting but my elbow is touching the metallic surface of lab test bench
-
-<figure><img src=".gitbook/assets/OYMotion_AD2_touching_table.gif" alt=""><figcaption><p>OYMotion AD2 noise</p></figcaption></figure>
-
-### External ADC: ADS1115&#x20;
-
-Because ESP32 ADC had a linearity issue and was practically 8bit + extension bits, I used 16-bit ADS1115.
-
-
-
-## Final Result
-
-<figure><img src=".gitbook/assets/IMG_2371 Large (1).jpeg" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/final_v1.gif" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/final_v2.gif" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/final_v3.gif" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/final_v4.gif" alt=""><figcaption></figcaption></figure>
-
-## Side Project for STM32 Class: PID-Controlled Ball Balancer (Ball Centering System)
-
-<figure><img src=".gitbook/assets/balancer_v1.gif" alt=""><figcaption></figcaption></figure>
-
-* **Designed and implemented a real-time embedded system** that tracks and centers a ping pong ball on a 2D tilting plane using STM32 Nucleo and OpenMV H7 camera.
-* Utilized **OpenMV H7 with FOMO model** to perform real-time object detection; mapped X-Y coordinates transmitted via **UART (19200 baud)** to STM32.
-* Developed **FreeRTOS-based multitasking firmware** to handle:
-  * UART data reception and position processing.
-  * Real-time servo control via PWM signals (angle range: 60°–120°).
-  * I2C SSD1306 OLED display updates for position and system uptime.
-* Applied **data smoothing techniques** (moving average of last 4 positions) for jerk prevention
-* Built a 2-axis plane system using **dual servo motors** for real-time tilt adjustment based on deviation from center (mapped range: -15° to +15°).
-
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUd6155yh2Z72spwZrzBQT0NmaLPY3nOGucGZmDFntRZ444MXDxGGgwo4GbnYX9dxk1X271sjScUTwg_yHS3MMIps1Zng6EtymEjdX0k2cyXhjpbuHe2Dl0xahu9BLnPT5eKcy8j=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfPQw6yX1kSdvDSb0ilIU_pGzoxLFw-X7fC-lFO4f9cWB4kXVjgxXkNer1SmTRdFXPQyUPTHVM642EAh5yDqmguo7vwLl-m5zUMmIp6pDMcB5hdWmlJ-q9gPfk90BEn99wtkWlBfg=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
-
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUd5ZzXuZCh3t63ILPjwyOKy6JoPgexMCrbFEbl9rblLir8ca7P-1whLP58sdbd22EqOAJnXUvyjhqAgheHOX5ywTK9JoDmXBcEUj5VYzxRGlcvA8IpOA50Tqt-XMNNB9k2BTPG8tQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
-
-* Microcontroller: Powered by STM32H7 ARM Cortex-M7 processor (480 MHz).
-* Camera: High-quality OV7725 image sensor for machine vision tasks.
-* UART, I2C, SPI, CAN, and USB for communication.
-* MicroSD card slot for data storage (I never used one)
-* Power Efficiency: Low-power design suitable for embedded vision applications.
-
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUcgM-wG98_j1hpfi9ka9J1WVSXqybtz2Wm5P35o0wzAHM9VxvzGFKHdp9LlF771Um5O2C3rrs4rjlOo1HYJX9MGpocxPY__FC6fL_sPrZyqd1WjYX0Vd-Sd9Xh71snc9AxT3YV3jA=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUdRi3nYC6uEHj_iXeRusDxBckwct4YJhtjjZ-0CKtyP2vIVPHy0-wiya_qAefR-REp-GLLflzfjRwTaBc36uFCaAP80cH29i1twRYwo2KKcx4muwVSzB_olmMroZhdRLxoqolUvnQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
-
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUfw_MwLijrTnLCMYI-25F0sWvXUSY21CqbDjK92zKgR7JVyBnmltfUxPY0uLr_2pbVr0g6NTPbCvgrEPAHbLa_FDGjmpRvD_Z1hyyeH5g-0I7tMha_3hYD5hI09Pf8TEblWTx_jrw=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
-
-### OpenMV H7 Codes&#x20;
-
-````
-uart = UART(3, 19200)
-sensor.reset()  # Reset and initialize the sensor.
-sensor.set_pixformat(sensor.RGB565)  # Set pixel format to RGB565 (or GRAYSCALE)
-sensor.set_framesize(sensor.QQVGA)  # Set frame size to QVGA (320x240)
-sensor.set_auto_exposure(0)
-
-sensor.skip_frames(time=2000)  # Let the camera adjust.
-
-min_confidence = 0.4
-threshold_list = [(math.ceil(min_confidence * 255), 255)]
-
-last_sent_value = 0
-
-# Load built-in model
-model = ml.Model("trained")
-```
-while True:
-   clock.tick()
-   img = sensor.snapshot()
-   for i, detection_list in enumerate(model.predict([img], callback=fomo_post_process)):
-       if i == 0:
-           continue  # background class
-       if len(detection_list) == 0:
-           continue  # no detections for this class?
-       for (x, y, w, h), score in detection_list:
-           center_x = math.floor(x + (w / 2))
-           center_y = math.floor(y + (h / 2))
-
-           # Store the values in the arrays
-           x_values.append(center_x)
-           y_values.append(center_y)
-
-           # Keep only the last 5 values
-           if len(x_values) > 4:
-               x_values.pop(0)
-           if len(y_values) > 4:
-               y_values.pop(0)
-
-           # Calculate and print the average if we have 5 values
-           if len(x_values) == 4 and len(y_values) == 4:
-               avg_x = sum(x_values) / 4 - 35
-               avg_y = 115 - sum(y_values) / 4
-               # Map avg_x and avg_y from range 0-200 to 0-9
-               mapped_x = int(max(0, min(9, (avg_x - 0) * (9 - 0) / (100 - 0) + 0)))
-               mapped_y = int(max(0, min(9, (avg_y - 0) * (9 - 0) / (100 - 0) + 0)))
-               print(f"Mapped X: {mapped_x}, Mapped Y: {mapped_y}")
-               # Concatenate mapped_x and mapped_y into a single integer
-               combined_value = int(f"{mapped_x}{mapped_y}")
-               time.sleep_ms(2)
-
-               if combined_value != last_sent_value:
-                                   # Send the combined integer via UART
-                                   uart.write(f"{combined_value}\n".encode())
-                                   last_sent_value = combined_value  # Update the last sent value
-
-           img.draw_circle((center_x, center_y, 10), color=colors[i], thickness=10)
-
-   print(clock.fps(), "fps", end="\n")
-````
-
-* The FOMO model processes each frame captured by the camera.
-* Detected objects' bounding boxes are post-processed using Non-Maximum Suppression (NMS) to eliminate overlapping detections.
-* The x and y coordinates are stored in arrays to maintain a history of the last few positions.
-* When enough data points are available (4 in this case), the average position is computed to smooth out the tracking.The mapped x and y values are concatenated into a single integer value.
-* This integer is sent via UART to the STM32. If the current value differs from the last sent value, it ensures that redundant data is not sent.
-
-
-
-### STM32 Receiving Ball Coordinate throguh UART communication&#x20;
-
-<figure><img src=".gitbook/assets/ENGR844 Final Presentation.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src=".gitbook/assets/balancer_uart.gif" alt=""><figcaption><p>Testing STM32 UART Communication with ESP32</p></figcaption></figure>
-
-### Controlling Two Servo by STM32 &#x20;
-
-* You can buy cheap 2-axis ball balancing frames that you can assemble for $10 in Aliexpress
-* Also bought 5V Servo for $8 in Aliexpress (with bunch of ESP32 WROOM boards)
-
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUeVn1a5T67lRLWU6_KeIGapfWyP0lBtpdfQ5biMlo1Zt99-6S8wESeibyUInwvFDUbO9kuTAhUkrdHQsDf6lWfsDIW9g6tCXsT2BapL05eWk8gXPSiRHtURZKARePR588jjIqqIEw=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
-
-<figure><img src=".gitbook/assets/Screenshot 2025-04-03 at 3.48.59 PM.png" alt=""><figcaption></figcaption></figure>
-
-* Datasheet → 50Hz \~ 133 Hz PWM Signal Generation&#x20;
-* 72MHz/72 Prescaler = 1MHz. 1MHZ/20000 Timer → 50Hz. &#x20;
-* PWM Signal Generation: The servo angle is controlled by generating a PWM signal using the TIM1 timer. The Set\_Servo\_Angle function converts the desired angle (0°–180°) into a pulse width (500 µs–2500 µs) and updates the timer compare register.
-* Timer Output: The mapped pulse width is applied to the appropriate timer channel (TIM\_CHANNEL\_1 for X-axis, TIM\_CHANNEL\_4 for Y-axis), setting the servo to the calculated position.
+### In terminal,&#x20;
 
 ```
-void Set_Servo_Angle(TIM_HandleTypeDef *htim, uint32_t channel, float angle) {
-// Convert angle to pulse width
-	uint32_t pulse_width = (500 + ((angle / 180.0) * 2000)); // 0.5ms to 2.5ms pulse
-	__HAL_TIM_SET_COMPARE(htim, channel, pulse_width);
-}
+$ brew update
+$ brew install node
+$ brew install python3 
+$ npm install -g edge-impulse-cli --force
+$ brew install arduino-cli
+$ edge-impulse-daemon 
+```
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.08.41 PM.png" alt=""><figcaption></figcaption></figure>
+
+### Go to the Project and take Photos&#x20;
+
+![](https://lh3.googleusercontent.com/5wx6PShdL86gZtkNMRB3PGH_r6V9GVKzIEIddkSlI0lbqDD3BFQR5IgJBtLcuNCeedz2ojqiPe3Idw9PWrxRBbqrtfD0_pQjb4fcWwMCL1rZUsNLnsYeSH-GMbV1muDUFLv1vXMoHOO_e-D45mOJmonqxQ=s2048)![](https://lh5.googleusercontent.com/V7KSbce5o03zJ2PgeXHC3gLCgg3c4DDRhzSOGIqo4hPjHxy1yCiMW3QoP4TTMRChnKSJH-WGwM9-esKjwQI65pEBJZWoBuso-TWIm09QBXSqkI-cti-FiQhQ1xVpqvPYETxJ8uXheOHPgL_1-ieDvvvt7g=s2048)<br>
+
+<figure><img src=".gitbook/assets/1.1_.gif" alt=""><figcaption><p>sony spresense video stream 96X96</p></figcaption></figure>
+
+### Take at least 50 image per object and draw bounding box for test/train dataset
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.12.43 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.15.48 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.16.13 PM.png" alt=""><figcaption></figcaption></figure>
+
+Above is my sample label. This was my testing program so I did not labeled much.&#x20;
+
+
+
+### Select/Train the model&#x20;
+
+* 96X96 RGB &#x20;
+* 2 classes - banana, cup&#x20;
+* FOMO MobileNetV2.0.1&#x20;
+* 200 epoch + 0.001 LR&#x20;
+* 128 Batch Size (You can go to export mode by pressing button next to Neural Network Settings and change Batch size. Default is 32.)
+
+I used 200 epoch + 0.001 LR. (Epoch higher than 70 does not bring significant improvement and the accuracy will be plateaued). Everything will be done in cloud.&#x20;
+
+However, the model training is limited to 20 minutes of session. If you have lots of train dataset, then you can choose to lower epoch + higher learning rate + increased batch size&#x20;
+
+Try to select the models that are officially supported by Edge Impulse as other community models crashed in my case
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.23.52 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.23.36 PM.png" alt=""><figcaption></figcaption></figure>
+
+Now you can do live classification with your model.&#x20;
+
+### Live Classification
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.29.51 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.30.03 PM.png" alt=""><figcaption></figcaption></figure>
+
+### Exporting Model&#x20;
+
+You can choose arduino library or firmware
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.37.24 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.30.23 PM.png" alt=""><figcaption></figcaption></figure>
+
+In the downloaded file, there will be firmware flash file for Spresense Board&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.30.40 PM.png" alt=""><figcaption></figcaption></figure>
+
+Just like when you connect Sony Spresense to the Edge Impulse, type&#x20;
+
+```
+edge-impulse-run-daemon
+```
+
+<figure><img src=".gitbook/assets/1.1_ (1).gif" alt=""><figcaption></figcaption></figure>
+
+You can choose to download arduino file which you can modify more than firmware.
+
+Download the Arduino Library&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.45.27 PM.png" alt=""><figcaption></figcaption></figure>
+
+Go to Arduino IDE --> Sketch --> Include Library --> Add .ZIP Library --> ei-sony\_spresense
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.49.16 PM.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.45.43 PM.png" alt=""><figcaption></figcaption></figure>
+
+Flash the sample code and turn on the Serial Monitor.&#x20;
+
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 4.45.57 PM.png" alt=""><figcaption></figcaption></figure>
+
+## Simpler Labeling
+
+It is inconvenient to manually label all the data while labeled dataset already exists. However, edge impulse does not support the .xml file (maybe in future it might). The [format required by Edge Impulse](https://docs.edgeimpulse.com/docs/tools/edge-impulse-cli/cli-uploader#bounding-boxes) is the json file with label and coordinates
+
+```
+{
+    "version": 1,
+    "type": "bounding-box-labels",
+    "boundingBoxes": {
+        "apple168.jpg": [
+            {
+                "x": 130,
+                "y": 103,
+                "width": 85,
+                "height": 85,
+                "label": "apple"
+            }
+        ],
+        "dataset2_382.jpg": [
+            {
+                "x": 75,
+                "y": 0,
+                "width": 123,
+                "height": 57,
+                "label": "hand"
+            }
+        ],
+```
+
+However, the PascalVOC XML Label looks like this:
+
+```
+<annotation verified="yes">
+    <folder>Annotation</folder>
+    <filename>apple315</filename>
+    <path>apple_dataset-PascalVOC-export/Annotations/frame_315.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>320</width>
+        <height>240</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+    <name>apple</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+        <xmin>179.99695702794241</xmin>
+        <ymin>56.52393900783014</ymin>
+        <xmax>290.4149357006774</xmax>
+        <ymax>161.96616971465858</ymax>
+    </bndbox>
+</object>
+</annotation>
 
 ```
 
-### STM32 UART Setup
+So, we need a program that converts the PascalVOC xml files into one json file that contain labels and coordinates. &#x20;
 
-Initializes UART1 in interrupt mode to receive data using HAL\_UART\_Receive\_IT.
+## Edge Impulse Label Converter
 
-Upon receiving 3 bytes of UART data, triggers the HAL\_UART\_RxCpltCallback.
+```
+# Jin Rhim 
+# Convert XML Bounding Box to Edge Impulse Json Format
+# Enter image folder name 
+# It will output bounding_boxes.labels
 
-* Processes the received data stored in rx\_buffer.
-* Sets update\_display flag to signal main loop for further actions.
-* Re-enables the UART interrupt for continuous reception using HAL\_UART\_Receive\_IT.
+import xml.etree.ElementTree as ET
+import json
+import os
 
-Main loop reacts to the update\_display flag:
+# Set the path to your dataset folder
+data_dir = input("Enter folder name: ")
 
-* Extracts the X and Y coordinate data from rx\_buffer.
-* Converts received ASCII values into numerical deviations.
-* Maps deviations to servo angles and constrains them within limits.
-* Updates the servo positions using the Set\_Servo\_Angle function.
-* Updates the SSD1306 OLED display with the received coordinates and related information.
+# Create an empty dictionary to store the bounding box data
+bounding_boxes = {}
 
-Utilizes UART2 for terminal communication to print diagnostic and status messages.
+# Loop through all .xml files in the data directory
+for xml_file in os.listdir(data_dir):
+    if xml_file.endswith(".xml"):
+        # Parse the .xml file and extract the relevant information
+        tree = ET.parse(os.path.join(data_dir, xml_file))
+        root = tree.getroot()
+        filename = root.find("filename").text + ".jpg"
+        boxes = []
+        for obj in root.findall("object"):
+            label = obj.find("name").text
+            xmin = int(round(float(obj.find("bndbox").find("xmin").text)))
+            ymin = int(round(float(obj.find("bndbox").find("ymin").text)))
+            xmax = int(round(float(obj.find("bndbox").find("xmax").text)))
+            ymax = int(round(float(obj.find("bndbox").find("ymax").text)))
+            box = {"x": xmin, "y": ymin, "width": xmax -
+                   xmin, "height": ymax - ymin, "label": label}
+            boxes.append(box)
 
-<pre><code><strong>// ===========================================================================================
-</strong>void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-	UNUSED(huart);
+        bounding_boxes[filename] = boxes
 
-// Transmit received byte on UART2
-	HAL_UART_Transmit(&#x26;huart2, (uint8_t*) rx_buffer, 3, 10); // Transmit all received bytes
-//
-//	char message[40];
-//	snprintf(message, sizeof(message), "\r\nReceived byte via UART1: %c %c %c",
-//			rx_buffer[0], rx_buffer[1], rx_buffer[2]);
-//	print_terminal(message);
-	update_display = 1;
+# Create the output dictionary
+output = {"version": 1, "type": "bounding-box-labels",
+          "boundingBoxes": bounding_boxes}
 
-	HAL_UART_Receive_IT(&#x26;huart1, (uint8_t*) rx_buffer, 3);
+# Write the output to a file in the same directory as the script
+output_file = os.path.join(os.path.dirname(__file__), "bounding_boxes.labels")
+with open(output_file, "w") as outfile:
+    json.dump(output, outfile, indent=4)
 
-}
-// ===========================================================================================
+```
 
-void Set_Servo_Angle(TIM_HandleTypeDef *htim, uint32_t channel, float angle) {
-// Convert angle to pulse width
-	uint32_t pulse_width = (500 + ((angle / 180.0) * 2000)); // 0.5ms to 2.5ms pulse
-	__HAL_TIM_SET_COMPARE(htim, channel, pulse_width);
-}
+Once you run this code in the same directory as the image folder, it will generate&#x20;
 
-// ===========================================================================================
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 5.03.56 PM.png" alt=""><figcaption></figcaption></figure>
 
-// this should print to uart 2 which prints in computer console
-void print_terminal(const char *message) {
-	HAL_UART_Transmit(&#x26;huart2, (uint8_t*) message, strlen(message), 100);
-//HAL_UART_Transmit(&#x26;huart2, (uint8_t*) "\r\n", 2, 100); // Adds a newline for better readability
-}
-// ===========================================================================================
-</code></pre>
+Put the bounding\_boxes.labels inside the dataset folder where .jpg files and .xml files are in
 
-### Servo Angle Mapping&#x20;
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 5.07.48 PM.png" alt=""><figcaption></figcaption></figure>
 
-* Mapping Deviation to Angles:
-* Numerical deviations (ranging from 0-9) are mapped to angles between -15° and +15° using the formula:
-* (deviation−4.5)×2.5(deviation - 4.5) \times 2.5(deviation−4.5)×2.5
-  * 0 deviation corresponds to -15°.
-  * 9 deviation corresponds to +15°.
-* Servo Angle Calculation:
-* Servo angles are derived from mapped deviations:
-  * X-axis angle: 90−x\_angle
-  * Y-axis angle: 90+y\_angle
-* Constrained within a safe range:
-  * Minimum: 60°
-  * Maximum: 120°
+And whatever project you have, you can just drag this dataset and upload it. Edge Impulse will automatically label it with message&#x20;
 
-### Temporary Soldering Board && Changing i2C Address 0x3C, 0x3D&#x20;
+```
+pre-processing annotation files. 
+Parse annotations file 'bounding_boxes.labels' successfully
+```
 
-<figure><img src=".gitbook/assets/IMG_3109 Medium.jpeg" alt=""><figcaption><p>SSD1306 Changing Address 0x3C, 0x3D </p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 5.12.51 PM.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src=".gitbook/assets/IMG_3072 Medium.jpeg" alt=""><figcaption><p>12V to 5V Buck Converter for 5V @ 5A power supply. With 5V 3A power supply, whenever servo moves the STM32 resets due to sudden voltage droop</p></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-08-27 at 5.13.05 PM.png" alt=""><figcaption></figcaption></figure>
 
-![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUflt6u3EgCGSA1aaCVZuDunFZlRYDQDVPoAEYMyj6AFZDLqBwSrBxxKfoLxQ0W-T9Lup8hSmQBvZQSrAW2eSidvDIxB-SgPyhplL-oFB-apeqN6RrB8yqdn2r3u-w6fcqg-e972SQ=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)![](https://lh7-rt.googleusercontent.com/slidesz/AGV_vUc8dm-tJKJ7QuNrNNDPwycQccPoUhaZfy5wVDuEist-_JQsX9aesYsBa_oIS88gOX7TKh4hVE0SrcE8c1idheEJIiatcNFbdGTbuig455F0l3lKFBYFnpPpKCUvArurvjHmQ1yM=s2048?key=rXrF2n4v8mZ2yITUB_aoWxdG)
+Now your dataset should look like this without labeling hundreds of image
 
-## Issues - slow inference speed&#x20;
+Below is the link for my 4.4 mb dataset that you could drag and upload to Edge Impulse for testing purpose
 
-<figure><img src=".gitbook/assets/balancer_demo_v1.gif" alt=""><figcaption></figcaption></figure>
+{% embed url="https://drive.google.com/file/d/1bxvysYBlD5dcd829rqSWqFxK5xmCsHcL/view?usp=sharing" %}
 
-* Sometimes the OpenMV H7 fails to detect the white ball on a black background, despite the ball being the only object to detect.&#x20;
-* Also, the bounding box is highly sensitive to the light condition&#x20;
