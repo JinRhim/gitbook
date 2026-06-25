@@ -2,7 +2,7 @@
 description: First time GaNFET
 ---
 
-# LMR2100R044 Test
+# LMG2100R044RARR Test
 
 Now we can buy a 60W GaN Charger with the size of smartphone charger for $15. Feels like every switching devices nowadays are pushing GaNFET.&#x20;
 
@@ -33,11 +33,15 @@ Although It does not need multiple components, I followed recommeded TI schemati
 * Charge Pump Slew Rate Control  - for ringing, 100nF Boost Capacitor + 1 Ohm Series Resistor&#x20;
 * Linear voltage Regulator - 48V to 5V&#x20;
 
+
+
+TI did not yet made the STEP file so I used similar model.&#x20;
+
 <figure><img src="../.gitbook/assets/LMG2100.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/2026_0616_104514_308.JPG" alt=""><figcaption></figcaption></figure>
 
-You can see 12 mil Via in the PGND Pad. Original footprint had 8 mil X 6 Vias
+You can see 12 mil Via in the PGND Pad.&#x20;
 
 <figure><img src="../.gitbook/assets/2026_0616_104614_310.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -51,11 +55,11 @@ You can see 12 mil Via in the PGND Pad. Original footprint had 8 mil X 6 Vias
 
 In footprint you can see footprint Q3 for TO-252 Package&#x20;
 
-| Parameter | DMP10H400SK3-13 | LMG2100R044 |
-| --------- | --------------- | ----------- |
-| **Vds**   | 100 V           | 90 V        |
-| **Rds**   | 240 mΩ          | 4.4 mΩ      |
-| **Id**    | 9 A             | 35 A        |
+| Parameter | DMP10H400SK3-13 (TO-252) | LMG2100R044 (5.5mm X 4.5mm) |
+| --------- | ------------------------ | --------------------------- |
+| **Vds**   | 100 V                    | 90 V                        |
+| **Rds**   | 240 mΩ                   | 4.4 mΩ                      |
+| **Id**    | 9 A                      | 35 A                        |
 
 ### Testing with Brushed DC Motor&#x20;
 
@@ -117,3 +121,22 @@ Below is with 60% duty cycle&#x20;
 
 ## Heating at high switching frequency&#x20;
 
+Unfortunately, when I was testing the 6.25MHz and 10MHz switching, the LMG2100 shut down after running few seconds - wasn't able to capture oscilloscope, but was able to capture thermal cam where it ramped up to 100 degree within few seconds&#x20;
+
+<figure><img src="../.gitbook/assets/6.25MHz_PWM_Heating.jpg" alt=""><figcaption></figcaption></figure>
+
+However, running at 100khz the GaNFET is at a surprisingly low temperature, compared to TO-252 package MOSFET which requrires extra heat sink. (The PCB is 4-layer)
+
+<figure><img src="../.gitbook/assets/FLIR0189.jpg" alt=""><figcaption></figcaption></figure>
+
+## Can It run Duty Cycle 100%?&#x20;
+
+<img src="../.gitbook/assets/unknown.png" alt="" height="120" width="624">
+
+<img src="../.gitbook/assets/unknown (1).png" alt="" height="168" width="624">
+
+It can run 100% duty cycle
+
+## What if Both High side and Low side switch is on?&#x20;
+
+There is no protection for High side and Low side overlap like DRV7167 or UCC27750 - it will instantaneouly burn the LMG2100 - I already burned one MOSFET.&#x20;
