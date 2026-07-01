@@ -1,4 +1,8 @@
-# Fab Mistake
+---
+description: QFN Package EPAD shorting with signal via
+---
+
+# Design Mistake
 
 ## PCB Design Mistake&#x20;
 

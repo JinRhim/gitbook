@@ -13,7 +13,7 @@
 * [DRV8305 Breadboard Test Board](pcb-design/drv8305-breadboard-test-board.md)
 * [LM61495 Test Board](pcb-design/lm61495-test-board.md)
 * [LMG2100R044RARR Test](pcb-design/lmg2100r044rarr-test.md)
-* [Fab Mistake](pcb-design/fab-mistake.md)
+* [Design Mistake](pcb-design/design-mistake.md)
 
 ## Motor
 
