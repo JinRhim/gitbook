@@ -69,7 +69,17 @@ Although initial issue is that the voltage divider or PG signal is missing for 3
 
 This method worked, by choking all the inrush currents going to massive 100nF bank for Xilinx FPGA.&#x20;
 
+Fortunately, all of logic ICS operating voltage was from 3V to 3.6Vish range. However, the issue was that the 3.3V dropped to 3.15V which affects the DAC outputs, affecting OPAMP gains and other setups.&#x20;
 
+
+
+## Permanent Fix&#x20;
+
+The only way to fix this issue is by adding resistor divider so that the buck converter does not start early before 5V rail is ready.&#x20;
+
+<img src="../.gitbook/assets/unknown (10).png" alt="" height="508" width="800">
+
+I simply chose resistors that were already in BOM.&#x20;
 
 
 
