@@ -36,7 +36,7 @@ If you use above level shifter for turning on the high side PMOS for more than 1
 
 The high side PMOS will eventually burn because once the capacitor is charged and voltage flips back from 0V to 12V, the 60V + 12V charge will be pushed to the PMOS gate which will be way above the Vgd threshold of 20V.&#x20;
 
-<br>
+As you can see in the oscilloscope, the PMOS VCC goes from 40V to almost 52V once the charge capacitor flips from 0V to 12V. Also, it cannot turn on PMOS for prolonged time due to capacitor slowly charging back.<br>
 
 To prevent that, an low side bjt will be used. Because this BJT is sinking mA range current, the package can be SOT-23 with $0.1 cost.
 
