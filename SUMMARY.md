@@ -13,8 +13,9 @@
 * [DRV8305 Breadboard Test Board](pcb-design/drv8305-breadboard-test-board.md)
 * [LM61495 Test Board](pcb-design/lm61495-test-board.md)
 * [LMG2100R044RARR Test](pcb-design/lmg2100r044rarr-test.md)
-* [Design Mistake](pcb-design/design-mistake.md)
+* [Gerber Design Mistake](pcb-design/gerber-design-mistake.md)
 * [±30V H-Bridge Drive](pcb-design/30v-h-bridge-drive.md)
+* [Cascading Buck Converter Error](pcb-design/cascading-buck-converter-error.md)
 
 ## Motor
 

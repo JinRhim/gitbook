@@ -131,9 +131,9 @@ However, running at 100khz the GaNFET is at a surprisingly low temperature, comp
 
 ## Can It run Duty Cycle 100%?&#x20;
 
-<img src="../.gitbook/assets/unknown.png" alt="" height="120" width="624">
+<img src="../.gitbook/assets/unknown (3).png" alt="" height="120" width="624">
 
-<img src="../.gitbook/assets/unknown (1).png" alt="" height="168" width="624">
+<img src="../.gitbook/assets/unknown (1) (1).png" alt="" height="168" width="624">
 
 It can run 100% duty cycle
 

@@ -10,7 +10,7 @@ Imagine a H-Bridge with +30V, -30V VCC, VSS (60V Swing). If the goal is to contr
 * Regardless of 3.3V high or low, the high side pmos will be always on&#x20;
 * Low side NMOS will be always turned on, as it is experiencing vgs of 30V + 3.3V = 33.3V.  Before turning on, it would burn due first due to extreme voltage difference.&#x20;
 
-<img src="../.gitbook/assets/unknown (2).png" alt="" height="414" width="522">
+<img src="../.gitbook/assets/unknown (2) (1).png" alt="" height="414" width="522">
 
 Unfortunately at the beginning of my work, I did not knew about the logic isolator or the isolated gate driver that would get rid of different potential/different voltage.&#x20;
 
@@ -18,7 +18,7 @@ One way that I thought of solving this problem was using Opto-Isolator + Inverte
 
 Because Opto-isolator output inverted logic, I could just add an simple SN74 inverter to flip the logic voltage.
 
-<img src="../.gitbook/assets/unknown (3).png" alt="" height="209" width="637">
+<img src="../.gitbook/assets/unknown (3) (1).png" alt="" height="209" width="637">
 
 For 3.3V logic from stm32/MSP430, the 0V to 3.3V PWM is level-shift to -30V, -26.7V PWM. Now, the gnd is -30V.&#x20;
 
