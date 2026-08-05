@@ -81,5 +81,5 @@ The only way to fix this issue is by adding resistor divider so that the buck co
 
 I simply chose resistors that were already in BOM.&#x20;
 
-
+In the future, I will ask to change this IC to TI TPS62A0569 SOT-563 package. DFN packages are hard to inspect and rework.&#x20;
 
