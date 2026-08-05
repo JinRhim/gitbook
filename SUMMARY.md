@@ -14,6 +14,7 @@
 * [LM61495 Test Board](pcb-design/lm61495-test-board.md)
 * [LMG2100R044RARR Test](pcb-design/lmg2100r044rarr-test.md)
 * [Design Mistake](pcb-design/design-mistake.md)
+* [±30V H-Bridge Drive](pcb-design/30v-h-bridge-drive.md)
 
 ## Motor
 
