@@ -26,7 +26,10 @@ the module can work with only Input capacitor and output capacitor, just like an
 
 <figure><img src="../.gitbook/assets/FLIR0201 (1).jpg" alt=""><figcaption></figcaption></figure>
 
-* Considering that this Buck is outputting 54V to 5V 600mA, it is an impressive result, considering how much compact space it is saving (LMR36506 with low profile, compact inductor with high DCR would heat up more than this)
+* Considering that this Buck is outputting 54V to 5V 600mA, it is an impressive result
+* Compact space is coming at the cost of selecting large, low DCR inductor but still a great result.  (LMR36506 with low profile, compact inductor with high DCR would heat up more than this)
 * Lacking thermal vias underneath (there was some signal going below that prevented thermal via placement)
+* With only one 1210 47uF output capacitor, the output voltage ripple was less than 50mV.&#x20;
 
 For next layout I would need to lower switching frequency around 800khz from 1mhz to lower switching loss. &#x20;
+
