@@ -9,6 +9,7 @@
 
 ## PCB Design
 
+* [12–60 V GaN Motor Driver with EtherCAT](pcb-design/12-60-v-gan-motor-driver-with-ethercat.md)
 * [USB-C PD Test Board](pcb-design/usb-c-pd-test-board.md)
 * [DRV8305 Breadboard Test Board](pcb-design/drv8305-breadboard-test-board.md)
 * [LM61495 Test Board](pcb-design/lm61495-test-board.md)
@@ -17,7 +18,6 @@
 * [±30V H-Bridge Drive](pcb-design/30v-h-bridge-drive.md)
 * [Cascading Buck Converter Error](pcb-design/cascading-buck-converter-error.md)
 * [TPSM365R6](pcb-design/tpsm365r6.md)
-* [12–60 V GaN Motor Driver with EtherCAT](pcb-design/12-60-v-gan-motor-driver-with-ethercat.md)
 
 ## Motor
 
