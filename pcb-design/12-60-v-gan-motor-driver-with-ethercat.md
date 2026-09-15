@@ -9,3 +9,7 @@ description: BLDC, Stepper, Piezo Test Board
 {% file src="../.gitbook/assets/MechE_Dimension (2).PDF" %}
 
 {% file src="../.gitbook/assets/GaN_Motor_Driver (1).pdf" %}
+
+## Sample Extension Board Example&#x20;
+
+{% file src="../.gitbook/assets/Extension_Board.PDF" %}
