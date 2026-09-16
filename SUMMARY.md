@@ -9,6 +9,7 @@
 
 ## PCB Design
 
+* [System on Module - GaN Driver](pcb-design/system-on-module-gan-driver.md)
 * [12–60 V GaN Motor Driver with EtherCAT](pcb-design/12-60-v-gan-motor-driver-with-ethercat.md)
 * [USB-C PD Test Board](pcb-design/usb-c-pd-test-board.md)
 * [DRV8305 Breadboard Test Board](pcb-design/drv8305-breadboard-test-board.md)
