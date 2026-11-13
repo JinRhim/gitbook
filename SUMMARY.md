@@ -19,7 +19,7 @@
 * [±30V H-Bridge Drive](pcb-design/30v-h-bridge-drive.md)
 * [Cascading Buck Converter Error](pcb-design/cascading-buck-converter-error.md)
 * [TPSM365R6](pcb-design/tpsm365r6.md)
-* [Photos](pcb-design/photos.md)
+* [Design Photo Collections](pcb-design/design-photo-collections.md)
 
 ## Motor
 
