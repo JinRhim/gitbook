@@ -128,3 +128,11 @@ Above is default EVM Schematic
 <figure><img src="../.gitbook/assets/LM71495_Layout.jpg" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/LM61495_TopLayer.jpg" alt=""><figcaption></figcaption></figure>
+
+
+
+### Actual Production&#x20;
+
+* Surprisingly Cool. Less heating than 3V3 LDO
+
+<figure><img src="../.gitbook/assets/IMG_7283 (2).JPG" alt=""><figcaption></figcaption></figure>
