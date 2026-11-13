@@ -33,3 +33,9 @@ the module can work with only Input capacitor and output capacitor, just like an
 
 For next layout I would need to lower switching frequency around 800khz from 1mhz to lower switching loss. &#x20;
 
+
+
+### Running DCM&#x20;
+
+<figure><img src="../.gitbook/assets/BK000027.png" alt=""><figcaption></figcaption></figure>
+
